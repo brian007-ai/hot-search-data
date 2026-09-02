@@ -288,21 +288,40 @@ async function fetchDoubanStructured(subjectId) {
     const html = r.data || ''
     let summary = ''
 
-    // 优先方案1：从 HTML 正文中提取完整简介（移动端页面含完整剧情简介）
-    // 常见容器：<div id="link-report"><span property="v:summary">...</span></div>
-    const bodyM = html.match(/<div[^>]+id=["']link-report["'][^>]*>([\s\S]*?)<\/div>/i)
-    if (bodyM && bodyM[1]) {
-      const inner = bodyM[1]
-      const spanM = inner.match(/<span[^>]+property=["']v:summary["'][^>]*>([\s\S]*?)<\/span>/i)
-      if (spanM && spanM[1]) {
-        summary = stripHtml(spanM[1]).replace(/\s+/g, ' ').trim()
-      } else {
-        // 没有 v:summary 标签，直接取容器文本
-        summary = stripHtml(inner).replace(/\s+/g, ' ').trim()
+    // 优先方案1：从页面纯文本提取「剧情简介」段落（移动端页面用文本结构，不依赖特定 HTML 标签）
+    {
+      const text = stripHtml(html)
+      const idx1 = text.search(/剧情简介/)
+      if (idx1 !== -1) {
+        // 从「剧情简介」标题后开始，到「演职员」或其他章节标题前结束
+        let section = text.slice(idx1)
+        // 移除标题本身
+        section = section.replace(/^剧情简介[\s·\*]*/, '')
+        // 截取到下一个章节（演职员/短评/影评/剧照/讨论/演职人员/谁演的）
+        const nextSec = section.search(/(演职员|演职人员|短评|影评|剧照|讨论|谁演的|更多\.\.\.|查看全部)/)
+        if (nextSec > 0) section = section.slice(0, nextSec)
+        section = section.trim()
+        if (section.length >= 20) {
+          summary = section
+        }
       }
     }
 
-    // 优先方案2：移动端 subject-info / subject-intro 容器
+    // 优先方案2：从 HTML 正文中提取完整简介（PC 端页面 v:summary 标签）
+    if (!summary || summary.length < 20) {
+      const bodyM = html.match(/<div[^>]+id=["']link-report["'][^>]*>([\s\S]*?)<\/div>/i)
+      if (bodyM && bodyM[1]) {
+        const inner = bodyM[1]
+        const spanM = inner.match(/<span[^>]+property=["']v:summary["'][^>]*>([\s\S]*?)<\/span>/i)
+        if (spanM && spanM[1]) {
+          summary = stripHtml(spanM[1]).replace(/\s+/g, ' ').trim()
+        } else {
+          summary = stripHtml(inner).replace(/\s+/g, ' ').trim()
+        }
+      }
+    }
+
+    // 优先方案3：移动端 subject-info / subject-intro 容器
     if (!summary || summary.length < 20) {
       const introM = html.match(/<div[^>]+class=["'][^"']*(?:subject-intro|subject-info|intro-content)[^"']*["'][^>]*>([\s\S]*?)<\/div>/i)
       if (introM && introM[1]) {
@@ -311,12 +330,11 @@ async function fetchDoubanStructured(subjectId) {
       }
     }
 
-    // 优先方案3：meta description（豆瓣截取版，可能不完整，作为兜底）
+    // 优先方案4：meta description（豆瓣截取版，可能不完整，作为兜底）
     if (!summary || summary.length < 20) {
       const descM = html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([\s\S]*?)["']/i)
         || html.match(/<meta[^>]+content=["']([\s\S]*?)["'][^>]+name=["']description["']/i)
       if (descM && descM[1]) {
-        // 格式："XXX豆瓣评分：x.x 简介：..." 或 "XXX评分 x.x 简介：..."
         const raw = clean(descM[1])
         const idx = raw.search(/简介[：:]\s*/)
         if (idx !== -1) {
@@ -327,7 +345,7 @@ async function fetchDoubanStructured(subjectId) {
       }
     }
 
-    // 优先方案4：og:description 兜底
+    // 优先方案5：og:description 兜底
     if (!summary) {
       const ogM = html.match(/<meta[^>]+property=["']og:description["'][^>]+content=["']([\s\S]*?)["']/i)
         || html.match(/<meta[^>]+content=["']([\s\S]*?)["'][^>]+property=["']og:description["']/i)
@@ -622,17 +640,29 @@ const FETCHERS = {
     const r = await fetch('https://m.ithome.com/', { timeout: 20000 })
     const html = r.data || ''
     const items = []
-    // 解析移动端首页新闻列表
-    const reg = /<a[^>]+href="(https:\/\/www\.ithome\.com\/0\/\d+\/\d+\.htm)"[^>]*>\s*<img[^>]*data-original="([^"]*)"[^>]*>[\s\S]*?<span[^>]*>([^<]+)<\/span>/g
+    // 解析移动端首页新闻列表：实际 URL 格式为 m.ithome.com/html/XXXXX.htm
+    const reg = /<a[^>]+href="(https:\/\/m\.ithome\.com\/html\/\d+\.htm)"[^>]*>([\s\S]*?)<\/a>/g
     let m
     while ((m = reg.exec(html)) && items.length < 30) {
       const url = m[1]
-      const title = (m[3] || '').replace(/<[^>]+>/g, '').trim()
+      const inner = m[2] || ''
+      // 从链接内部提取标题文本（可能在 span/p 标签中，也可能直接是文本）
+      const title = stripHtml(inner).replace(/\s+/g, ' ').trim()
       if (!title || title.length < 4) continue
+      // 过滤广告
+      if (title.includes('广告')) continue
+      // 移除尾部时间（HH:MM）和评论数（N评）
+      const cleanTitle = title
+        .replace(/\s*\d{1,2}:\d{2}\s*/g, ' ')
+        .replace(/\s*\d+评\s*/g, ' ')
+        .replace(/\s*视频\d+评\s*/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+      if (!cleanTitle || cleanTitle.length < 4) continue
       if (items.some(x => x.url === url)) continue
-      items.push({ index: items.length + 1, title, desc: '', pic: m[2] || '', hot: '', url, mobilUrl: url })
+      items.push({ index: items.length + 1, title: cleanTitle, desc: '', pic: '', hot: '', url, mobilUrl: url })
     }
-    // 备用正则：无图新闻
+    // 备用正则：匹配 www.ithome.com 格式的 URL
     if (items.length < 10) {
       const reg2 = /<a[^>]+href="(https:\/\/www\.ithome\.com\/0\/\d+\/\d+\.htm)"[^>]*>([^<]{4,})<\/a>/g
       while ((m = reg2.exec(html)) && items.length < 30) {
