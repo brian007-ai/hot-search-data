@@ -1,4 +1,57 @@
-name: 抓取热搜数据
+name: Fetch Hot Search Data
+
+on:
+  schedule:
+    # UTC 0-14 点（北京时间 8-22 点）每小时整点
+    - cron: '0 0-14 * * *'
+    # UTC 16、20 点（北京时间 0、4 点）夜间低频
+    - cron: '0 16,20 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-hot-search
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install axios cheerio
+
+      - name: Fetch hot search data
+        run: node fetcher/fetch.js
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ -A || true
+          if git diff --cached --quiet; then
+            echo "No changes, skip commit"
+          else
+            git commit -m "chore(data): update hot search data $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
+
+      - name: Report summary
+        if: always()
+        run: |
+          echo "=== Done ==="
+          echo "UTC: $(date -u)"
+          echo "Beijing: $(TZ='Asia/Shanghai' date)"
+          [ -f data/_meta.json ] && cat data/_meta.json || echo "No meta yet"name: 抓取热搜数据
 
 # 触发条件：
 #   - 白天 8-22 点（UTC 0-14）每小时整点触发一次
