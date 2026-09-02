@@ -17,53 +17,15 @@ jobs:
       - name: Push to Gitee mirror
         env:
           GITEE_USERNAME: ${{ secrets.GITEE_USERNAME }}
-          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+          GITEE_TOKEN:    ${{ secrets.GITEE_TOKEN }}
         run: |
           if [ -z "$GITEE_USERNAME" ] || [ -z "$GITEE_TOKEN" ]; then
-            echo "WARN: GITEE_USERNAME or GITEE_TOKEN not set, skip mirror."
+            echo "WARN: GITEE_USERNAME or GITEE_TOKEN not set in GitHub Secrets."
+            echo "WARN: Skip mirror push. Please add them in: Settings → Secrets → Actions"
             exit 0
           fi
           git remote add gitee "https://$GITEE_USERNAME:$GITEE_TOKEN@gitee.com/$GITEE_USERNAME/hot-search-data.git"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git push --force gitee main
-          echo "Mirrored to Gitee: https://gitee.com/$GITEE_USERNAME/hot-search-data"name: 镜像到 Gitee
-
-# 触发条件：
-#   - GitHub 仓库 main 分支有 push（即抓取 workflow 完成提交后）
-#   - 支持手动触发
-# 前置条件：
-#   1. 在 Gitee 创建同名空仓库 hot-search-data（不要勾选初始化 README）
-#   2. Gitee 个人设置 → 私人令牌 生成一个 token（勾选 projects 权限）
-#   3. GitHub 仓库 Settings → Secrets and variables → Actions → New repository secret
-#      - 添加 GITEE_USERNAME（Gitee 用户名）
-#      - 添加 GITEE_TOKEN（Gitee 私人令牌）
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
-jobs:
-  mirror:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 检出代码（完整历史）
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: 配置 Gitee 远程
-        run: |
-          git remote add gitee "https://${{ secrets.GITEE_USERNAME }}:${{ secrets.GITEE_TOKEN }}@gitee.com/${{ secrets.GITEE_USERNAME }}/hot-search-data.git"
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: 推送到 Gitee
-        run: |
-          git push --force gitee main
-          echo "✓ 已镜像到 Gitee"
-
-      - name: 提示开通 Gitee Pages
-        run: |
-          echo "下一步：登录 Gitee → 进入 hot-search-data → 服务 → Gitee Pages → 开通"
-          echo "URL: https://${{ secrets.GITEE_USERNAME }}.gitee.io/hot-search-data/data/baidu.json"
+          echo "OK: mirrored to https://gitee.com/$GITEE_USERNAME/hot-search-data"
