@@ -1,6 +1,6 @@
 {
   "version": "2.2",
-  "update_time": "2026-09-02T12:14:17.257Z",
+  "update_time": "2026-09-02T13:10:54.641Z",
   "platforms": [
     {
       "key": "baidu",
@@ -40,12 +40,14 @@
     {
       "key": "douban",
       "success": true,
-      "count": 20
+      "count": 20,
+      "fallback": true
     },
     {
       "key": "doubantv",
       "success": true,
-      "count": 20
+      "count": 20,
+      "fallback": true
     },
     {
       "key": "doubanhot",
@@ -56,17 +58,19 @@
     {
       "key": "doubannew",
       "success": true,
-      "count": 20
+      "count": 20,
+      "fallback": true
     },
     {
       "key": "doubanscore",
       "success": true,
-      "count": 20
+      "count": 20,
+      "fallback": true
     },
     {
       "key": "ithome",
       "success": true,
-      "count": 23
+      "count": 22
     }
   ]
 }
