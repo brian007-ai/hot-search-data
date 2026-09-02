@@ -2,9 +2,9 @@ name: Fetch Hot Search Data
 
 on:
   schedule:
-    # UTC 0-14 点（北京时间 8-22 点）每小时整点
+    # UTC 0-14 = Beijing 8-22, every hour on the hour
     - cron: '0 0-14 * * *'
-    # UTC 16、20 点（北京时间 0、4 点）夜间低频
+    # UTC 16,20 = Beijing 0,4 (night, low frequency)
     - cron: '0 16,20 * * *'
   workflow_dispatch:
 
@@ -27,17 +27,17 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies
+      - name: Install dependencies (axios + cheerio)
         run: npm install axios cheerio
 
       - name: Fetch hot search data
         run: node fetcher/fetch.js
 
-      - name: Commit and push
+      - name: Commit and push updates
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ -A || true
+          git add data/ -A 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes, skip commit"
           else
@@ -48,61 +48,12 @@ jobs:
       - name: Report summary
         if: always()
         run: |
-          echo "=== Done ==="
-          echo "UTC: $(date -u)"
-          echo "Beijing: $(TZ='Asia/Shanghai' date)"
-          [ -f data/_meta.json ] && cat data/_meta.json || echo "No meta yet"name: 抓取热搜数据
-
-# 触发条件：
-#   - 白天 8-22 点（UTC 0-14）每小时整点触发一次
-#   - 夜间 0 点、4 点（UTC 16、20）触发一次，降低频率省额度
-#   - 支持手动触发
-#   - 推送到 main 时不触发，避免循环
-on:
-  schedule:
-    - cron: '0 0-14 * * *'    # UTC 0-14 = 北京 8-22 点，每小时
-    - cron: '0 16,20 * * *'   # UTC 16,20 = 北京 0,4 点
-  workflow_dispatch:
-
-permissions:
-  contents: write    # 允许 commit 回仓库
-
-concurrency:
-  group: fetch-hot-search
-  cancel-in-progress: false    # 不打断正在运行的抓取
-
-jobs:
-  fetch:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 检出代码
-        uses: actions/checkout@v4
-
-      - name: 设置 Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: 抓取数据
-        run: node fetcher/fetch.js
-
-      - name: 提交到仓库（github-actions[bot] 身份）
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/ -A
-          if git diff --cached --quiet; then
-            echo "无变化，跳过提交"
-          else
-            git commit -m "chore(data): 更新热搜数据 $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git push
-          fi
-
-      - name: 报告状态
-        if: always()
-        run: |
-          echo "=== 抓取完成 ==="
-          echo "时间: $(date)"
+          echo "=== Run Summary ==="
+          echo "UTC Time: $(date -u)"
+          echo "Beijing : $(TZ='Asia/Shanghai' date)"
           if [ -f data/_meta.json ]; then
+            echo "--- Meta ---"
             cat data/_meta.json
+          else
+            echo "No _meta.json yet"
           fi
