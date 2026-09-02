@@ -1,6 +1,6 @@
 {
   "version": "2.2",
-  "update_time": "2026-09-02T05:22:33.799Z",
+  "update_time": "2026-09-02T08:14:08.084Z",
   "platforms": [
     {
       "key": "baidu",
@@ -20,7 +20,7 @@
     {
       "key": "tieba",
       "success": true,
-      "count": 29
+      "count": 30
     },
     {
       "key": "sspai",
@@ -46,6 +46,26 @@
       "key": "doubantv",
       "success": true,
       "count": 20
+    },
+    {
+      "key": "doubannew",
+      "success": true,
+      "count": 20
+    },
+    {
+      "key": "doubanscore",
+      "success": true,
+      "count": 20
+    },
+    {
+      "key": "zhihu",
+      "success": false,
+      "count": 0
+    },
+    {
+      "key": "ithome",
+      "success": false,
+      "count": 0
     }
   ]
 }
