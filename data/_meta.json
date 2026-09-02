@@ -1,6 +1,6 @@
 {
   "version": "2.2",
-  "update_time": "2026-09-02T08:30:51.057Z",
+  "update_time": "2026-09-02T09:11:20.401Z",
   "platforms": [
     {
       "key": "baidu",
@@ -30,8 +30,7 @@
     {
       "key": "hupu",
       "success": true,
-      "count": 30,
-      "fallback": true
+      "count": 30
     },
     {
       "key": "cctv",
@@ -49,6 +48,11 @@
       "count": 20
     },
     {
+      "key": "doubanhot",
+      "success": true,
+      "count": 20
+    },
+    {
       "key": "doubannew",
       "success": true,
       "count": 20
@@ -57,11 +61,6 @@
       "key": "doubanscore",
       "success": true,
       "count": 20
-    },
-    {
-      "key": "zhihu",
-      "success": false,
-      "count": 0
     },
     {
       "key": "ithome",

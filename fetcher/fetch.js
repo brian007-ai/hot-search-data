@@ -362,8 +362,12 @@ async function fetchDoubanStructured(subjectId) {
         summary = idx !== -1 ? raw.slice(idx).replace(/^简介[：:]\s*/, '') : raw
       }
     }
-    // 清洗尾部噪音：广告标记、替换字符（乱码）
-    summary = summary.replace(/\s*广告\s*$/g, '').replace(/[\uFFFD\uFFFE\uFFFF]/g, '').trim()
+    // 清洗噪音：广告标记（任意位置）、替换字符/控制字符（乱码）
+    summary = summary
+      .replace(/\s*广告\s*/g, ' ')
+      .replace(/[\uFFFD\uFFFE\uFFFF\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim()
     summary = clean(summary)
     if (summary && summary.length >= 10) {
       info.douban_intro = summary
@@ -576,26 +580,50 @@ const FETCHERS = {
     })).filter(it => it.title)
   },
 
-  // 影院热映：tag=热映
+  // 影院热映：解析豆瓣"正在上映"页面（tag=热映 API 返回的是热门老片，不是当前上映）
   doubanhot: async () => {
     primeCookies('movie.douban.com', ['https://movie.douban.com/']).catch(() => {})
     primeCookies('m.douban.com',     ['https://m.douban.com/movie/']).catch(() => {})
-    const r = await fetch('https://movie.douban.com/j/search_subjects?type=movie&tag=热映&page_limit=20&page_start=0', {
-      headers: { 'Referer': 'https://movie.douban.com/' }
+    const r = await fetch('https://movie.douban.com/cinema/nowplaying/', {
+      headers: { 'Referer': 'https://movie.douban.com/', 'Accept': 'text/html,*/*' },
+      timeout: 20000
     })
-    const j = JSON.parse(r.data)
-    const list = j.subjects || []
-    return list.map((it, i) => ({
+    const html = r.data || ''
+    // 按 data-subject="ID" 分组，从每个块提取标题/评分/海报
+    const blockRegex = /data-subject="(\d+)"[^>]*>([\s\S]*?)(?=data-subject="|$)/g
+    let m, items = []
+    while ((m = blockRegex.exec(html)) && items.length < 20) {
+      const subjectId = m[1]
+      const block = m[2]
+      // 标题：从 img alt
+      const altM = block.match(/<img[^>]*alt="([^"]{2,})"/)
+      // 海报
+      const imgM = block.match(/<img[^>]*src="([^"]+)"/)
+      // 评分：subject-rate span 或 title 属性
+      const rateM = block.match(/<span[^>]*class="[^"]*subject-rate[^"]*"[^>]*>\s*([\d.]+)\s*<\/span>/)
+                   || block.match(/<span[^>]*>\s*(\d\.\d)\s*<\/span>/)
+                   || block.match(/class="is-star"\s*title="([\d.]+)"/)
+      const title = altM ? altM[1].trim() : ''
+      if (title && title.length > 1) {
+        items.push({
+          subjectId,
+          title,
+          rating: rateM ? rateM[1] : '',
+          img: imgM ? imgM[1] : ''
+        })
+      }
+    }
+    return items.map((it, i) => ({
       index: i + 1,
-      title: (it.title || '').trim(),
-      desc: it.rate ? '评分 ' + it.rate : '',
-      pic: it.cover || '',
-      hot: it.rate || '',
-      rate: it.rate || '',
-      url: it.url || ('https://movie.douban.com/subject/' + it.id + '/'),
-      mobilUrl: it.url || ('https://movie.douban.com/subject/' + it.id + '/'),
-      douban_id: String(it.id || '')
-    })).filter(it => it.title)
+      title: it.title,
+      desc: it.rating ? '评分 ' + it.rating : '',
+      pic: it.img || '',
+      hot: it.rating || '',
+      rate: it.rating || '',
+      url: 'https://movie.douban.com/subject/' + it.subjectId + '/',
+      mobilUrl: 'https://movie.douban.com/subject/' + it.subjectId + '/',
+      douban_id: it.subjectId
+    }))
   },
 
   // 豆瓣新片榜：tag=最新
