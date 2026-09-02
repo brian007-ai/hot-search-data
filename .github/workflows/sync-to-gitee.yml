@@ -1,4 +1,33 @@
-name: 镜像到 Gitee
+name: Mirror to Gitee
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to Gitee mirror
+        env:
+          GITEE_USERNAME: ${{ secrets.GITEE_USERNAME }}
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
+        run: |
+          if [ -z "$GITEE_USERNAME" ] || [ -z "$GITEE_TOKEN" ]; then
+            echo "WARN: GITEE_USERNAME or GITEE_TOKEN not set, skip mirror."
+            exit 0
+          fi
+          git remote add gitee "https://$GITEE_USERNAME:$GITEE_TOKEN@gitee.com/$GITEE_USERNAME/hot-search-data.git"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git push --force gitee main
+          echo "Mirrored to Gitee: https://gitee.com/$GITEE_USERNAME/hot-search-data"name: 镜像到 Gitee
 
 # 触发条件：
 #   - GitHub 仓库 main 分支有 push（即抓取 workflow 完成提交后）
