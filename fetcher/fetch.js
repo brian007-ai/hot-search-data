@@ -298,7 +298,7 @@ async function fetchDoubanStructured(subjectId) {
         // 移除标题本身
         section = section.replace(/^剧情简介[\s·\*]*/, '')
         // 截取到下一个章节（演职员/短评/影评/剧照/讨论/演职人员/谁演的）
-        const nextSec = section.search(/(演职员|演职人员|短评|影评|剧照|讨论|谁演的|更多\.\.\.|查看全部)/)
+        const nextSec = section.search(/(演职员|演职人员|短评|影评|剧照|讨论|谁演的|更多\.\.\.|查看全部|广告)/)
         if (nextSec > 0) section = section.slice(0, nextSec)
         section = section.trim()
         if (section.length >= 20) {
@@ -362,6 +362,8 @@ async function fetchDoubanStructured(subjectId) {
         summary = idx !== -1 ? raw.slice(idx).replace(/^简介[：:]\s*/, '') : raw
       }
     }
+    // 清洗尾部噪音：广告标记、替换字符（乱码）
+    summary = summary.replace(/\s*广告\s*$/g, '').replace(/[\uFFFD\uFFFE\uFFFF]/g, '').trim()
     summary = clean(summary)
     if (summary && summary.length >= 10) {
       info.douban_intro = summary
@@ -574,6 +576,28 @@ const FETCHERS = {
     })).filter(it => it.title)
   },
 
+  // 影院热映：tag=热映
+  doubanhot: async () => {
+    primeCookies('movie.douban.com', ['https://movie.douban.com/']).catch(() => {})
+    primeCookies('m.douban.com',     ['https://m.douban.com/movie/']).catch(() => {})
+    const r = await fetch('https://movie.douban.com/j/search_subjects?type=movie&tag=热映&page_limit=20&page_start=0', {
+      headers: { 'Referer': 'https://movie.douban.com/' }
+    })
+    const j = JSON.parse(r.data)
+    const list = j.subjects || []
+    return list.map((it, i) => ({
+      index: i + 1,
+      title: (it.title || '').trim(),
+      desc: it.rate ? '评分 ' + it.rate : '',
+      pic: it.cover || '',
+      hot: it.rate || '',
+      rate: it.rate || '',
+      url: it.url || ('https://movie.douban.com/subject/' + it.id + '/'),
+      mobilUrl: it.url || ('https://movie.douban.com/subject/' + it.id + '/'),
+      douban_id: String(it.id || '')
+    })).filter(it => it.title)
+  },
+
   // 豆瓣新片榜：tag=最新
   doubannew: async () => {
     primeCookies('movie.douban.com', ['https://movie.douban.com/']).catch(() => {})
@@ -615,23 +639,6 @@ const FETCHERS = {
       url: it.url || ('https://movie.douban.com/subject/' + it.id + '/'),
       mobilUrl: it.url || ('https://movie.douban.com/subject/' + it.id + '/'),
       douban_id: String(it.id || '')
-    })).filter(it => it.title)
-  },
-
-  // 知乎日报：API 返回完整正文，最稳定的全文榜单
-  zhihu: async () => {
-    const r = await fetch('https://news-at.zhihu.com/api/4/news/latest', { timeout: 20000 })
-    const j = JSON.parse(r.data)
-    const list = j.stories || []
-    return list.map((it, i) => ({
-      index: i + 1,
-      title: (it.title || '').trim(),
-      desc: (it.hint || '').trim(),
-      pic: (it.images && it.images[0]) || '',
-      hot: '',
-      url: 'https://daily.zhihu.com/story/' + it.id,
-      mobilUrl: 'https://daily.zhihu.com/story/' + it.id,
-      zhihu_id: String(it.id || '')
     })).filter(it => it.title)
   },
 
@@ -688,8 +695,7 @@ const CLEAN_PLATFORMS = ['tieba', 'hupu', 'cctv', 'sspai', 'ithome']
 async function enrichContent(platform, items) {
   const top = items.slice(0, DETAIL_TOP_N)
   const rest = items.slice(DETAIL_TOP_N)
-  const isDouban = ['douban', 'doubantv', 'doubannew', 'doubanscore'].includes(platform)
-  const isZhihu = (platform === 'zhihu')
+  const isDouban = ['douban', 'doubanhot', 'doubantv', 'doubannew', 'doubanscore'].includes(platform)
   const skipUrl = SKIP_URL_PLATFORMS.includes(platform)
   const needClean = CLEAN_PLATFORMS.includes(platform)
 
@@ -702,26 +708,6 @@ async function enrichContent(platform, items) {
       const body = (info.content_for_item || '').slice(0, CONTENT_MAX_LEN)
       delete info.content_for_item
       return Object.assign({ content: body }, info)
-    }
-    // ---- 知乎日报：通过 API 直接获取完整正文 ----
-    if (isZhihu) {
-      const zid = it.zhihu_id
-      if (!zid) return { content: '' }
-      try {
-        const r = await fetch('https://news-at.zhihu.com/api/4/news/' + encodeURIComponent(zid), { timeout: DETAIL_TIMEOUT })
-        const j = JSON.parse(r.data)
-        if (j && j.body) {
-          // body 是 HTML，提取纯文本并保留段落
-          let content = j.body
-          // 将 <p> 标签转为换行，再 stripHtml
-          content = content.replace(/<\/p>/gi, '\n\n').replace(/<br\s*\/?>/gi, '\n')
-          content = stripHtml(content)
-          if (content.length > 50) return { content: content.slice(0, CONTENT_MAX_LEN) }
-        }
-        return { content: '' }
-      } catch (_) {
-        return { content: '' }
-      }
     }
     // ---- 搜索页平台：跳过 URL 抓取（搜索页无法提取正文） ----
     if (skipUrl) return { content: '' }
