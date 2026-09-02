@@ -115,6 +115,42 @@ function stripHtml(s) {
     .replace(/&quot;/g, '"').replace(/&#39;/g, "'")
     .replace(/\s+/g, ' ').trim()
 }
+// 清洗抓取到的正文：去除页面导航、用户评论等噪音
+function cleanContent(s) {
+  if (!s) return ''
+  let t = s
+    // 贴吧页面噪音
+    .replace(/吧内搜索\s*搜贴\s*搜人\s*进吧\s*搜标签/g, '')
+    .replace(/贴吧用户_\w+/g, '')
+    .replace(/来自\s+\S+吧/g, '')
+    // 虎扑页面噪音
+    .replace(/亮了\(\s*\d+\s*\)\s*回复/g, '')
+    .replace(/点灭\s*只看此人\s*举报/g, '')
+    .replace(/含AI生成内容/g, '')
+    .replace(/深聊/g, '')
+    .replace(/\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}:\d{2}/g, '')
+    .replace(/发布于[\s\S]*?(?=\n)/g, '')
+    .replace(/\d+\s*楼\s*/g, '')
+    .replace(/查看评论\(\s*\d+\s*\)/g, '')
+    .replace(/引用内容由于违规已被删除/g, '')
+    // 虎扑页脚
+    .replace(/社区\s*»[\s\S]*?(?=\n|$)/g, '')
+    .replace(/虎扑首页[\s\S]*?(?:版权所有|All Rights Reserved)/g, '')
+    .replace(/热门游戏[\s\S]*?(?=\n|$)/g, '')
+    .replace(/FIFPRO[\s\S]*?(?=\n|$)/g, '')
+    .replace(/美职篮篮球世界/g, '')
+    .replace(/世界大赛[\s\S]*?(?=\n|$)/g, '')
+    .replace(/NBA官方正版授权[\s\S]*?(?=\n|$)/g, '')
+    // 央视页脚
+    .replace(/央视网[\s\S]*?(?:版权所有|All Rights Reserved)/g, '')
+    // 通用噪音
+    .replace(/编辑[:：]\s*\S+/g, '')
+    .replace(/来源[:：]\s*\S+/g, '')
+    // 清理多余空白
+    .replace(/\n{3,}/g, '\n\n')
+    .replace(/  +/g, ' ')
+  return t.trim()
+}
 function parseHot(hotStr) {
   if (!hotStr) return 0
   const s = String(hotStr).replace(/[,，\s]/g, '')
@@ -328,10 +364,10 @@ const FETCHERS = {
     return content.map((it, i) => ({
       index: it.index || i + 1,
       title: (it.word || '').trim(),
-      desc: (it.desc || '').trim(),
+      desc: (it.desc || it.abs || it.show || '').trim(),
       pic: it.img || '',
       hot: it.hotScore ? String(it.hotScore) : '',
-      url: it.url || it.rawUrl || '',
+      url: it.rawUrl || it.url || '',
       mobilUrl: it.url || it.rawUrl || ''
     })).filter(it => it.title)
   },
@@ -343,7 +379,7 @@ const FETCHERS = {
     return list.map((it, i) => ({
       index: i + 1,
       title: (it.word || '').trim(),
-      desc: (it.event_description || it.word_desc || '').trim(),
+      desc: (it.event_description || it.word_desc || it.description || '').trim(),
       pic: '',
       hot: it.hot_value ? String(it.hot_value) : '',
       url: 'https://www.douyin.com/search/' + encodeURIComponent(it.word || ''),
@@ -358,7 +394,7 @@ const FETCHERS = {
     return list.map((it, i) => ({
       index: i + 1,
       title: (it.Title || '').trim(),
-      desc: clean(it.ClipInfo ? (it.ClipInfo.AbsText || '') : ''),
+      desc: clean((it.ClipInfo && (it.ClipInfo.AbsText || it.ClipInfo.Description)) || it.Description || it.Abstract || ''),
       pic: it.Image ? (it.Image.url || '') : '',
       hot: it.HotValue ? String(it.HotValue) : '',
       url: (it.Url || '').trim(),
@@ -382,7 +418,7 @@ const FETCHERS = {
   },
 
   sspai: async () => {
-    const r = await fetch('https://sspai.com/api/v1/articles?limit=30')
+    const r = await fetch('https://sspai.com/api/v1/articles?limit=30', { timeout: 20000 })
     const j = JSON.parse(r.data)
     const list = j.list || []
     return list.map((it, i) => ({
@@ -475,27 +511,36 @@ const FETCHERS = {
 }
 
 // ============ 正文抓取（方案 D：分平台策略） ============
+// 搜索页平台：URL 是搜索/趋势页，无法抓取正文，直接用 API 描述兜底
+const SKIP_URL_PLATFORMS = ['baidu', 'douyin', 'toutiao']
+// 正文需要清洗噪音的平台
+const CLEAN_PLATFORMS = ['tieba', 'hupu', 'cctv', 'sspai']
+
 async function enrichContent(platform, items) {
   const top = items.slice(0, DETAIL_TOP_N)
   const rest = items.slice(DETAIL_TOP_N)
   const isDouban = (platform === 'douban' || platform === 'doubantv')
+  const skipUrl = SKIP_URL_PLATFORMS.includes(platform)
+  const needClean = CLEAN_PLATFORMS.includes(platform)
 
   const results = await mapWithConcurrency(top, DETAIL_CONCURRENCY, async (it) => {
     // ---- 豆瓣：结构化 JSON + 移动端剧情简介 ----
     if (isDouban) {
       const sid = (it && it.douban_id) || extractDoubanSubjectId(it.url)
       const info = await fetchDoubanStructured(sid)
-      // 若 abstract 没返回 rate，保留列表接口自带的
       if (!info.rate && it && it.rate) info.rate = it.rate
       const body = (info.content_for_item || '').slice(0, CONTENT_MAX_LEN)
       delete info.content_for_item
       return Object.assign({ content: body }, info)
     }
-    // ---- 非豆瓣：常规正文抓取（方案 D） ----
+    // ---- 搜索页平台：跳过 URL 抓取（搜索页无法提取正文） ----
+    if (skipUrl) return { content: '' }
+    // ---- 常规正文抓取（方案 D） ----
     if (!it.url) return { content: '' }
     try {
       const r = await fetch(it.url, { timeout: DETAIL_TIMEOUT })
-      const content = extractContentFromHtml(r.data || '').slice(0, CONTENT_MAX_LEN)
+      let content = extractContentFromHtml(r.data || '').slice(0, CONTENT_MAX_LEN)
+      if (needClean && content) content = cleanContent(content)
       return { content }
     } catch (_) {
       return { content: '' }
@@ -505,7 +550,6 @@ async function enrichContent(platform, items) {
   top.forEach((it, i) => {
     const r = results[i] || {}
     if (isDouban) {
-      // content：优先 douban_intro（剧情简介），其次列表 excerpt（"评分 X.X"）
       if (r.douban_intro) it.content = r.douban_intro.slice(0, CONTENT_MAX_LEN)
       else it.content = it.excerpt || ''
       if (r.douban_directors) it.douban_directors = r.douban_directors
@@ -517,13 +561,17 @@ async function enrichContent(platform, items) {
       if (r.douban_region)   it.douban_region   = r.douban_region
       if (r.rate)            it.rate            = r.rate
     } else {
-      const c = (r && r.content) || ''
-      if (c && c.length > (it.excerpt || '').length) it.content = c
-      else if (it.excerpt) it.content = it.excerpt
-      else it.content = c
+      let c = (r && r.content) || ''
+      // 兜底链：抓到的正文 → API excerpt → 标题
+      if (!c || c.length < 20) c = it.excerpt || ''
+      if (!c && it.title) c = it.title
+      it.content = c
     }
   })
-  rest.forEach(it => { it.content = it.excerpt || '' })
+  rest.forEach(it => {
+    if (!it.content || it.content.length < 20) it.content = it.excerpt || ''
+    if (!it.content && it.title) it.content = it.title
+  })
   return items
 }
 
