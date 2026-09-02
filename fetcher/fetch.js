@@ -105,6 +105,12 @@ function fetch(url, options = {}) {
 function clean(s) {
   return (s || '').toString().replace(/\s+/g, ' ').trim()
 }
+// 检测文本是否主要为英文（超过 60% ASCII 字符）
+function isMostlyEnglish(s) {
+  if (!s || s.length < 20) return false
+  const ascii = (s.match(/[\x00-\x7f]/g) || []).length
+  return ascii / s.length > 0.6
+}
 function stripHtml(s) {
   return (s || '')
     .replace(/<script[\s\S]*?<\/script>/gi, '')
@@ -361,6 +367,23 @@ async function fetchDoubanStructured(subjectId) {
         const idx = raw.search(/简介[：:]\s*/)
         summary = idx !== -1 ? raw.slice(idx).replace(/^简介[：:]\s*/, '') : raw
       }
+    }
+    // 如果移动端简介是英文（外国影片），尝试 PC 页 v:summary 获取中文简介
+    if (isMostlyEnglish(summary)) {
+      try {
+        const pc = await fetch('https://movie.douban.com/subject/' + encodeURIComponent(subjectId) + '/', {
+          timeout: DETAIL_TIMEOUT,
+          headers: { 'Referer': 'https://movie.douban.com/' }
+        })
+        const pcHtml = pc.data || ''
+        const vsm = pcHtml.match(/<span[^>]+property=["']v:summary["'][^>]*>([\s\S]*?)<\/span>/i)
+        if (vsm && vsm[1]) {
+          const cnSummary = stripHtml(vsm[1]).replace(/\s+/g, ' ').trim()
+          if (cnSummary.length >= 20 && !isMostlyEnglish(cnSummary)) {
+            summary = cnSummary
+          }
+        }
+      } catch (_) { /* PC 页面可能被 WAF 拦截，保留英文简介 */ }
     }
     // 清洗噪音：广告标记（任意位置）、替换字符/控制字符（乱码）
     summary = summary
