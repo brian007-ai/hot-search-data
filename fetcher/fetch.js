@@ -392,6 +392,10 @@ async function fetchDoubanStructured(subjectId) {
       .replace(/\s+/g, ' ')
       .trim()
     summary = clean(summary)
+    // 英文简介不展示（外国影片移动端可能返回英文），改用评分兜底
+    if (isMostlyEnglish(summary)) {
+      summary = ''
+    }
     if (summary && summary.length >= 10) {
       info.douban_intro = summary
       info.content_for_item = summary.slice(0, CONTENT_MAX_LEN)
