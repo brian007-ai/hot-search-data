@@ -1,6 +1,6 @@
 {
   "version": "2.2",
-  "update_time": "2026-09-02T11:10:01.189Z",
+  "update_time": "2026-09-02T12:14:17.257Z",
   "platforms": [
     {
       "key": "baidu",
@@ -50,7 +50,8 @@
     {
       "key": "doubanhot",
       "success": true,
-      "count": 20
+      "count": 20,
+      "fallback": true
     },
     {
       "key": "doubannew",
@@ -65,7 +66,7 @@
     {
       "key": "ithome",
       "success": true,
-      "count": 22
+      "count": 23
     }
   ]
 }
