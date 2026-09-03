@@ -1,6 +1,6 @@
 {
   "version": "2.2",
-  "update_time": "2026-09-03T05:25:37.278Z",
+  "update_time": "2026-09-03T06:14:47.547Z",
   "platforms": [
     {
       "key": "baidu",
@@ -30,7 +30,8 @@
     {
       "key": "hupu",
       "success": true,
-      "count": 30
+      "count": 30,
+      "fallback": true
     },
     {
       "key": "cctv",
