@@ -1,6 +1,6 @@
 {
   "version": "2.2",
-  "update_time": "2026-09-04T11:10:10.290Z",
+  "update_time": "2026-09-04T12:13:55.811Z",
   "platforms": [
     {
       "key": "baidu",
@@ -65,7 +65,8 @@
     {
       "key": "ithome",
       "success": true,
-      "count": 22
+      "count": 22,
+      "fallback": true
     }
   ]
 }
