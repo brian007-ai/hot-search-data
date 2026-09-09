@@ -1,0 +1,214 @@
+{
+  "success": true,
+  "platform": "juejin",
+  "update_time": "2026-09-09T04:56:37.785Z",
+  "count": 20,
+  "data": [
+    {
+      "rank": 1,
+      "title": "<![CDATA[字符串匹配四大经典算法：BF、RK、BM、KMP 到底有什么区别？]]>",
+      "excerpt": "<![CDATA[BF 暴力匹配，RK 用滚动 Hash，KMP 利用前缀信息，BM 通过坏字符、好后缀跳跃，减少比较次数。]]>",
+      "content": "",
+      "hot": "",
+      "tags": [
+        "热议"
+      ],
+      "url": "https://juejin.cn/post/7683308465897553958",
+      "thumb": ""
+    },
+    {
+      "rank": 2,
+      "title": "<![CDATA[浪费时间！DeepSeek 4.1 Flash]]>",
+      "excerpt": "<![CDATA[我曾经因为 DS 的风格和梁文锋说的那句话，而对 DS 充满了好感。 但是，我对DeepSeek的好感所剩无几了！ 搞技术，实力为尊，做产品，体验为上，其它说再多都无用。 我这篇文章本来的标题是“辣鸡]]>",
+      "content": "",
+      "hot": "",
+      "tags": [
+        "热议"
+      ],
+      "url": "https://juejin.cn/post/7683125482832887823",
+      "thumb": ""
+    },
+    {
+      "rank": 3,
+      "title": "<![CDATA[Android 线上卡顿治理：从布局层级到主线程负载的全链路排查]]>",
+      "excerpt": "<![CDATA[前言 线上突然收到「滑动卡顿率飙升」的告警，用户反馈「点个按钮都要等半天」。这种问题不像崩溃那样有明确堆栈，往往需要从布局层级、主线程耗时、内存抖动、过度绘制等多个维度全链路排查。 本文记录一次真实的]]>",
+      "content": "",
+      "hot": "",
+      "tags": [
+        "热议"
+      ],
+      "url": "https://juejin.cn/post/7683140037420875822",
+      "thumb": ""
+    },
+    {
+      "rank": 4,
+      "title": "<![CDATA[终端里的AI战争，命令行编程代理全景扫描]]>",
+      "excerpt": "<![CDATA[如果你最近刷推特或者刷开发者论坛，大概会发现一个挺有意思的现象，大家聊AI编程助手的方式变了。以前动不动就是\"这个IDE插件真香\"，现在越来越多人在晒自己的终端截图，一个黑底白字的窗口里，AI正在读代]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683133361661820938",
+      "thumb": ""
+    },
+    {
+      "rank": 5,
+      "title": "<![CDATA[测试全绿，功能能跑，代码却烂到没法上线：AI编程助手留下的十个坑]]>",
+      "excerpt": "<![CDATA[这半年来跟不少做代码审查的朋友聊过一个共同感受，AI coding agent 写代码的速度确实惊人，跑起来也真的能实现需求，可是一旦真正准备把它推上生产环境，总有种说不出的别扭。测试用例全绿，功能演]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683155634733187098",
+      "thumb": ""
+    },
+    {
+      "rank": 6,
+      "title": "<![CDATA[多模式字符串匹配：Trie 与 AC 自动机]]>",
+      "excerpt": "<![CDATA[AC 自动机将 **Trie 与 KMP 的失败跳转思想结合**，通过 Failure 指针实现多模式匹配，只需扫描一次文本即可高效查找大量关键词，常用于敏感词过滤、搜索和日志分析。]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683140037421023278",
+      "thumb": ""
+    },
+    {
+      "rank": 7,
+      "title": "<![CDATA[为什么技术极强的前端，往往当不好前端 Team Leader？]]>",
+      "excerpt": "<![CDATA[技术拔尖者晋升管理者常因个人英雄主义、代码洁癖与技术自嗨陷入困境，需将个人能力转化为制度与工程护栏，容忍不完美过程，方能实现角色转换。]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683013257235283987",
+      "thumb": ""
+    },
+    {
+      "rank": 8,
+      "title": "<![CDATA[Dart Skills CLI 1.0 ：AI 时代的 Dart 交付支持]]>",
+      "excerpt": "<![CDATA[最近 Dart 发布了 skills CLI 1.0 版本，这个工具其实最早由 Serverpod 团队开发，一个做后端的 Dart 框架，最近看也看到一些不错的 Dart 全栈式框架，现在这个 CL]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683152167263846463",
+      "thumb": ""
+    },
+    {
+      "rank": 9,
+      "title": "<![CDATA[OpenAI用上万AI代理，几分钟解开困扰数学界近百年的难题]]>",
+      "excerpt": "<![CDATA[OpenAI宣布其智能体系统解开了Navier-Stokes千禧年难题，这是AI首次攻入数学研究最前沿的开放问题。研究员Noam Brown承认成本高达数百万美元，但断言会快速下降。这不是营销话术——]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683152167239270406",
+      "thumb": ""
+    },
+    {
+      "rank": 10,
+      "title": "<![CDATA[不用 LangChain，从 0 写一个 Ollama 本地 RAG]]>",
+      "excerpt": "<![CDATA[把公司的《差旅报销规则》丢给本地模型，并不会让模型永久记住它。用户问“高铁一等座能报销吗”时，程序必须先找到文档中对应的段落，再把这段文本和问题一起交给模型。]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683073875694616622",
+      "thumb": ""
+    },
+    {
+      "rank": 11,
+      "title": "<![CDATA[9 个开源 App，治好了我的 vibe coding 焦虑]]>",
+      "excerpt": "<![CDATA[码哥从 3 月那篇 vibe coding 爆款更新而来，实测 9 个 2026 年好用的开源 vibe coding 工具，按底座和阶段分类，告诉你现在该装哪个、先别碰哪个。]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683133522291605542",
+      "thumb": ""
+    },
+    {
+      "rank": 12,
+      "title": "<![CDATA[模板字面量类型：用类型做字符串的正则]]>",
+      "excerpt": "<![CDATA[1. 技术难点：字符串也要有精确类型 普通 TypeScript 里字符串类型就是 string，但它太\"宽\"——表达不了\"必须以某前缀开头\"\"必须是指定的某种格式\"这类约束： 接口路径没法约束：/a]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683073875694518318",
+      "thumb": ""
+    },
+    {
+      "rank": 13,
+      "title": "<![CDATA[AI 编程时代，IM 集成也该有自己的 Skill 了]]>",
+      "excerpt": "<![CDATA[Skill 不是更强的通用 AI，而是一份更懂IM的说明书。 过去一年，AI 编程助手完成了从“补全工具”到“协作 Agent”的进化。 Claude Skills、Cursor Rules、各类 I]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683102406072811520",
+      "thumb": ""
+    },
+    {
+      "rank": 14,
+      "title": "<![CDATA[时间序列数据库选型2026：5款主流产品深度对比与场景适配]]>",
+      "excerpt": "<![CDATA[面对时序数据库众多选择，选型不能只看QPS数字。本文从技术路线、写入性能、查询能力、压缩效率、生态兼容五个维度，对5款主流时序数据库进行深度对比。]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683013257235447827",
+      "thumb": ""
+    },
+    {
+      "rank": 15,
+      "title": "<![CDATA[AI Chat 长会话性能实践：消息虚拟化、动态高度与流式滚动设计]]>",
+      "excerpt": "<![CDATA[AI Chat : 拆解虚拟列表、动态高度与流式滚动的协作边界：Virtuoso 管真实测量，策略管阅读意图，流式缓冲只管提交节奏，展示层临时状态不污染消息树，长会话流式跟随中做到稳定贴底、不抢滚动。]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683069801370681382",
+      "thumb": ""
+    },
+    {
+      "rank": 16,
+      "title": "<![CDATA[让聊天机器人学会工作方法，星悟接 Agent Skills 的实践]]>",
+      "excerpt": "<![CDATA[星悟在 MCP 之外接入 Agent Skills，让聊天机器人学会工作方法。文章分享技术选型、目录常驻正文按需的核心设计、三个工具、存储与扫描证明，以及提示词供应链的安全边界。]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683069801370664998",
+      "thumb": ""
+    },
+    {
+      "rank": 17,
+      "title": "<![CDATA[让 AI 真正读懂你的代码：一套可复用的 Cursor 辅助编码实践]]>",
+      "excerpt": "<![CDATA[😨先说痛点：为什么\"会用大模型\"还不够 把大模型接入日常开发后，多数团队很快会撞到同一堵墙——问题不是模型\"写不出代码\"，而是它\"不懂我们的代码\" ： 每次对话都要重新交代上下文：架构分层、命名前缀、]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683049897089335336",
+      "thumb": ""
+    },
+    {
+      "rank": 18,
+      "title": "<![CDATA[Redis8.8新特性]]>",
+      "excerpt": "<![CDATA[前言 Redis8.8新增了一些特性，可以学习参考 Redis8.8新特性 Redis官网 可以查阅Redis官网 Redis8.8安装 为了方便，采用docker镜像安装部署，以下是安装命令 配置r]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683152167239483398",
+      "thumb": ""
+    },
+    {
+      "rank": 19,
+      "title": "<![CDATA[01-04-认知篇-基础-Unity Addressable Assets全面解析]]>",
+      "excerpt": "<![CDATA[Unity Addressable Assets 全面解析 一、引言 Addressable Assets 是 Unity 官方推出的高级资源管理方案，它在原生 AssetBundle 的基础上提供了]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683133361661411338",
+      "thumb": ""
+    },
+    {
+      "rank": 20,
+      "title": "<![CDATA[阶段五讲义：STL 全貌——扔掉手写循环，学“动词“]]>",
+      "excerpt": "<![CDATA[0. 本课地图 这一课解决三个问题： STL 是什么？ —— 三个东西组成一个三角：容器（存数据的结构）、算法（对数据做的操作）、迭代器（算法与容器之间的桥）。算法只管 [begin, end) 这对]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683089360926130230",
+      "thumb": ""
+    }
+  ]
+}

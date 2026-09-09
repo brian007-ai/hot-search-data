@@ -1,0 +1,17 @@
+{
+  "name": "hot-search-data-fetcher",
+  "version": "2.3.0",
+  "description": "热搜数据抓取器 - 配置驱动",
+  "main": "fetcher/fetch.js",
+  "scripts": {
+    "fetch": "node fetcher/fetch.js",
+    "test": "node -c fetcher/fetch.js",
+    "build-config": "node build-config.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -496,8 +496,7 @@ const SOURCE_FETCHERS = {
       while ((m = itemRegex.exec(xml)) && items.length < 50) {
         const itemXml = m[0]
         const getTag = (tag) => {
-          // 支持命名空间标签如 content:encoded
-          const re = new RegExp('<' + tag.replace(':', '\\:') + '[^>]*>([\\s\\S]*?)<\\/' + tag.replace(':', '\\:') + '>', 'i')
+          const re = new RegExp('<' + tag + '[^>]*>([\\s\\S]*?)<\\/' + tag + '>', 'i')
           const mm = itemXml.match(re)
           return mm ? mm[1] : ''
         }
@@ -513,7 +512,6 @@ const SOURCE_FETCHERS = {
           author: getTag(field_mapping?.author || 'author') || ''
         })
       }
-      console.log(`  ✓ ${source.id}: ${items.length} 条`)
       return { [source.platforms?.[0] || 'rss']: items }
     } catch (e) {
       console.error(`  ✗ ${source.id}: ${e.message}`)

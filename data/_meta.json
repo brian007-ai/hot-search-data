@@ -1,29 +1,34 @@
 {
-  "version": "2.2",
-  "update_time": "2026-09-08T23:57:53.478Z",
+  "version": "2.3",
+  "update_time": "2026-09-09T04:56:33.792Z",
   "platforms": [
     {
-      "key": "baidu",
-      "success": true,
-      "count": 51
+      "key": "weibo",
+      "success": false,
+      "count": 0
     },
     {
-      "key": "douyin",
-      "success": true,
-      "count": 50
+      "key": "zhihu",
+      "success": false,
+      "count": 0
+    },
+    {
+      "key": "bilibili",
+      "success": false,
+      "count": 0
     },
     {
       "key": "toutiao",
-      "success": true,
-      "count": 50
+      "success": false,
+      "count": 0
+    },
+    {
+      "key": "baidu",
+      "success": false,
+      "count": 0
     },
     {
       "key": "tieba",
-      "success": true,
-      "count": 30
-    },
-    {
-      "key": "sspai",
       "success": true,
       "count": 30
     },
@@ -33,9 +38,54 @@
       "count": 30
     },
     {
-      "key": "cctv",
+      "key": "v2ex",
+      "success": false,
+      "count": 0
+    },
+    {
+      "key": "weixin",
+      "success": false,
+      "count": 0
+    },
+    {
+      "key": "36kr",
+      "success": false,
+      "count": 0
+    },
+    {
+      "key": "huxiu",
+      "success": false,
+      "count": 0
+    },
+    {
+      "key": "infoq",
+      "success": false,
+      "count": 0
+    },
+    {
+      "key": "juejin",
       "success": true,
-      "count": 3
+      "count": 20
+    },
+    {
+      "key": "sspai",
+      "success": true,
+      "count": 30
+    },
+    {
+      "key": "ithome",
+      "success": true,
+      "count": 22
+    },
+    {
+      "key": "github_trending",
+      "success": false,
+      "count": 0
+    },
+    {
+      "key": "arxiv",
+      "success": false,
+      "count": 0
     },
     {
       "key": "douban",
@@ -43,12 +93,12 @@
       "count": 20
     },
     {
-      "key": "doubantv",
+      "key": "doubanhot",
       "success": true,
       "count": 20
     },
     {
-      "key": "doubanhot",
+      "key": "doubantv",
       "success": true,
       "count": 20
     },
@@ -60,12 +110,17 @@
     {
       "key": "doubanscore",
       "success": true,
-      "count": 20
+      "count": 19
     },
     {
-      "key": "ithome",
-      "success": true,
-      "count": 23
+      "key": "cctv",
+      "success": false,
+      "count": 0
+    },
+    {
+      "key": "douyin",
+      "success": false,
+      "count": 0
     }
   ]
 }
