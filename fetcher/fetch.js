@@ -454,14 +454,26 @@ function norm(items, platform) {
 const SOURCE_FETCHERS = {
   // 聚合 API：一次请求返回多平台数据
   aggregated_api: async (source) => {
-    const { base_url, platform_mapping, field_mapping } = source.config
+    const { base_url, platform_mapping, field_mapping, url_pattern } = source.config
     const results = {}
+    console.log(`[DEBUG] aggregated_api source: ${source.id}, url_pattern: ${url_pattern}`)
     for (const [apiType, platformKey] of Object.entries(platform_mapping)) {
       try {
-        const url = base_url + (base_url.includes('?') ? '&' : '?') + 'type=' + encodeURIComponent(apiType)
+        // 支持两种 URL 模式：
+        // 1. query 参数模式（默认）：base_url?type=apiType
+        // 2. 路径模式：base_url/apiType （当 url_pattern === 'path' 时），apiType 为映射后的值
+        let url
+        if (url_pattern === 'path') {
+          // 直接使用 apiType 作为 endpoint（platform_mapping 的 key 即为 API endpoint）
+          url = base_url.replace(/\/+$/, '') + '/' + apiType
+        } else {
+          url = base_url + (base_url.includes('?') ? '&' : '?') + 'type=' + encodeURIComponent(apiType)
+        }
+        console.log(`[DEBUG] ${source.id} ${apiType} -> ${url}`)
         const r = await fetch(url, { timeout: globalConfig.timeout || 15000 })
         const j = JSON.parse(r.data)
         const list = j.data || j.list || j.result || []
+        console.log(`[DEBUG] ${source.id} ${apiType} got ${list.length} items`)
         const mapped = list.map((it, i) => {
           const title = clean(it[field_mapping?.title || 'title'] || it[field_mapping?.name || 'name'])
           if (!title) return null
