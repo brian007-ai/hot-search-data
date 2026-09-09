@@ -1,11 +1,11 @@
 {
   "version": "2.3",
-  "update_time": "2026-09-09T09:53:08.815Z",
+  "update_time": "2026-09-09T17:08:19.875Z",
   "platforms": [
     {
       "key": "weibo",
       "success": true,
-      "count": 48
+      "count": 50
     },
     {
       "key": "zhihu",
@@ -14,8 +14,8 @@
     },
     {
       "key": "bilibili",
-      "success": false,
-      "count": 0
+      "success": true,
+      "count": 50
     },
     {
       "key": "toutiao",
@@ -49,8 +49,8 @@
     },
     {
       "key": "36kr",
-      "success": false,
-      "count": 0
+      "success": true,
+      "count": 50
     },
     {
       "key": "huxiu",
@@ -119,13 +119,8 @@
     },
     {
       "key": "douyin",
-      "success": false,
-      "count": 0
-    },
-    {
-      "key": "bilibili",
-      "success": false,
-      "count": 0
+      "success": true,
+      "count": 49
     }
   ]
 }

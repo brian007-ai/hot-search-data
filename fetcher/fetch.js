@@ -8,10 +8,11 @@ const http = require('http')
 const fs = require('fs')
 const path = require('path')
 const { URL } = require('url')
-const { loadConfig, getEnabledSources, getPlatforms, getSourcesForPlatform, getGlobalConfig } = require('./config-loader')
+const { loadConfig, getEnabledSources, getPlatforms, getSourcesForPlatform, getGlobalConfig, parsePlatformParsers } = require('./config-loader')
 
 // ============ 配置 ============
 const config = loadConfig()
+parsePlatformParsers(config)
 const globalConfig = getGlobalConfig(config)
 const OUTPUT_DIR = path.resolve(__dirname, '..', 'data')
 const DETAIL_TOP_N = globalConfig.detail_top_n || 20
@@ -454,7 +455,7 @@ function norm(items, platform) {
 const SOURCE_FETCHERS = {
   // 聚合 API：一次请求返回多平台数据
   aggregated_api: async (source) => {
-    const { base_url, platform_mapping, field_mapping, url_pattern } = source.config
+    const { base_url, platform_mapping, field_mapping, field_mapping_per_platform, platform_parsers, url_pattern } = source.config
     const results = {}
     console.log(`[DEBUG] aggregated_api source: ${source.id}, url_pattern: ${url_pattern}`)
     for (const [apiType, platformKey] of Object.entries(platform_mapping)) {
@@ -474,19 +475,31 @@ const SOURCE_FETCHERS = {
         const j = JSON.parse(r.data)
         const list = j.data || j.list || j.result || []
         console.log(`[DEBUG] ${source.id} ${apiType} got ${list.length} items`)
-        const mapped = list.map((it, i) => {
-          const title = clean(it[field_mapping?.title || 'title'] || it[field_mapping?.name || 'name'])
-          if (!title) return null
-          return {
-            index: it[field_mapping?.rank || 'index'] || i + 1,
-            title,
-            desc: clean(it[field_mapping?.desc || 'desc'] || it[field_mapping?.excerpt || 'excerpt'] || ''),
-            pic: it[field_mapping?.cover || 'pic'] || it[field_mapping?.img || 'img'] || it[field_mapping?.thumb || 'thumb'] || '',
-            hot: it[field_mapping?.hot || 'hot'] ? String(it[field_mapping.hot]) : '',
-            url: it[field_mapping?.url || 'url'] || it[field_mapping?.link || 'link'] || '',
-            mobilUrl: it[field_mapping?.mobilUrl || 'mobilUrl'] || it[field_mapping?.url || 'url'] || it[field_mapping?.link || 'link'] || ''
-          }
-        }).filter(Boolean)
+        
+        // 优先使用平台专用解析器，其次用字段映射
+        const parser = platform_parsers?.[apiType]
+        const perPlatformMapping = field_mapping_per_platform?.[apiType] || field_mapping
+        
+        let mapped = []
+        if (parser && typeof parser === 'function') {
+          // 使用自定义解析器
+          mapped = list.map((it, i) => parser(it, i)).filter(Boolean)
+        } else {
+          // 使用字段映射
+          mapped = list.map((it, i) => {
+            const title = clean(it[perPlatformMapping?.title || 'title'] || it[perPlatformMapping?.name || 'name'])
+            if (!title) return null
+            return {
+              index: it[perPlatformMapping?.rank || 'index'] || i + 1,
+              title,
+              desc: clean(it[perPlatformMapping?.desc || 'desc'] || it[perPlatformMapping?.excerpt || 'excerpt'] || ''),
+              pic: it[perPlatformMapping?.cover || 'pic'] || it[perPlatformMapping?.img || 'img'] || it[perPlatformMapping?.thumb || 'thumb'] || '',
+              hot: it[perPlatformMapping?.hot || 'hot'] ? String(it[perPlatformMapping.hot]) : '',
+              url: it[perPlatformMapping?.url || 'url'] || it[perPlatformMapping?.link || 'link'] || '',
+              mobilUrl: it[perPlatformMapping?.mobilUrl || 'mobilUrl'] || it[perPlatformMapping?.url || 'url'] || it[perPlatformMapping?.link || 'link'] || ''
+            }
+          }).filter(Boolean)
+        }
         if (mapped.length) results[platformKey] = mapped
       } catch (e) {
         console.error(`  ✗ ${source.id} ${apiType}: ${e.message}`)
