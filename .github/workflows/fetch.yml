@@ -18,6 +18,13 @@ concurrency:
   group: fetch-hot-search
   cancel-in-progress: false    # 不打断正在运行的抓取
 
+env:
+  # 告警 Webhook URL（在 GitHub Settings → Secrets → Actions 中配置 ALERT_WEBHOOK_URL）
+  # 支持：Bark、PushPlus、Server酉、钉钉、企业微信等兼容 HTTP POST 的 Webhook
+  ALERT_WEBHOOK_URL: ${{ secrets.ALERT_WEBHOOK_URL }}
+  # 数据新鲜度阈值（小时），超过此时间未更新视为过期
+  FRESHNESS_THRESHOLD_HOURS: 3
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -31,9 +38,80 @@ jobs:
           node-version: '20'
 
       - name: 抓取数据
+        id: fetch
         run: node fetcher/fetch.js
 
+      - name: 数据新鲜度检查
+        id: freshness
+        if: always()
+        run: |
+          echo "=== 数据新鲜度检查 ==="
+          THRESHOLD_HOURS=${{ env.FRESHNESS_THRESHOLD_HOURS }}
+          THRESHOLD_SECONDS=$((THRESHOLD_HOURS * 3600))
+          NOW=$(date +%s)
+          
+          ALERT_MSG=""
+          EXIT_CODE=0
+          
+          if [ -f data/_meta.json ]; then
+            # 使用 jq 解析 _meta.json
+            PLATFORMS=$(cat data/_meta.json | jq -r '.platforms[]? | select(.success == true) | "\(.key) \(.update_time)"')
+            
+            while IFS= read -r line; do
+              if [ -z "$line" ]; then continue; fi
+              KEY=$(echo "$line" | awk '{print $1}')
+              UPDATE_TIME=$(echo "$line" | awk '{print $2}')
+              
+              if [ -z "$UPDATE_TIME" ] || [ "$UPDATE_TIME" = "null" ]; then
+                ALERT_MSG="${ALERT_MSG}⚠️ ${KEY}: 无更新时间\n"
+                EXIT_CODE=1
+                continue
+              fi
+              
+              UPDATE_TS=$(date -d "$UPDATE_TIME" +%s 2>/dev/null || date -u -d "$UPDATE_TIME" +%s 2>/dev/null)
+              if [ -z "$UPDATE_TS" ] || [ "$UPDATE_TS" = "0" ]; then
+                ALERT_MSG="${ALERT_MSG}⚠️ ${KEY}: 更新时间解析失败 (${UPDATE_TIME})\n"
+                EXIT_CODE=1
+                continue
+              fi
+              
+              AGE=$((NOW - UPDATE_TS))
+              AGE_HOURS=$((AGE / 3600))
+              
+              if [ $AGE -gt $THRESHOLD_SECONDS ]; then
+                ALERT_MSG="${ALERT_MSG}🔴 ${KEY}: 数据过期 ${AGE_HOURS} 小时 (阈值 ${THRESHOLD_HOURS} 小时)\n"
+                EXIT_CODE=1
+              else
+                echo "✅ ${KEY}: 数据新鲜 (${AGE_HOURS} 小时前更新)"
+              fi
+            done <<< "$PLATFORMS"
+          else
+            echo "❌ 未找到 _meta.json"
+            ALERT_MSG="❌ 缺少 _meta.json 文件"
+            EXIT_CODE=1
+          fi
+          
+          # 检查是否有平台完全无数据
+          MISSING_PLATFORMS=$(cat data/_meta.json 2>/dev/null | jq -r '.platforms[]? | select(.success == false or .count == 0) | .key' | tr '\n' ' ')
+          if [ -n "$MISSING_PLATFORMS" ]; then
+            ALERT_MSG="${ALERT_MSG}🟡 无数据平台: ${MISSING_PLATFORMS}\n"
+            EXIT_CODE=1
+          fi
+          
+          # 输出告警信息供后续步骤使用
+          echo "alert_msg<<EOF" >> $GITHUB_OUTPUT
+          echo "$ALERT_MSG" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
+          
+          if [ $EXIT_CODE -ne 0 ]; then
+            echo "⚠️ 发现数据异常，将触发告警"
+          else
+            echo "✅ 所有平台数据新鲜度正常"
+          fi
+
       - name: 提交到仓库（github-actions[bot] 身份）
+        if: steps.fetch.outcome == 'success'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -44,6 +122,22 @@ jobs:
             git commit -m "chore(data): 更新热搜数据 $(date -u +'%Y-%m-%d %H:%M UTC')"
             git push
           fi
+
+      - name: 发送告警通知
+        if: always() && steps.freshness.outputs.exit_code != '0' && env.ALERT_WEBHOOK_URL != ''
+        run: |
+          ALERT_MSG="${{ steps.freshness.outputs.alert_msg }}"
+          TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          PAYLOAD=$(cat <<EOF
+          {
+            "title": "🚨 热搜数据异常告警",
+            "content": "**时间**: $TIMESTAMP\n\n$ALERT_MSG\n**仓库**: https://github.com/${{ github.repository }}\n**Actions**: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+            "timestamp": "$TIMESTAMP"
+          }
+          EOF
+          )
+          curl -s -X POST -H "Content-Type: application/json" -d "$PAYLOAD" "$ALERT_WEBHOOK_URL" > /dev/null
+          echo "✅ 告警已发送"
 
       - name: 报告状态
         if: always()
