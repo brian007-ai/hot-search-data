@@ -15,9 +15,10 @@ const config = loadConfig()
 parsePlatformParsers(config)
 const globalConfig = getGlobalConfig(config)
 const OUTPUT_DIR = path.resolve(__dirname, '..', 'data')
-const DETAIL_TOP_N = globalConfig.detail_top_n || 20
+const DETAIL_TOP_N = globalConfig.detail_top_n || 50  // 增加到 50 条
 const DETAIL_CONCURRENCY = globalConfig.concurrency || 5
-const DETAIL_TIMEOUT = globalConfig.timeout || 8000
+const DETAIL_TIMEOUT = globalConfig.timeout || 10000  // 增加到 10s
+const DETAIL_RETRY = 2  // 重试次数
 const CONTENT_MAX_LEN = globalConfig.content_max_len || 6000
 
 // ============ Cookie Jar ============
@@ -715,6 +716,19 @@ async function fetchCctv() {
 const SKIP_URL_PLATFORMS = ['douyin', 'bilibili', 'github_trending', 'arxiv', 'v2ex', 'weixin']
 const CLEAN_PLATFORMS = ['tieba', 'hupu', 'cctv', 'sspai', 'ithome', '36kr', 'huxiu', 'infoq', 'juejin']
 
+// 带重试的 fetch
+async function fetchWithRetry(url, options = {}, retries = DETAIL_RETRY) {
+  for (let i = 0; i <= retries; i++) {
+    try {
+      return await fetch(url, options)
+    } catch (e) {
+      if (i === retries) throw e
+      // 指数退避
+      await new Promise(r => setTimeout(r, 500 * (i + 1)))
+    }
+  }
+}
+
 async function enrichContent(platform, items) {
   const top = items.slice(0, DETAIL_TOP_N)
   const rest = items.slice(DETAIL_TOP_N)
@@ -734,7 +748,7 @@ async function enrichContent(platform, items) {
     if (skipUrl) return { content: '' }
     if (!it.url) return { content: '' }
     try {
-      const r = await fetch(it.url, { timeout: DETAIL_TIMEOUT })
+      const r = await fetchWithRetry(it.url, { timeout: DETAIL_TIMEOUT })
       let content
       if (platform === 'cctv') {
         content = extractCctvContent(r.data || '')
@@ -764,14 +778,16 @@ async function enrichContent(platform, items) {
       if (r.rate) it.rate = r.rate
     } else {
       let c = (r && r.content) || ''
-      if (!c || c.length < 20) c = it.excerpt || ''
-      if (!c && it.title) c = it.title
+      // 优先级：抓取到的正文 > excerpt > desc > title
+      if (!c || c.length < 20) c = it.excerpt || it.desc || it.title || ''
       it.content = c
     }
   })
   rest.forEach(it => {
-    if (!it.content || it.content.length < 20) it.content = it.excerpt || ''
-    if (!it.content && it.title) it.content = it.title
+    // 剩余条目同样兜底
+    if (!it.content || it.content.length < 20) {
+      it.content = it.excerpt || it.desc || it.title || ''
+    }
   })
   return items
 }
