@@ -1,6 +1,6 @@
 {
   "version": "2.3",
-  "update_time": "2026-09-09T09:38:54.887Z",
+  "update_time": "2026-09-09T09:53:08.815Z",
   "platforms": [
     {
       "key": "weibo",
@@ -119,6 +119,11 @@
     },
     {
       "key": "douyin",
+      "success": false,
+      "count": 0
+    },
+    {
+      "key": "bilibili",
       "success": false,
       "count": 0
     }

@@ -1,11 +1,35 @@
 {
   "success": true,
   "platform": "juejin",
-  "update_time": "2026-09-09T09:39:12.898Z",
+  "update_time": "2026-09-09T09:53:14.313Z",
   "count": 20,
   "data": [
     {
       "rank": 1,
+      "title": "<![CDATA[为了实现设计师想要的按钮动画，我Vibe了一个可视化小工具]]>",
+      "excerpt": "<![CDATA[最近，我们的设计小伙伴让我在按钮上加上一点动画效果，我做了两版都不太符合他的想法，他想要的是：按钮底部有渐变色的波浪无限循环往右流动的效果，这个描述太模糊了不好量化，于是我想干脆vibe一个参数可调的]]>",
+      "content": "",
+      "hot": "",
+      "tags": [
+        "热议"
+      ],
+      "url": "https://juejin.cn/post/7683072481465729067",
+      "thumb": ""
+    },
+    {
+      "rank": 2,
+      "title": "<![CDATA[前端手摸手跑路之 AI 应用开发（二）]]>",
+      "excerpt": "<![CDATA[Vue 调用 FastAPI：从 HTTP 请求到 CORS。项目骨架搭好以后，我没有立刻接数据库，而是先完成一条最小的前后端请求链路]]>",
+      "content": "",
+      "hot": "",
+      "tags": [
+        "热议"
+      ],
+      "url": "https://juejin.cn/post/7683355056540844066",
+      "thumb": ""
+    },
+    {
+      "rank": 3,
       "title": "<![CDATA[一天一个开源项目（第211篇）：prime-agent —— 会自我改进的 RLM 编码智能体]]>",
       "excerpt": "<![CDATA[prime-agent 是 PrimeIntellect 团队构建的自我改进 RLM 智能体，用于编码工作流与长时运行的自主任务。两大核心抽象：将上下文视为变量，子智能体调用视为函数调用]]>",
       "content": "",
@@ -17,31 +41,27 @@
       "thumb": ""
     },
     {
-      "rank": 2,
+      "rank": 4,
       "title": "<![CDATA[第一次用 SGLang：把本地模型接进聊天应用]]>",
       "excerpt": "<![CDATA[第一次用 SGLang：把本地模型接进聊天应用 你已经有一个聊天页面，后端也会调用 /v1/chat/completions。现在想把远程模型换成自己机器上的模型，卡住的地方通常很具体：权重下载完了，]]>",
       "content": "",
       "hot": "",
-      "tags": [
-        "热议"
-      ],
+      "tags": [],
       "url": "https://juejin.cn/post/7682593227545313286",
       "thumb": ""
     },
     {
-      "rank": 3,
+      "rank": 5,
       "title": "<![CDATA[Android 工业手持机蓝牙扫描失败：为什么同时需要蓝牙和定位权限]]>",
       "excerpt": "<![CDATA[Android 工业手持机蓝牙扫描失败：为什么同时需要蓝牙和定位权限 一、问题现象 现场的 GP-Print 页面显示： 当时已经确认： 手持机蓝牙已打开； 系统蓝牙设置页能搜索到附近设备； 打印机已]]>",
       "content": "",
       "hot": "",
-      "tags": [
-        "热议"
-      ],
+      "tags": [],
       "url": "https://juejin.cn/post/7682800396524732425",
       "thumb": ""
     },
     {
-      "rank": 4,
+      "rank": 6,
       "title": "<![CDATA[智能眼镜开发：图片翻译与EXIF的重要性]]>",
       "excerpt": "<![CDATA[Android 图片翻译中的 EXIF：从 CameraX、Glide、ImageView 到服务端 OCR 图片翻译看似是“拍照、上传、OCR、返回译图”四步，但只要页面锁定竖屏、用户横着拿手机拍照]]>",
       "content": "",
@@ -51,7 +71,7 @@
       "thumb": ""
     },
     {
-      "rank": 5,
+      "rank": 7,
       "title": "<![CDATA[将cURL 命令直接变成 Java 代码？用JQuick-Curl搞起来]]>",
       "excerpt": "<![CDATA[平时习惯了使用类似Postman测试接口，直接将curl命令复制到工具里就可以自动转化，完成接口调试。如果要将curl直接使用在Java中，这样就免去了OkHttp/RestTemplate]]>",
       "content": "",
@@ -61,7 +81,7 @@
       "thumb": ""
     },
     {
-      "rank": 6,
+      "rank": 8,
       "title": "<![CDATA[让我退掉 Claude 的不是代码能力，是一张图]]>",
       "excerpt": "<![CDATA[Claude 用 Godot 给我做了两小时火柴人游戏，出来的动作僵硬得不忍看；GPT 的 Image 2.5 一张概念图直接把我说服了。一次没有生图模型就走不通的 2D 游戏尝试。]]>",
       "content": "",
@@ -71,7 +91,7 @@
       "thumb": ""
     },
     {
-      "rank": 7,
+      "rank": 9,
       "title": "<![CDATA[Funes Agent Memory 实测：Codex 长期记忆召回、旧记忆污染与 no-answer 边界]]>",
       "excerpt": "<![CDATA[直接答案：Funes 的价值不是给 Claude Code 或 Codex 再塞一段更长的系统提示词，而是把它们已经产生的 session trace 变成一个可搜索、可追溯、默认本地运行的长期记忆层]]>",
       "content": "",
@@ -81,7 +101,7 @@
       "thumb": ""
     },
     {
-      "rank": 8,
+      "rank": 10,
       "title": "<![CDATA[AAOS AppCard 实践：怎么把自己的 App 塞进别人的卡片里]]>",
       "excerpt": "<![CDATA[车机系统里经常能看到这种场景：天气信息出现在桌面的一张小卡片上，导航的下一步提示嵌在主界面的一角，用户没有打开这些 App，但它们的内容已经显示在别的地方了。这套机制在 AAOS 里有官方名字——Ap]]>",
       "content": "",
@@ -91,7 +111,7 @@
       "thumb": ""
     },
     {
-      "rank": 9,
+      "rank": 11,
       "title": "<![CDATA[nest(5)-文件上传和静态资源]]>",
       "excerpt": "<![CDATA[文件上传 文件预览 解释 🧪 测试矩阵 # 测试 结果 ① GET / express.static 服务 index.html（不带 token） ✅ 200 公开访问 ② POST /user/m]]>",
       "content": "",
@@ -101,7 +121,7 @@
       "thumb": ""
     },
     {
-      "rank": 10,
+      "rank": 12,
       "title": "<![CDATA[nest(5)-Middleware]]>",
       "excerpt": "<![CDATA[CORS 设置 链路ID 解释 好问题！Middleware 是 NestJS AOP 体系里执行最早的一层（在 Guard 之前） 好！在动手之前，先把 Middleware 和 Guard/Int]]>",
       "content": "",
@@ -111,7 +131,7 @@
       "thumb": ""
     },
     {
-      "rank": 11,
+      "rank": 13,
       "title": "<![CDATA[nest(3)-jwt和RBAC]]>",
       "excerpt": "<![CDATA[Middleware / Guard / Interceptor的区别 让我用一张流程图先把 Middleware / Guard / Interceptor 的执行位置 搞清楚，再回答你。 🗺️ 完]]>",
       "content": "",
@@ -121,7 +141,7 @@
       "thumb": ""
     },
     {
-      "rank": 12,
+      "rank": 14,
       "title": "<![CDATA[从 NL2SQL 到自动巡检：乐檬如何打造面向多租户 SaaS 的全链路可观测性体系？]]>",
       "excerpt": "<![CDATA[经过评估，乐檬选择以阿里云云监控 2.0 以及全域智能运维平台 STAROps 为核心完成这次升级。]]>",
       "content": "",
@@ -131,7 +151,7 @@
       "thumb": ""
     },
     {
-      "rank": 13,
+      "rank": 15,
       "title": "<![CDATA[用 GitHub Issues 当数据库，零成本搭一个「提示词归档库」]]>",
       "excerpt": "<![CDATA[用 GitHub Issues 当数据库，零成本搭一个「提示词归档库」 先看成品 打开 https://codeniu.github.io/prompt-archive/ ，你看到的是一个「编辑档案」]]>",
       "content": "",
@@ -141,7 +161,7 @@
       "thumb": ""
     },
     {
-      "rank": 14,
+      "rank": 16,
       "title": "<![CDATA[Vite静态资源路径这个大坑害我调了一下午]]>",
       "excerpt": "<![CDATA[上周部署一个企业级中台项目时，我遇到了一个邪门问题：生产环境的所有静态资源都404了，而本地开发环境一切正常。你猜怎么着？Vite的配置和资源引用姿势挖了个大坑，让我白白浪费了四小时。 现象：为什么生]]>",
       "content": "",
@@ -151,7 +171,7 @@
       "thumb": ""
     },
     {
-      "rank": 15,
+      "rank": 17,
       "title": "<![CDATA[分享下我的读书清单]]>",
       "excerpt": "<![CDATA[长期自主的人生读书计划 时间与权重 按每周 7 小时计算： 方向 权重 每周时间 目的 系统、技术与创造 25% 1.75 小时 理解复杂系统，形成可创造的作品、产品或服务 经济、组织与社会 25% ]]>",
       "content": "",
@@ -161,7 +181,7 @@
       "thumb": ""
     },
     {
-      "rank": 16,
+      "rank": 18,
       "title": "<![CDATA[Agent 观测与优化开发者摸底报告]]>",
       "excerpt": "<![CDATA[为了让更多企业看清 Agent 上线后的真实运行状态、建立可评估与可优化的工程闭环，我们于 8-9 月在北京、上海、深圳三城发起「Agent 评估与优化 · Close the Loop」的系列开发者]]>",
       "content": "",
@@ -171,7 +191,7 @@
       "thumb": ""
     },
     {
-      "rank": 17,
+      "rank": 19,
       "title": "<![CDATA[别只拿 GPT-6 Astra 聊天，它真正恐怖的是开始会“干活”了]]>",
       "excerpt": "<![CDATA[话说在前头。 最近看到不少人在吐槽： GPT-6 好像也没什么明显提升？ 如果你只是打开 ChatGPT，问几个问题、写几段文案、让它总结一下文章，然后跟 GPT-5.6 Sol 对比，我其实完全能够]]>",
       "content": "",
@@ -181,33 +201,13 @@
       "thumb": ""
     },
     {
-      "rank": 18,
+      "rank": 20,
       "title": "<![CDATA[从InMemory内存记忆到文件持久化，手把手教你管理AI的“记忆”]]>",
       "excerpt": "<![CDATA[一、灵魂拷问：大模型真的记得你上一句说了啥吗？ 大模型本质上是一个无状态函数——你给它输入，它吐输出，每次调用都是“重新做人”。那为什么ChatGPT能记住我们的上下文呢？秘密就是——Memory（记]]>",
       "content": "",
       "hot": "",
       "tags": [],
       "url": "https://juejin.cn/post/7683353994743562274",
-      "thumb": ""
-    },
-    {
-      "rank": 19,
-      "title": "<![CDATA[AI 应用开发生产落地实践指南]]>",
-      "excerpt": "<![CDATA[一、概述与背景 大语言模型(LLM)在直接使用时存在三个核心局限： 🧠 理解与推理能力的局限 LLM本质上是基于概率的“文本预测器”，依靠海量数据中的统计规律来生成内容，而非真正理解语义和逻辑关系。它]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683072481465270315",
-      "thumb": ""
-    },
-    {
-      "rank": 20,
-      "title": "<![CDATA[深入浅出RAG——第10章：检索后处理与重排序]]>",
-      "excerpt": "<![CDATA[讲解检索结果的后处理三件套：重排序、上下文压缩和分数阈值过滤，深入 Bi-Encoder 与 Cross-Encoder 的架构差异，并通过 代码演示 Reranker前后效果对比。]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683347149874937865",
       "thumb": ""
     }
   ]
