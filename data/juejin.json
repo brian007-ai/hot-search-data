@@ -1,213 +1,213 @@
 {
   "success": true,
   "platform": "juejin",
-  "update_time": "2026-09-10T02:43:19.102Z",
+  "update_time": "2026-09-10T03:33:18.339Z",
   "count": 20,
   "data": [
     {
       "rank": 1,
-      "title": "<![CDATA[Tailwind CSS 加入 Shopify，正在用 Tailwind 的项目要不要调整？]]>",
-      "excerpt": "<![CDATA[2026 年 9 月 9 日，Tailwind CSS 创始人 Adam Wathan 在官方博客宣布： 作为目前前端领域最流行的 CSS 框架之一，Tailwind CSS 官方透露，其每周安装量已]]>",
+      "title": "<![CDATA[为什么市面上的 coding agent 大多数都基于Nodejs？]]>",
+      "excerpt": "<![CDATA[最近看了几套比较知名的 Coding Agent，发现 TypeScript 确实出现得非常频繁。 新的 Kimi Code CLI 是 TypeScript + Node.js，DeepSeek H]]>",
       "content": "",
       "hot": "",
       "tags": [
         "热议"
       ],
-      "url": "https://juejin.cn/post/7683447309472727067",
+      "url": "https://juejin.cn/post/7683481485497188403",
       "thumb": ""
     },
     {
       "rank": 2,
-      "title": "<![CDATA[当程序员遇到装修：用 AI 画 CAD、搭房子，甚至自己做家具]]>",
-      "excerpt": "<![CDATA[AI Agent 正在从\"写代码\"走向\"设计现实世界\"。这篇文章把 text-to-cad 与 Pascal Editor 组合起来，就是一个完整的\"装修 Agent\"工作流。]]>",
+      "title": "<![CDATA[SmartPhotoCrafter: 先思考后修图，统一理解-生成的图像优化新范式]]>",
+      "excerpt": "<![CDATA[本文提出一种全新的统一理解—生成—优化框架，为自动图像优化提供了新的技术范式。该方法在保留原始场景的内容结构与细节的同时提升图像质量，实现兼具真实性与美感的自动图像优化。]]>",
       "content": "",
       "hot": "",
       "tags": [
         "热议"
       ],
-      "url": "https://juejin.cn/post/7683447309472579611",
+      "url": "https://juejin.cn/post/7683515498160914441",
       "thumb": ""
     },
     {
       "rank": 3,
-      "title": "<![CDATA[ASCF 元服务如何区分“后台恢复”与“携参拉起”：后台标记 + 参数指纹方案]]>",
-      "excerpt": "<![CDATA[ASCF 元服务如何区分“后台恢复”与“携参拉起”：后台标记 + 参数指纹方案 一、问题背景 在 ASCF 元服务中，我们经常需要根据进入方式执行不同逻辑： 用户把元服务切到后台后再次返回：恢复页面状]]>",
+      "title": "<![CDATA[Text2SQL 实战：自然语言直连数据库，让 AI 自动写 SQL 完成 CRUD 与多表联查]]>",
+      "excerpt": "<![CDATA[Text2SQL 实战：自然语言直连数据库，让 AI 自动写 SQL 完成 CRUD 与多表联查 一、Text2SQL 是什么？ 1.1 从\"会写代码\"到\"会说话\" 1.2 Text2SQL 的本质 ]]>",
       "content": "",
       "hot": "",
       "tags": [
         "热议"
       ],
-      "url": "https://juejin.cn/post/7683394933154021416",
+      "url": "https://juejin.cn/post/7683433296757014582",
       "thumb": ""
     },
     {
       "rank": 4,
+      "title": "<![CDATA[LLM 结构化输出进阶：withStructuredOutput 一行封装 Tool Call，从流式输出到 MySQL 落地]]>",
+      "excerpt": "<![CDATA[LLM 结构化输出进阶：withStructuredOutput 一行封装 Tool Call，从流式输出到 MySQL 落地 一、回顾：结构化输出的四种方案 1.1 为什么需要结构化输出 1.2 四]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683448371321225252",
+      "thumb": ""
+    },
+    {
+      "rank": 5,
+      "title": "<![CDATA[《elisp 每日一练》—— Minor Mode 变量生成机制与状态控制]]>",
+      "excerpt": "<![CDATA[前面我们以一个简单的 dired-mode 实战案例结束了关于文件和目录专题的学习。现在开始进入Emacs中的Minor Mode 和 Major Mode的学习。 define-minor-mode]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683493984029081627",
+      "thumb": ""
+    },
+    {
+      "rank": 6,
+      "title": "<![CDATA[Numpy-数据操作]]>",
+      "excerpt": "<![CDATA[本节课聚焦于如何操作数组中的数据，我们日常能用到的处理数组的方法这一节都会介绍，通过本小节的介绍大家会对Numpy有更加直观的认识。]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683515498160226313",
+      "thumb": ""
+    },
+    {
+      "rank": 7,
+      "title": "<![CDATA[8. 向量化：用 Python 构建你的第一个向量库]]>",
+      "excerpt": "<![CDATA[8.1 反常识：向量库的\"库\"没你想的那么难 很多人一听\"向量数据库\"就觉得是重型基础设施——分布式、高可用、运维复杂。 真相：90% 的场景用 Chroma 一个文件就能跑。]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683427479403364406",
+      "thumb": ""
+    },
+    {
+      "rank": 8,
+      "title": "<![CDATA[丝滑的奥秘：Reanimated 3 动画引擎与手势处理（Gesture Handler）]]>",
+      "excerpt": "<![CDATA[在 Android 开发中，我们习惯使用 ObjectAnimator、ValueAnimator 或 Compose 中的 animate*AsState / Transition 来构建丝滑的动画]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683433296757194806",
+      "thumb": ""
+    },
+    {
+      "rank": 9,
+      "title": "<![CDATA[Gemini 3.8 Flash 是真的站起来了，一起来看看我到底做了什么吧~]]>",
+      "excerpt": "<![CDATA[大家好，一晃好几年都没发文章了，刚好最近用 ai 完整开发了一款小程序，并正式上架了，今天就来给大家分享一下我的全制作过程。 我做的这款小程序，名字叫 「知心星晴」 ，定位是一个偏年轻人体感的暗黑星空]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683447309472792603",
+      "thumb": ""
+    },
+    {
+      "rank": 10,
+      "title": "<![CDATA[浏览器切到后台后，AI 给我的代码就失效了：我拿 3 个模型测了 6 个定时器坑]]>",
+      "excerpt": "<![CDATA[前端有一类 Bug 特别烦。 你本地盯着页面测： 测试同学一直看着页面测： 结果用户干了一件特别普通的事： 切到另一个标签页。 过几分钟再回来。 倒计时不准了。 轮询慢了。 Token 过期了。 We]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683459786963484710",
+      "thumb": ""
+    },
+    {
+      "rank": 11,
+      "title": "<![CDATA[两个线程改互不相关的变量，性能掉了 7 倍]]>",
+      "excerpt": "<![CDATA[两个线程改互不相关的变量，性能掉了 7 倍 先看一段没有任何共享状态、没有锁、没有原子操作的代码。两个线程各自累加自己的计数器： c packed 和 padded 的逻辑完全等价。唯一区别是两个计数]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683447309472858139",
+      "thumb": ""
+    },
+    {
+      "rank": 12,
+      "title": "<![CDATA[零基础也能看懂的 Loop Engineering]]>",
+      "excerpt": "<![CDATA[TraeCode 已支持 /goal 模式，它正是 Loop 思路在实际编码任务中的一种落地：围绕一个明确目标，根据执行结果和反馈持续推进任务。]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683515498160701449",
+      "thumb": ""
+    },
+    {
+      "rank": 13,
+      "title": "<![CDATA[《Agent 评测白皮书》系列01：Agent 评测全览]]>",
+      "excerpt": "<![CDATA[我们推出了《Agent评测白皮书》系列博客，体系化地为大家讲解评测的落地指南，分为《评测全览》、《冷启动篇》、《扩量篇》、《自进化篇》等共4篇，本文为系列的第一篇。]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683448371321274404",
+      "thumb": ""
+    },
+    {
+      "rank": 14,
+      "title": "<![CDATA[企业级 MultiAgent 落地：Plan 模式与主子 Agent 协作｜得物技术]]>",
+      "excerpt": "<![CDATA[建设一个基于 AgentScope Java 的企业级 MultiAgent 平台，为研发、数据分析和知识问答等场景提供统一的模型调用、工具接入、任务编排、流式输出与运行追踪能力。上一篇文章介绍了平台]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683433296757030966",
+      "thumb": ""
+    },
+    {
+      "rank": 15,
+      "title": "<![CDATA[为什么不推荐走Agent开发？]]>",
+      "excerpt": "<![CDATA[大家好呀，我是飞鱼 最近有些读者在学 Agent 开发，问了我一些问题： 其实大家经常看到网上很多培训班都会说，后端要向 AI 转型： 我个人觉得，Agent 开发这个职业想要有长期发展的前提是：你的]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683457864929329204",
+      "thumb": ""
+    },
+    {
+      "rank": 16,
+      "title": "<![CDATA[软件不是从数据开始，而是从现实开始 | KDC 系列 01]]>",
+      "excerpt": "<![CDATA[本文从退款案例出发，提出 Reality First 的观察顺序：先明确系统面对的领域现实，再讨论现实模型、数字表示以及验证反馈如何共同支撑软件的判断与行动。]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683459786963370022",
+      "thumb": ""
+    },
+    {
+      "rank": 17,
+      "title": "<![CDATA[Tailwind CSS 加入 Shopify，正在用 Tailwind 的项目要不要调整？]]>",
+      "excerpt": "<![CDATA[2026 年 9 月 9 日，Tailwind CSS 创始人 Adam Wathan 在官方博客宣布： 作为目前前端领域最流行的 CSS 框架之一，Tailwind CSS 官方透露，其每周安装量已]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683447309472727067",
+      "thumb": ""
+    },
+    {
+      "rank": 18,
+      "title": "<![CDATA[当程序员遇到装修：用 AI 画 CAD、搭房子，甚至自己做家具]]>",
+      "excerpt": "<![CDATA[AI Agent 正在从\"写代码\"走向\"设计现实世界\"。这篇文章把 text-to-cad 与 Pascal Editor 组合起来，就是一个完整的\"装修 Agent\"工作流。]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683447309472579611",
+      "thumb": ""
+    },
+    {
+      "rank": 19,
+      "title": "<![CDATA[ASCF 元服务如何区分“后台恢复”与“携参拉起”：后台标记 + 参数指纹方案]]>",
+      "excerpt": "<![CDATA[ASCF 元服务如何区分“后台恢复”与“携参拉起”：后台标记 + 参数指纹方案 一、问题背景 在 ASCF 元服务中，我们经常需要根据进入方式执行不同逻辑： 用户把元服务切到后台后再次返回：恢复页面状]]>",
+      "content": "",
+      "hot": "",
+      "tags": [],
+      "url": "https://juejin.cn/post/7683394933154021416",
+      "thumb": ""
+    },
+    {
+      "rank": 20,
       "title": "<![CDATA[2026 苹果秋季新品发布会总结]]>",
       "excerpt": "<![CDATA[北京时间 9 月 10 日凌晨 1 点，苹果秋季新品发布会如约而至。 今天凌晨的苹果发布会是苹果近十年迭代力度最大的秋季发布会，砍掉标准版iPhone 18，全部主推高端旗舰，最大亮点是首款折叠屏]]>",
       "content": "",
       "hot": "",
       "tags": [],
       "url": "https://juejin.cn/post/7683507165231677455",
-      "thumb": ""
-    },
-    {
-      "rank": 5,
-      "title": "<![CDATA[GitHub每日热评｜用写HTML的方式生成确定性MP4：HeyGen开源的HyperFrames到底强在哪？]]>",
-      "excerpt": "<![CDATA[GitHub每日热评｜用写HTML的方式生成确定性MP4：HeyGen开源的HyperFrames到底强在哪？ 在当下生成式 AI 视频浪潮中，无论是 Sora、Runway 还是 Kling，主要解]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683481485496107059",
-      "thumb": ""
-    },
-    {
-      "rank": 6,
-      "title": "<![CDATA[本地大模型网关 CLI 使用教程]]>",
-      "excerpt": "<![CDATA[我的开源大模型网关： https://github.com/boonya-hrgk/llm-proxy-tk 目录 前置准备 安装与配置 三种模式详解 快速上手 常见问题 进阶技巧 1. 前置准备 1]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683471512306499590",
-      "thumb": ""
-    },
-    {
-      "rank": 7,
-      "title": "<![CDATA[android12 SystemUI下拉通知栏的加载流程]]>",
-      "excerpt": "<![CDATA[当手势确认要展开面板时，`PhoneStatusBarView` 的 `onPanelPeeked()` 方法会被调用。该方法进而调用 `StatusBar` 的]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683515498159882249",
-      "thumb": ""
-    },
-    {
-      "rank": 8,
-      "title": "<![CDATA[Vue2 快速入门：环境搭建、模板语法、指令系统全解]]>",
-      "excerpt": "<![CDATA[本文将从零搭建 Vue2 项目，掌握插值语法、常用指令、事件绑定、双向绑定，理清 Vue2 开发思维，进行零基础快速入门。]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683443642280263695",
-      "thumb": ""
-    },
-    {
-      "rank": 9,
-      "title": "<![CDATA[5个Skills，一个人干一个团队的活]]>",
-      "excerpt": "<![CDATA[01 前言 一个人做项目，最常遇到的情况是什么？——同时扮演好几个角色。 前一小时还在找资料，下一小时开始分析数据；客户马上要来，又得准备策略、做 PPT、找配图。 事情未必有多难，真正消耗时间的是不]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683384640531841059",
-      "thumb": ""
-    },
-    {
-      "rank": 10,
-      "title": "<![CDATA[2026最新款Electron41+React19+AntDesign电脑端后台管理系统Exe]]>",
-      "excerpt": "<![CDATA[2026/9最新跨平台实战研发Electron41+React19.2+AntDesign+Zustand5+Echarts+MockJS客户端通用后台框架系统解决方案。]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683443642280017935",
-      "thumb": ""
-    },
-    {
-      "rank": 11,
-      "title": "<![CDATA[从原生 PG 到 Vastbase、GaussDB：聊透“Patroni + ETCD”高可用架构演进与实战]]>",
-      "excerpt": "<![CDATA[从原生 PG 到 Vastbase、GaussDB：聊透“Patroni + ETCD”高可用架构演进与实战 昨天我们介绍了 PostgreSQL 的一主两从搭建过程，并详细说明了 synchro]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683384640531922979",
-      "thumb": ""
-    },
-    {
-      "rank": 12,
-      "title": "<![CDATA[如何用 Python 算多只股票的相关性矩阵与组合波动率？]]>",
-      "excerpt": "<![CDATA[一句话回答： 持有一篮子股票时，组合风险不等于各股波动率的简单加总——相关性越低，分散化越有效。用 AlphaFeed 批量取前复权 K 线算日收益率，再用 pandas/numpy 几行就能得到相关]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683459786962845734",
-      "thumb": ""
-    },
-    {
-      "rank": 13,
-      "title": "<![CDATA[高并发场景下MySQL数据库性能优化实战]]>",
-      "excerpt": "<![CDATA[高并发 MySQL 五层全链路优化实战！从 SQL 索引、表结构、内核锁调优，到缓存读写分离、分库分表异步削峰。内含乐观锁扣减、DCL 防缓存击穿、深分页优化等可直接落地代码，附大促优化指标对比，避开]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683433296756719670",
-      "thumb": ""
-    },
-    {
-      "rank": 14,
-      "title": "<![CDATA[「可重放」不是形容词：我把自家 Agent 运行时的 run 账本翻了个底朝天]]>",
-      "excerpt": "<![CDATA[「可重放」到底重放什么？我读遍了自家开源 Agent 运行时的 replay 代码：五张账本表、四种代价不同的重放路径、一个叫 in_doubt 的状态，以及现在还对不上的七个地方，每条都指到行号。]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683459786962059302",
-      "thumb": ""
-    },
-    {
-      "rank": 15,
-      "title": "<![CDATA[客户问AI答不出你的公司名，才是中小企业最大的获客事故]]>",
-      "excerpt": "<![CDATA[先看一组扎心数据 2026年9月6日深圳IEAE电子展一场演讲披露，45%的B2B买家找供应商先问AI，68%信任AI推荐，被AI点名的企业询盘量高出3到5倍。 加上CNNIC的数据（截至2025年1]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683447309472448539",
-      "thumb": ""
-    },
-    {
-      "rank": 16,
-      "title": "<![CDATA[分治、贪心、回溯、动态规划：四种经典算法思想]]>",
-      "excerpt": "<![CDATA[分治重在拆分，贪心追求局部最优，回溯通过尝试与撤销搜索答案，动态规划则利用状态转移和缓存避免重复计算。掌握核心思想，才能灵活选择算法。]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683481485495828531",
-      "thumb": ""
-    },
-    {
-      "rank": 17,
-      "title": "<![CDATA[01-05-认知篇-基础-Unity资源管理痛点分析]]>",
-      "excerpt": "<![CDATA[Unity 资源管理痛点分析 一、引言 在 Unity 游戏开发中，资源管理是贯穿整个项目生命周期的核心课题。从项目启动到上线运营，资源管理涉及打包、加载、更新、卸载等多个环节，每个环节都可能成为项目]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683515498159570953",
-      "thumb": ""
-    },
-    {
-      "rank": 18,
-      "title": "<![CDATA[Codex 里很好用但容易被忽视的功能：Hook]]>",
-      "excerpt": "<![CDATA[Codex Hook 是一个容易被忽视却很实用的功能。本文通过流程对比和实际案例，带你快速理解 Hook 是什么、如何触发，以及它能为 Codex 执行过程带来哪些变化。]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683493984028459035",
-      "thumb": ""
-    },
-    {
-      "rank": 19,
-      "title": "<![CDATA[Python 基础语法（三）：条件判断与分支结构]]>",
-      "excerpt": "<![CDATA[前面所写的程序大多都是顺序执行，但现在现实生产环境中，���常要根据不同情况走不同分支。Python里，这部分主要靠if、elif和else完成，今天我们就把条件判断相关的内容系统讲一遍。]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683384640531824675",
-      "thumb": ""
-    },
-    {
-      "rank": 20,
-      "title": "<![CDATA[把 PP-OCR 塞进一个纯 C Runtime：从 Tiny 到 Medium，再到单文件 HTML OCR]]>",
-      "excerpt": "<![CDATA[最近一段时间，我一直在折腾一个看起来有点“逆潮流”的项目： 不用 Python，不用 OpenCV，不用 ONNX Runtime，也不用 OpenVINO、TensorRT、protobuf，直接用]]>",
-      "content": "",
-      "hot": "",
-      "tags": [],
-      "url": "https://juejin.cn/post/7683427479402856502",
       "thumb": ""
     }
   ]
