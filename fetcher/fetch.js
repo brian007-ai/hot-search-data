@@ -443,7 +443,7 @@ function norm(items, platform) {
       rank,
       title: clean(it.title),
       excerpt: clean(it.desc),
-      content: '',
+      content: it.content || '',  // 保留 enrichContent 设置的 content
       hot,
       tags: tagsFor(hot, rank),
       url: it.mobilUrl || it.url || '',
@@ -782,33 +782,35 @@ async function enrichContent(platform, items) {
   })
 
   top.forEach((it, i) => {
-    const r = results[i] || {}
-    if (isDouban) {
-      if (r.douban_intro) it.content = r.douban_intro.slice(0, CONTENT_MAX_LEN)
-      else it.content = it.excerpt || ''
-      if (r.douban_directors) it.douban_directors = r.douban_directors
-      if (r.douban_casts) it.douban_casts = r.douban_casts
-      if (r.douban_genre) it.douban_genre = r.douban_genre
-      if (r.douban_year) it.douban_year = r.douban_year
-      if (r.douban_runtime) it.douban_runtime = r.douban_runtime
-      if (r.douban_episodes) it.douban_episodes = r.douban_episodes
-      if (r.douban_region) it.douban_region = r.douban_region
-      if (r.rate) it.rate = r.rate
-    } else {
-      let c = (r && r.content) || ''
-      // 优先级：抓取到的正文 > excerpt > desc > title
-      if (!c || c.length < 20) c = it.excerpt || it.desc || it.title || ''
-      it.content = c
-    }
-  })
-  rest.forEach(it => {
-    // 剩余条目同样兜底
-    if (!it.content || it.content.length < 20) {
-      it.content = it.excerpt || it.desc || it.title || ''
-    }
-  })
-  return items
-}
+          const r = results[i] || {}
+          if (isDouban) {
+            if (r.douban_intro) it.content = r.douban_intro.slice(0, CONTENT_MAX_LEN)
+            else it.content = it.excerpt || FALLBACK_MESSAGES[platform] || it.title || ''
+            if (r.douban_directors) it.douban_directors = r.douban_directors
+            if (r.douban_casts) it.douban_casts = r.douban_casts
+            if (r.douban_genre) it.douban_genre = r.douban_genre
+            if (r.douban_year) it.douban_year = r.douban_year
+            if (r.douban_runtime) it.douban_runtime = r.douban_runtime
+            if (r.douban_episodes) it.douban_episodes = r.douban_episodes
+            if (r.douban_region) it.douban_region = r.douban_region
+            if (r.rate) it.rate = r.rate
+          } else {
+            let c = (r && r.content) || ''
+            // 优先级：抓取到的正文 > excerpt > desc > FALLBACK_MESSAGE > title
+            if (!c || c.length < 20) {
+              c = it.excerpt || it.desc || FALLBACK_MESSAGES[platform] || it.title || ''
+            }
+            it.content = c
+          }
+        })
+        rest.forEach(it => {
+          // 剩余条目同样兜底
+          if (!it.content || it.content.length < 20) {
+            it.content = it.excerpt || it.desc || FALLBACK_MESSAGES[platform] || it.title || ''
+          }
+        })
+        return items
+      }
 
 // ============ 合并去重 ============
 function mergePlatformData(platformKey, allData, mergeConfig) {
