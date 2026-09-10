@@ -1,11 +1,11 @@
 {
   "version": "2.3",
-  "update_time": "2026-09-10T03:32:54.811Z",
+  "update_time": "2026-09-10T10:54:21.344Z",
   "platforms": [
     {
       "key": "weibo",
       "success": true,
-      "count": 50
+      "count": 49
     },
     {
       "key": "zhihu",
@@ -84,8 +84,8 @@
     },
     {
       "key": "arxiv",
-      "success": false,
-      "count": 0
+      "success": true,
+      "count": 50
     },
     {
       "key": "douban",
@@ -120,7 +120,7 @@
     {
       "key": "douyin",
       "success": true,
-      "count": 48
+      "count": 50
     }
   ]
 }

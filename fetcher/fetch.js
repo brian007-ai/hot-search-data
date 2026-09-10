@@ -713,8 +713,26 @@ async function fetchCctv() {
 }
 
 // ============ 正文抓取 ============
-const SKIP_URL_PLATFORMS = ['douyin', 'bilibili', 'github_trending', 'arxiv', 'v2ex', 'weixin']
-const CLEAN_PLATFORMS = ['tieba', 'hupu', 'cctv', 'sspai', 'ithome', '36kr', 'huxiu', 'infoq', 'juejin']
+// 仅跳过真正无法抓取的平台（无文章 URL 或强反爬）
+const SKIP_URL_PLATFORMS = ['github_trending', 'arxiv', 'v2ex']  // 这些平台无文章 URL 或纯 API
+const CLEAN_PLATFORMS = ['tieba', 'hupu', 'cctv', 'sspai', 'ithome', '36kr', 'huxiu', 'infoq', 'juejin', 'weibo', 'zhihu', 'toutiao', 'baidu', 'douyin', 'bilibili', 'weixin']
+
+// 无法抓取正文的平台友好提示
+const FALLBACK_MESSAGES = {
+  weibo: '微博热搜无法直接获取正文，微博有严格反爬限制。可点击「复制链接」在微博 App/浏览器中查看完整内容。',
+  zhihu: '知乎热榜无法直接获取正文，知乎有严格反爬限制。可点击「复制链接」在知乎 App/浏览器中查看完整内容。',
+  toutiao: '头条热榜无法直接获取正文，今日头条有反爬限制。可点击「复制链接」在头条 App/浏览器中查看完整内容。',
+  baidu: '百度热搜无法直接获取正文，百度有反爬限制。可点击「复制链接」在百度 App/浏览器中查看完整内容。',
+  weibo: '微博热搜无法直接获取正文。可点击「复制链接」在微博 App/浏览器中查看完整内容。',
+  douyin: '抖音热榜为短视频内容，无文字正文。可点击「复制链接」在抖音 App 中观看视频。',
+  bilibili: 'B站热榜为视频内容，无文字正文。可点击「复制链接」在哔哩哔哩 App/网页中观看视频。',
+  weixin: '微信热文无法直接获取正文，微信文章需在微信内打开。可点击「复制链接」在微信中打开阅读。',
+  douban: '豆瓣条目包含评分、导演、演员等结构化信息，详情页已展示。如需查看完整影评/简介，请点击「复制链接」在豆瓣 App/网页查看。',
+  weixin: '微信热文需在微信内打开。可点击「复制链接」在微信中打开阅读。',
+  zhihu: '知乎热榜无法直接获取正文。可点击「复制链接」在知乎 App/浏览器中查看完整内容。',
+  toutiao: '头条热榜无法直接获取正文。可点击「复制链接」在头条 App/浏览器中查看完整内容。',
+  baidu: '百度热搜无法直接获取正文。可点击「复制链接」在百度 App/浏览器中查看完整内容。',
+}
 
 // 带重试的 fetch
 async function fetchWithRetry(url, options = {}, retries = DETAIL_RETRY) {
@@ -745,7 +763,7 @@ async function enrichContent(platform, items) {
       delete info.content_for_item
       return Object.assign({ content: body }, info)
     }
-    if (skipUrl) return { content: '' }
+    if (skipUrl) return { content: FALLBACK_MESSAGES[platform] || '' }
     if (!it.url) return { content: '' }
     try {
       const r = await fetchWithRetry(it.url, { timeout: DETAIL_TIMEOUT })
