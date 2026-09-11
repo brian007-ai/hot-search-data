@@ -37,6 +37,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: 安装 jq (用于 JSON 解析)
+        run: sudo apt-get update && sudo apt-get install -y jq
+
       - name: 抓取数据
         id: fetch
         run: node fetcher/fetch.js
