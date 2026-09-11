@@ -713,25 +713,39 @@ async function fetchCctv() {
 }
 
 // ============ 正文抓取 ============
-// 仅跳过真正无法抓取的平台（无文章 URL 或强反爬）
-const SKIP_URL_PLATFORMS = ['github_trending', 'arxiv', 'v2ex']  // 这些平台无文章 URL 或纯 API
-const CLEAN_PLATFORMS = ['tieba', 'hupu', 'cctv', 'sspai', 'ithome', '36kr', 'huxiu', 'infoq', 'juejin', 'weibo', 'zhihu', 'toutiao', 'baidu', 'douyin', 'bilibili', 'weixin']
+// 平台分级（内部使用，决定抓取策略和兜底文案）
+const PLATFORM_TIER = {
+  // Tier 1: 可完整抓取正文
+  FULL: ['tieba', 'hupu', 'cctv', 'sspai', 'ithome', '36kr', 'huxiu', 'infoq', 'juejin', 'baidu', 'arxiv'],
+  // Tier 2: 仅结构化数据（豆瓣）
+  STRUCTURED: ['douban', 'doubanhot', 'doubantv', 'doubannew', 'doubanscore'],
+  // Tier 3: 无正文/视频/强反爬，只能引导跳转
+  LINK_ONLY: ['weibo', 'zhihu', 'toutiao', 'douyin', 'bilibili', 'weixin', 'github_trending', 'v2ex']
+}
 
-// 无法抓取正文的平台友好提示
+const SKIP_URL_PLATFORMS = ['github_trending', 'arxiv', 'v2ex']  // 这些平台无文章 URL 或纯 API
+const CLEAN_PLATFORMS = ['tieba', 'hupu', 'cctv', 'sspai', 'ithome', '36kr', 'huxiu', 'infoq', 'juejin']
+
+// 无法抓取正文的平台友好提示（面向用户直接展示）
 const FALLBACK_MESSAGES = {
-  weibo: '微博热搜无法直接获取正文，微博有严格反爬限制。可点击「复制链接」在微博 App/浏览器中查看完整内容。',
-  zhihu: '知乎热榜无法直接获取正文，知乎有严格反爬限制。可点击「复制链接」在知乎 App/浏览器中查看完整内容。',
-  toutiao: '头条热榜无法直接获取正文，今日头条有反爬限制。可点击「复制链接」在头条 App/浏览器中查看完整内容。',
-  baidu: '百度热搜无法直接获取正文，百度有反爬限制。可点击「复制链接」在百度 App/浏览器中查看完整内容。',
-  weibo: '微博热搜无法直接获取正文。可点击「复制链接」在微博 App/浏览器中查看完整内容。',
-  douyin: '抖音热榜为短视频内容，无文字正文。可点击「复制链接」在抖音 App 中观看视频。',
-  bilibili: 'B站热榜为视频内容，无文字正文。可点击「复制链接」在哔哩哔哩 App/网页中观看视频。',
-  weixin: '微信热文无法直接获取正文，微信文章需在微信内打开。可点击「复制链接」在微信中打开阅读。',
-  douban: '豆瓣条目包含评分、导演、演员等结构化信息，详情页已展示。如需查看完整影评/简介，请点击「复制链接」在豆瓣 App/网页查看。',
-  weixin: '微信热文需在微信内打开。可点击「复制链接」在微信中打开阅读。',
-  zhihu: '知乎热榜无法直接获取正文。可点击「复制链接」在知乎 App/浏览器中查看完整内容。',
-  toutiao: '头条热榜无法直接获取正文。可点击「复制链接」在头条 App/浏览器中查看完整内容。',
-  baidu: '百度热搜无法直接获取正文。可点击「复制链接」在百度 App/浏览器中查看完整内容。',
+  weibo: '微博热搜无法直接获取正文（反爬限制）。可点击下方「原文链接」在微博 App/浏览器查看完整内容。',
+  zhihu: '知乎热榜无法直接获取正文（反爬限制）。可点击下方「原文链接」在知乎 App/浏览器查看完整内容。',
+  toutiao: '头条热榜无法直接获取正文（反爬限制）。可点击下方「原文链接」在头条 App/浏览器查看完整内容。',
+  baidu: '百度热搜无法直接获取正文（反爬限制）。可点击下方「原文链接」在百度 App/浏览器查看完整内容。',
+  douyin: '抖音热榜为短视频内容，无文字正文。可点击下方「原文链接」在抖音 App 观看视频。',
+  bilibili: 'B站热榜为视频内容，无文字正文。可点击下方「原文链接」在哔哩哔哩 App/网页观看视频。',
+  weixin: '微信热文需在微信内打开。可点击下方「原文链接」复制后在微信中打开阅读。',
+  github_trending: 'GitHub Trending 无详情页正文。可点击下方「原文链接」在 GitHub 查看项目详情。',
+  v2ex: 'V2EX 热榜无详情页正文。可点击下方「原文链接」在 V2EX 查看完整帖子。',
+  douban: '豆瓣条目包含评分、导演、演员等结构化信息。如需查看完整影评/简介，请点击下方「原文链接」在豆瓣 App/网页查看。'
+}
+
+// 判断平台分级
+function getPlatformTier(platform) {
+  if (PLATFORM_TIER.FULL.includes(platform)) return 'full'
+  if (PLATFORM_TIER.STRUCTURED.includes(platform)) return 'structured'
+  if (PLATFORM_TIER.LINK_ONLY.includes(platform)) return 'link_only'
+  return 'full'  // 默认尝试抓取
 }
 
 // 带重试的 fetch
@@ -753,6 +767,7 @@ async function enrichContent(platform, items) {
   const isDouban = ['douban', 'doubanhot', 'doubantv', 'doubannew', 'doubanscore'].includes(platform)
   const skipUrl = SKIP_URL_PLATFORMS.includes(platform)
   const needClean = CLEAN_PLATFORMS.includes(platform)
+  const tier = getPlatformTier(platform)
 
   const results = await mapWithConcurrency(top, DETAIL_CONCURRENCY, async (it) => {
     if (isDouban) {
@@ -763,6 +778,8 @@ async function enrichContent(platform, items) {
       delete info.content_for_item
       return Object.assign({ content: body }, info)
     }
+    // LINK_ONLY 平台：直接返回兜底文案，不尝试抓取
+    if (tier === 'link_only') return { content: FALLBACK_MESSAGES[platform] || '' }
     if (skipUrl) return { content: FALLBACK_MESSAGES[platform] || '' }
     if (!it.url) return { content: '' }
     try {
@@ -782,35 +799,54 @@ async function enrichContent(platform, items) {
   })
 
   top.forEach((it, i) => {
-          const r = results[i] || {}
-          if (isDouban) {
-            if (r.douban_intro) it.content = r.douban_intro.slice(0, CONTENT_MAX_LEN)
-            else it.content = it.excerpt || FALLBACK_MESSAGES[platform] || it.title || ''
-            if (r.douban_directors) it.douban_directors = r.douban_directors
-            if (r.douban_casts) it.douban_casts = r.douban_casts
-            if (r.douban_genre) it.douban_genre = r.douban_genre
-            if (r.douban_year) it.douban_year = r.douban_year
-            if (r.douban_runtime) it.douban_runtime = r.douban_runtime
-            if (r.douban_episodes) it.douban_episodes = r.douban_episodes
-            if (r.douban_region) it.douban_region = r.douban_region
-            if (r.rate) it.rate = r.rate
-          } else {
-            let c = (r && r.content) || ''
-            // 优先级：抓取到的正文 > excerpt > desc > FALLBACK_MESSAGE > title
-            if (!c || c.length < 20) {
-              c = it.excerpt || it.desc || FALLBACK_MESSAGES[platform] || it.title || ''
-            }
-            it.content = c
-          }
-        })
-        rest.forEach(it => {
-          // 剩余条目同样兜底
-          if (!it.content || it.content.length < 20) {
-            it.content = it.excerpt || it.desc || FALLBACK_MESSAGES[platform] || it.title || ''
-          }
-        })
-        return items
+    const r = results[i] || {}
+    if (isDouban) {
+      // 豆瓣：将结构化字段拼成可读文本
+      const parts = []
+      if (r.rate) parts.push(`⭐ ${r.rate}/10`)
+      if (r.douban_directors) parts.push(`导演: ${r.douban_directors}`)
+      if (r.douban_casts) parts.push(`主演: ${r.douban_casts}`)
+      if (r.douban_genre) parts.push(`类型: ${r.douban_genre}`)
+      if (r.douban_year) parts.push(`年份: ${r.douban_year}`)
+      if (r.douban_runtime) parts.push(`片长: ${r.douban_runtime}`)
+      if (r.douban_episodes) parts.push(`集数: ${r.douban_episodes}`)
+      if (r.douban_region) parts.push(`地区: ${r.douban_region}`)
+      if (r.douban_intro) parts.push(r.douban_intro.slice(0, 500))
+      it.content = parts.join('\n\n') || it.excerpt || it.title || FALLBACK_MESSAGES[platform] || ''
+      // 保留结构化字段供前端使用
+      if (r.douban_directors) it.douban_directors = r.douban_directors
+      if (r.douban_casts) it.douban_casts = r.douban_casts
+      if (r.douban_genre) it.douban_genre = r.douban_genre
+      if (r.douban_year) it.douban_year = r.douban_year
+      if (r.douban_runtime) it.douban_runtime = r.douban_runtime
+      if (r.douban_episodes) it.douban_episodes = r.douban_episodes
+      if (r.douban_region) it.douban_region = r.douban_region
+      if (r.rate) it.rate = r.rate
+    } else if (tier === 'link_only') {
+      // LINK_ONLY 平台：结果已经是兜底文案
+      it.content = r.content || FALLBACK_MESSAGES[platform] || ''
+    } else {
+      let c = (r && r.content) || ''
+      // 优先级：抓取到的正文 > excerpt > desc > FALLBACK_MESSAGE > title
+      if (!c || c.length < 20) {
+        c = it.excerpt || it.desc || FALLBACK_MESSAGES[platform] || it.title || ''
       }
+      it.content = c
+    }
+  })
+  rest.forEach(it => {
+    // 剩余条目同样兜底
+    if (!it.content || it.content.length < 20) {
+      const tier = getPlatformTier(platform)
+      if (tier === 'link_only') {
+        it.content = FALLBACK_MESSAGES[platform] || ''
+      } else {
+        it.content = it.excerpt || it.desc || FALLBACK_MESSAGES[platform] || it.title || ''
+      }
+    }
+  })
+  return items
+}
 
 // ============ 合并去重 ============
 function mergePlatformData(platformKey, allData, mergeConfig) {
