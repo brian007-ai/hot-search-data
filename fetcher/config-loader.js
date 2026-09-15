@@ -10,7 +10,27 @@ const CONFIG_PATH = path.resolve(__dirname, '..', '..', 'data-sources.yaml')
 
 function loadConfig() {
   const content = fs.readFileSync(CONFIG_PATH, 'utf8')
-  return yaml.load(content)
+  const config = yaml.load(content)
+  
+  // 解析 platform_parsers 字符串为函数
+  if (config.sources) {
+    config.sources.forEach(source => {
+      if (source.config && source.config.platform_parsers) {
+        const parsedParsers = {}
+        for (const [key, parserStr] of Object.entries(source.config.platform_parsers)) {
+          try {
+            // 字符串转函数：(item, i) => { ... }
+            parsedParsers[key] = new Function('item', 'i', parserStr)
+          } catch (e) {
+            console.warn('解析平台解析器失败 ' + key + ': ' + e.message)
+          }
+        }
+        source.config.platform_parsers = parsedParsers
+      }
+    })
+  }
+  
+  return config
 }
 
 function getEnabledSources(config) {
