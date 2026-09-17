@@ -1,6 +1,6 @@
 {
   "version": "2.3",
-  "update_time": "2026-09-15T03:26:06.826Z",
+  "update_time": "2026-09-17T04:40:29.620Z",
   "platforms": [
     {
       "key": "weibo",
@@ -14,8 +14,8 @@
     },
     {
       "key": "bilibili",
-      "success": true,
-      "count": 50
+      "success": false,
+      "count": 0
     },
     {
       "key": "toutiao",
@@ -30,7 +30,7 @@
     {
       "key": "tieba",
       "success": true,
-      "count": 29
+      "count": 30
     },
     {
       "key": "hupu",
@@ -49,8 +49,8 @@
     },
     {
       "key": "36kr",
-      "success": true,
-      "count": 50
+      "success": false,
+      "count": 0
     },
     {
       "key": "huxiu",
@@ -75,7 +75,7 @@
     {
       "key": "ithome",
       "success": true,
-      "count": 22
+      "count": 23
     },
     {
       "key": "github_trending",
@@ -119,8 +119,8 @@
     },
     {
       "key": "douyin",
-      "success": true,
-      "count": 50
+      "success": false,
+      "count": 0
     }
   ]
 }

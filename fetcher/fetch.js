@@ -734,21 +734,17 @@ const FALLBACK_MESSAGES = {
   v2ex: 'V2EX 热榜无详情页正文。可点击下方「原文链接」在 V2EX 查看完整帖子。',
   arxiv: 'arXiv 论文详情可点击下方「原文链接」在 arXiv 查看完整论文。',
   douban: '豆瓣条目包含评分、导演、演员等结构化信息。如需查看完整影评/简介，请点击下方「原文链接」在豆瓣 App/网页查看。'
-}
+  }
 
-// 无法抓取正文的平台友好提示（面向用户直接展示）
-const FALLBACK_MESSAGES = {
-  weibo: '微博热搜无法直接获取正文（反爬限制）。可点击下方「原文链接」在微博 App/浏览器查看完整内容。',
-  zhihu: '知乎热榜无法直接获取正文（反爬限制）。可点击下方「原文链接」在知乎 App/浏览器查看完整内容。',
-  toutiao: '头条热榜无法直接获取正文（反爬限制）。可点击下方「原文链接」在头条 App/浏览器查看完整内容。',
-  baidu: '百度热搜无法直接获取正文（反爬限制）。可点击下方「原文链接」在百度 App/浏览器查看完整内容。',
-  douyin: '抖音热榜为短视频内容，无文字正文。可点击下方「原文链接」在抖音 App 观看视频。',
-  bilibili: 'B站热榜为视频内容，无文字正文。可点击下方「原文链接」在哔哩哔哩 App/网页观看视频。',
-  weixin: '微信热文需在微信内打开。可点击下方「原文链接」复制后在微信中打开阅读。',
-  github_trending: 'GitHub Trending 无详情页正文。可点击下方「原文链接」在 GitHub 查看项目详情。',
-  v2ex: 'V2EX 热榜无详情页正文。可点击下方「原文链接」在 V2EX 查看完整帖子。',
-  douban: '豆瓣条目包含评分、导演、演员等结构化信息。如需查看完整影评/简介，请点击下方「原文链接」在豆瓣 App/网页查看。'
-}
+  // 平台分级配置
+  const PLATFORM_TIER = {
+    // Tier 1: 可完整抓取正文
+    FULL: ['tieba', 'hupu', 'cctv', 'sspai', 'ithome', '36kr', 'huxiu', 'infoq', 'juejin'],
+    // Tier 2: 仅结构化数据（豆瓣）
+    STRUCTURED: ['douban', 'doubanhot', 'doubantv', 'doubannew', 'doubanscore'],
+    // Tier 3: 无正文/视频/强反爬，只能引导跳转
+    LINK_ONLY: ['weibo', 'zhihu', 'toutiao', 'douyin', 'bilibili', 'weixin', 'github_trending', 'v2ex', 'arxiv']
+  }
 
 // 判断平台分级
 function getPlatformTier(platform) {
