@@ -1,5 +1,5 @@
 /**
- * 今日热搜榜 - 零依赖抓取脚本 v4.0
+ * 今日热搜榜 - 零依赖抓取脚本 v4.1
  * 核心原则：零第三方依赖、只用官方源+RSS+静态兜底、零维护成本
  * 只依赖 Node.js 原生模块：https, http, fs, path, url
  */
@@ -57,7 +57,7 @@ function _cookieHeader(host) {
 }
 
 // ============ 通用请求（原生 http/https，零依赖） ============
-function fetch(url, options = {}) {
+function httpFetch(url, options = {}) {
   const parsed = new URL(url)
   const isHttps = parsed.protocol === 'https:'
   const client = isHttps ? https : http
@@ -81,7 +81,7 @@ function fetch(url, options = {}) {
         const next = res.headers.location.startsWith('http')
           ? res.headers.location
           : new URL(res.headers.location, url).href
-        return resolve(fetch(next, options))
+        return resolve(httpFetch(next, options))
       }
       let data = ''
       res.on('data', chunk => { data += chunk })
@@ -104,6 +104,19 @@ function clean(s) {
   return (s || '').toString().replace(/\s+/g, ' ').trim()
 }
 
+function cleanHtml(s) {
+  if (!s) return ''
+  return s
+    .replace(/<!\[CDATA\[/, '')
+    .replace(/\]\]>/g, '')
+    .replace(/<script[\s\S]*?<\/script>/gi, '')
+    .replace(/<style[\s\S]*?<\/style>/gi, '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&[a-z]+;/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
 function similarity(a, b) {
   const s1 = a.toLowerCase().replace(/[^\w\u4e00-\u9fa5]/g, '')
   const s2 = b.toLowerCase().replace(/[^\w\u4e00-\u9fa5]/g, '')
@@ -124,6 +137,35 @@ function similarity(a, b) {
 function writeFile(filepath, content) {
   fs.mkdirSync(path.dirname(filepath), { recursive: true })
   fs.writeFileSync(filepath, content, 'utf8')
+}
+
+// ============ RSS 解析器（修复 regex 转义） ============
+function parseRss(xml) {
+  const items = []
+  const itemRegex = /<item[\s\S]*?<\/item>/gi
+  let m
+  while ((m = itemRegex.exec(xml)) && items.length < 50) {
+    const itemXml = m[0]
+    const getTag = (tag) => {
+      const startMarker = '<' + tag
+      const endMarker = '</' + tag + '>'
+      const startIdx = itemXml.indexOf(startMarker)
+      if (startIdx === -1) return ''
+      const afterTag = itemXml.indexOf('>', startIdx)
+      if (afterTag === -1) return ''
+      const contentStart = afterTag + 1
+      const endIdx = itemXml.indexOf(endMarker, contentStart)
+      if (endIdx === -1) return ''
+      return cleanHtml(itemXml.substring(contentStart, endIdx))
+    }
+    items.push({
+      title: getTag('title'),
+      desc: getTag('description'),
+      url: getTag('link'),
+      pubDate: getTag('pubDate'),
+    })
+  }
+  return items.filter(it => it.title)
 }
 
 // ============ 兜底消息 ============
@@ -150,17 +192,6 @@ const FALLBACK_MESSAGES = {
 }
 
 // ============ 正文提取 ============
-function cleanContent(s) {
-  if (!s) return ''
-  return s
-    .replace(/<script[\s\S]*?<\/script>/gi, '')
-    .replace(/<style[\s\S]*?<\/style>/gi, '')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/&[a-z]+;/gi, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-}
-
 function extractContentFromHtml(html) {
   if (!html) return ''
   let content = html.replace(/<script[\s\S]*?<\/script>/gi, '')
@@ -201,7 +232,7 @@ async function fetchDoubanStructured(subjectId) {
   if (!subjectId) return {}
   const url = `https://api.douban.com/v2/movie/subject/${subjectId}`
   try {
-    const r = await fetch(url, { timeout: 5000 })
+    const r = await httpFetch(url, { timeout: 5000 })
     const j = JSON.parse(r.data)
     return {
       douban_directors: (j.directors || []).map(d => d.name).join(', '),
@@ -231,7 +262,7 @@ async function enrichContent(platform, items) {
     if (SKIP_URL_PLATFORMS.includes(platform)) return { content: FALLBACK_MESSAGES[platform] || '' }
     if (!it.url) return { content: FALLBACK_MESSAGES[platform] || '' }
     try {
-      const r = await fetch(it.url, { timeout: 10000 })
+      const r = await httpFetch(it.url, { timeout: 10000 })
       let content
       if (platform === 'cctv') {
         content = extractCctvContent(r.data || '')
@@ -239,7 +270,7 @@ async function enrichContent(platform, items) {
         content = extractContentFromHtml(r.data || '')
       }
       content = content.slice(0, 5000)
-      if (CLEAN_PLATFORMS.includes(platform) && content) content = cleanContent(content)
+      if (CLEAN_PLATFORMS.includes(platform) && content) content = cleanHtml(content)
       return { content }
     } catch (_) {
       return { content: FALLBACK_MESSAGES[platform] || '' }
@@ -355,28 +386,19 @@ const SOURCE_FETCHERS = {
   rss: async (source) => {
     const { url } = source.config
     try {
-      const r = await fetch(url, { timeout: 15000 })
-      const xml = r.data
-      const items = []
-      const itemRegex = /<item[\s\S]*?<\/item>/gi
-      let m
-      while ((m = itemRegex.exec(xml)) && items.length < 50) {
-        const itemXml = m[0]
-        const getTag = (tag) => {
-          const match = itemXml.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`))
-          return match ? clean(match[1]) : ''
-        }
-        items.push({
-          title: getTag('title'),
-          desc: getTag('description'),
-          url: getTag('link'),
-          pubDate: getTag('pubDate'),
-        })
+      const r = await httpFetch(url, { timeout: 15000 })
+      const items = parseRss(r.data)
+      // 按 platforms 字段包装为对象返回，与 html_scrape/static 格式一致
+      const platforms = source.platforms || []
+      if (!platforms.length) return {}
+      const result = {}
+      for (const p of platforms) {
+        result[p] = items
       }
-      return items.filter(it => it.title)
+      return result
     } catch (e) {
       console.error(`  ✗ ${source.id}: ${e.message}`)
-      return []
+      return {}
     }
   },
 
@@ -384,9 +406,15 @@ const SOURCE_FETCHERS = {
     const { api_url, parser } = source.config
     try {
       if (!api_url) return []
-      const r = await fetch(api_url, { timeout: 15000 })
+      const r = await httpFetch(api_url, { timeout: 15000 })
       const j = JSON.parse(r.data)
-      const list = j.data || j.list || j.result || []
+
+      // 兼容多种 API 返回格式
+      const list = j.data || j.list || j.result || j
+      if (!Array.isArray(list)) {
+        console.error(`  ✗ ${source.id}: 返回格式非数组`)
+        return []
+      }
 
       if (parser === 'tieba_json') {
         return list.map((it, i) => ({
@@ -395,8 +423,8 @@ const SOURCE_FETCHERS = {
           desc: clean(it.topic_desc || it.abstract || ''),
           pic: it.topic_pic || '',
           hot: it.discuss_num ? String(it.discuss_num) : '',
-          url: clean((it.topic_url || '').replace(/&/g, '&')),
-          mobilUrl: clean((it.topic_url || '').replace(/&/g, '&'))
+          url: clean((it.topic_url || '').replace(/&amp;/g, '&')),
+          mobilUrl: clean((it.topic_url || '').replace(/&amp;/g, '&'))
         })).filter(it => it.title)
       }
 
@@ -412,7 +440,6 @@ const SOURCE_FETCHERS = {
         })).filter(it => it.title)
       }
 
-      if (parser === 'hupu_html' || parser === 'ithome_html') return []
       return []
     } catch (e) {
       console.error(`  ✗ ${source.id}: ${e.message}`)
@@ -444,7 +471,7 @@ const SOURCE_FETCHERS = {
 
 // ============ 主流程 ============
 async function main() {
-  console.log('=== 开始抓取热搜数据 (零依赖版 v4.0) ===')
+  console.log('=== 开始抓取热搜数据 (零依赖版 v4.1) ===')
   console.log('Time:', new Date().toISOString())
   console.log('Output dir:', OUTPUT_DIR)
   fs.mkdirSync(OUTPUT_DIR, { recursive: true })
@@ -476,7 +503,7 @@ async function main() {
   }
 
   const finalResults = {}
-  const meta = { version: '4.0', update_time: new Date().toISOString(), platforms: [] }
+  const meta = { version: '4.1', update_time: new Date().toISOString(), platforms: [] }
 
   for (const platform of platforms) {
     const key = platform.key
