@@ -1,35 +1,16 @@
 /**
- * data-sources.yaml 解析器（云端 Node.js 版）
- * 用于 fetcher/fetch.js 读取配置驱动抓取
+ * data-sources.yaml 解析器 - 零依赖版
+ * 使用自建 yaml-parser.js 解析 YAML，无需 js-yaml
  */
 const fs = require('fs')
 const path = require('path')
-const yaml = require('js-yaml')
+const { parseYaml } = require('./yaml-parser')
 
 const CONFIG_PATH = path.resolve(__dirname, '..', '..', 'data-sources.yaml')
 
 function loadConfig() {
   const content = fs.readFileSync(CONFIG_PATH, 'utf8')
-  const config = yaml.load(content)
-  
-  // 解析 platform_parsers 字符串为函数
-  if (config.sources) {
-    config.sources.forEach(source => {
-      if (source.config && source.config.platform_parsers) {
-        const parsedParsers = {}
-        for (const [key, parserStr] of Object.entries(source.config.platform_parsers)) {
-          try {
-            // 字符串转函数：(item, i) => { ... }
-            parsedParsers[key] = new Function('item', 'i', parserStr)
-          } catch (e) {
-            console.warn('解析平台解析器失败 ' + key + ': ' + e.message)
-          }
-        }
-        source.config.platform_parsers = parsedParsers
-      }
-    })
-  }
-  
+  const config = parseYaml(content)
   return config
 }
 
@@ -41,10 +22,7 @@ function getPlatforms(config) {
   const result = []
   for (const group of config.platforms || []) {
     for (const item of group.items || []) {
-      result.push({
-        ...item,
-        group: group.group
-      })
+      result.push({ ...item, group: group.group })
     }
   }
   return result
@@ -53,63 +31,9 @@ function getPlatforms(config) {
 function getSourcesForPlatform(config, platformKey) {
   const platform = getPlatforms(config).find(p => p.key === platformKey)
   if (!platform || !platform.source_priority) return []
-
   const sources = getEnabledSources(config)
   const sourceMap = Object.fromEntries(sources.map(s => [s.id, s]))
-
-  return platform.source_priority
-    .map(id => sourceMap[id])
-    .filter(Boolean)
-}
-
-function getGlobalConfig(config) {
-  return config.global || {}
-}
-
-// 解析平台专用解析器字符串为函数
-function parsePlatformParsers(config) {
-  for (const source of config.sources || []) {
-    if (source.config && source.config.platform_parsers) {
-      const parsers = source.config.platform_parsers
-      for (const [apiType, fnStr] of Object.entries(parsers)) {
-        try {
-          // 使用 eval 将字符串转为函数
-          source.config.platform_parsers[apiType] = eval('(' + fnStr + ')')
-        } catch (e) {
-          console.error(`解析解析器失败 ${source.id}.${apiType}:`, e.message)
-        }
-      }
-    }
-  }
-}
-
-function getEnabledSources(config) {
-  return (config.sources || []).filter(s => s.enabled !== false).sort((a, b) => (a.priority || 999) - (b.priority || 999))
-}
-
-function getPlatforms(config) {
-  const result = []
-  for (const group of config.platforms || []) {
-    for (const item of group.items || []) {
-      result.push({
-        ...item,
-        group: group.group
-      })
-    }
-  }
-  return result
-}
-
-function getSourcesForPlatform(config, platformKey) {
-  const platform = getPlatforms(config).find(p => p.key === platformKey)
-  if (!platform || !platform.source_priority) return []
-
-  const sources = getEnabledSources(config)
-  const sourceMap = Object.fromEntries(sources.map(s => [s.id, s]))
-
-  return platform.source_priority
-    .map(id => sourceMap[id])
-    .filter(Boolean)
+  return platform.source_priority.map(id => sourceMap[id]).filter(Boolean)
 }
 
 function getGlobalConfig(config) {
@@ -121,6 +45,5 @@ module.exports = {
   getEnabledSources,
   getPlatforms,
   getSourcesForPlatform,
-  getGlobalConfig,
-  parsePlatformParsers
+  getGlobalConfig
 }

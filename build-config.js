@@ -1,10 +1,11 @@
 // build-config.js
 // 将 data-sources.yaml 转为 data-sources.json + data-sources.js，供小程序前端引用
 // 用法：node build-config.js
+// 零依赖版 - 使用自建 yaml-parser.js
 
 const fs = require('fs')
 const path = require('path')
-const yaml = require('js-yaml')
+const { parseYaml } = require('./fetcher/yaml-parser')
 
 const SRC = path.resolve(__dirname, '..', 'data-sources.yaml')
 const DST_JSON = path.resolve(__dirname, '..', '小程序前端源码', 'utils', 'data-sources.json')
@@ -12,7 +13,7 @@ const DST_JS = path.resolve(__dirname, '..', '小程序前端源码', 'utils', '
 
 try {
   const content = fs.readFileSync(SRC, 'utf8')
-  const config = yaml.load(content)
+  const config = parseYaml(content)
   
   // 仅输出前端需要的字段，减小体积
   const frontendConfig = {
@@ -34,7 +35,6 @@ try {
   fs.writeFileSync(DST_JSON, JSON.stringify(frontendConfig, null, 2), 'utf8')
   
   // 写入 JS 模块版本（小程序可直接 require）
-  // 使用数组拼接避免模板字符串缩进问题
   const jsonStr = JSON.stringify(frontendConfig, null, 2)
   const jsContent = [
     '// 今日热搜榜 - 数据源配置（前端可 require 版）',

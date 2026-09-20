@@ -1,7 +1,7 @@
 /**
- * 今日热搜榜 - 配置驱动抓取脚本 v3.0 (纯零依赖版)
- * 只使用：RSS、HTML抓取、静态文件
- * 零第三方API、零API Key、零额度限制、零维护成本
+ * 今日热搜榜 - 零依赖抓取脚本 v4.0
+ * 核心原则：零第三方依赖、只用官方源+RSS+静态兜底、零维护成本
+ * 只依赖 Node.js 原生模块：https, http, fs, path, url
  */
 
 const https = require('https')
@@ -9,19 +9,31 @@ const http = require('http')
 const fs = require('fs')
 const path = require('path')
 const { URL } = require('url')
-const { loadConfig, getEnabledSources, getPlatforms, getSourcesForPlatform, getGlobalConfig } = require('./config-loader')
+const { loadConfig, getEnabledSources, getPlatforms, getGlobalConfig } = require('./config-loader')
 
-// ============ 配置 ============
+// ============ 配置加载 ============
 const config = loadConfig()
 const globalConfig = getGlobalConfig(config)
 const OUTPUT_DIR = path.resolve(__dirname, '..', 'data')
-const DETAIL_TOP_N = globalConfig.detail_top_n || 50
-const DETAIL_CONCURRENCY = globalConfig.concurrency || 5
-const DETAIL_TIMEOUT = globalConfig.timeout || 10000
-const DETAIL_RETRY = 2
-const CONTENT_MAX_LEN = globalConfig.content_max_len || 6000
 
-// ============ Cookie Jar ============
+// ============ 常量 ============
+const SKIP_URL_PLATFORMS = ['github_trending', 'arxiv', 'v2ex']
+const CLEAN_PLATFORMS = ['tieba', 'hupu', 'ithome', 'sspai']
+const DOUBAN_PLATFORMS = ['douban', 'doubanhot', 'doubantv', 'doubannew', 'doubanscore']
+
+const PLATFORM_TIER = {
+  FULL: ['tieba', 'hupu', 'ithome', 'sspai', 'arxiv'],
+  STRUCTURED: DOUBAN_PLATFORMS,
+  LINK_ONLY: ['weibo', 'zhihu', 'toutiao', 'douyin', 'bilibili', 'weixin', 'github_trending', 'v2ex', 'cctv', 'huxiu', 'infoq', 'baidu']
+}
+
+function getPlatformTier(platform) {
+  if (PLATFORM_TIER.FULL.includes(platform)) return 'full'
+  if (PLATFORM_TIER.STRUCTURED.includes(platform)) return 'structured'
+  return 'link_only'
+}
+
+// ============ Cookie 管理 ============
 const COOKIE_JAR = Object.create(null)
 function _saveCookies(host, setCookieHeaders) {
   if (!setCookieHeaders || !setCookieHeaders.length) return
@@ -44,13 +56,12 @@ function _cookieHeader(host) {
   return keys.map(k => k + '=' + jar[k]).join('; ')
 }
 
-// ============ 通用请求 ============
+// ============ 通用请求（原生 http/https，零依赖） ============
 function fetch(url, options = {}) {
   const parsed = new URL(url)
   const isHttps = parsed.protocol === 'https:'
   const client = isHttps ? https : http
   const host = parsed.host
-  const extraHeaders = options.headers || {}
   return new Promise((resolve, reject) => {
     const req = client.request({
       hostname: parsed.hostname,
@@ -58,10 +69,10 @@ function fetch(url, options = {}) {
       path: parsed.pathname + parsed.search,
       method: options.method || 'GET',
       headers: Object.assign({
-        'User-Agent': globalConfig.default_headers?.['User-Agent'] || 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36',
+        'User-Agent': globalConfig.default_headers?.['User-Agent'] || 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         'Accept': 'application/json, text/html, */*',
         'Accept-Language': 'zh-CN,zh;q=0.9'
-      }, extraHeaders, _cookieHeader(host) ? { Cookie: _cookieHeader(host) } : {}),
+      }, options.headers || {}, _cookieHeader(host) ? { Cookie: _cookieHeader(host) } : {}),
       timeout: options.timeout || 15000,
       rejectUnauthorized: false
     }, res => {
@@ -92,11 +103,7 @@ function fetch(url, options = {}) {
 function clean(s) {
   return (s || '').toString().replace(/\s+/g, ' ').trim()
 }
-function isMostlyEnglish(s) {
-  if (!s || s.length < 20) return false
-  const ascii = (s.match(/[\x00-\x7f]/g) || []).length
-  return ascii / s.length > 0.7
-}
+
 function similarity(a, b) {
   const s1 = a.toLowerCase().replace(/[^\w\u4e00-\u9fa5]/g, '')
   const s2 = b.toLowerCase().replace(/[^\w\u4e00-\u9fa5]/g, '')
@@ -110,19 +117,16 @@ function similarity(a, b) {
       while (i + k < s1.length && j + k < s2.length && s1[i + k] === s2[j + k]) k++
       if (k > maxLen) maxLen = k
     }
-  return maxLen / Math.max(s1.length, s2.length)
+    return maxLen / Math.max(s1.length, s2.length)
+  }
 }
 
-// ============ 写文件 ============
 function writeFile(filepath, content) {
   fs.mkdirSync(path.dirname(filepath), { recursive: true })
   fs.writeFileSync(filepath, content, 'utf8')
 }
 
-// ============ 正文提取工具 ============
-const SKIP_URL_PLATFORMS = ['github_trending', 'arxiv', 'v2ex']
-const CLEAN_PLATFORMS = ['tieba', 'hupu', 'cctv', 'sspai', 'ithome', '36kr', 'huxiu', 'infoq', 'juejin']
-
+// ============ 兜底消息 ============
 const FALLBACK_MESSAGES = {
   weibo: '微博热搜无法直接获取正文（反爬限制）。可点击下方「原文链接」在微博 App/浏览器查看完整内容。',
   zhihu: '知乎热榜无法直接获取正文（反爬限制）。可点击下方「原文链接」在知乎 App/浏览器查看完整内容。',
@@ -134,34 +138,32 @@ const FALLBACK_MESSAGES = {
   github_trending: 'GitHub Trending 无详情页正文。可点击下方「原文链接」在 GitHub 查看项目详情。',
   v2ex: 'V2EX 热榜无详情页正文。可点击下方「原文链接」在 V2EX 查看完整帖子。',
   arxiv: 'arXiv 论文详情可点击下方「原文链接」在 arXiv 查看完整论文。',
-  douban: '豆瓣条目包含评分、导演、演员等结构化信息。如需查看完整影评/简介，请点击下方「原文链接」在豆瓣 App/网页查看。'
+  douban: '豆瓣条目包含评分、导演、演员等结构化信息。如需查看完整影评/简介，请点击下方「原文链接」在豆瓣 App/网页查看。',
+  cctv: '央视新闻详情需在官网查看。可点击下方「原文链接」查看完整内容。',
+  huxiu: '虎嗅文章需在官网查看。可点击下方「原文链接」查看完整内容。',
+  infoq: 'InfoQ 文章需在官网查看。可点击下方「原文链接」查看完整内容。',
+  ithome: 'IT之家文章需在官网查看。可点击下方「原文链接」查看完整内容。',
+  juejin: '掘金文章需在官网查看。可点击下方「原文链接」查看完整内容。',
+  sspai: '少数派文章需在官网查看。可点击下方「原文链接」查看完整内容。',
+  tieba: '贴吧帖子需在官网查看。可点击下方「原文链接」查看完整内容。',
+  hupu: '虎扑帖子需在官网查看。可点击下方「原文链接」查看完整内容。',
 }
 
-// 平台分级配置
-const PLATFORM_TIER = {
-  FULL: ['tieba', 'hupu', 'cctv', 'sspai', 'ithome', '36kr', 'huxiu', 'infoq', 'juejin'],
-  STRUCTURED: ['douban', 'doubanhot', 'doubantv', 'doubannew', 'doubanscore'],
-  LINK_ONLY: ['weibo', 'zhihu', 'toutiao', 'douyin', 'bilibili', 'weixin', 'github_trending', 'v2ex', 'arxiv']
-}
-function getPlatformTier(platform) {
-  if (PLATFORM_TIER.FULL.includes(platform)) return 'full'
-  if (PLATFORM_TIER.STRUCTURED.includes(platform)) return 'structured'
-  if (PLATFORM_TIER.LINK_ONLY.includes(platform)) return 'link_only'
-  return 'full'
-}
-
-// 带重试的 fetch
-async function fetchWithRetry(url, options = {}, retries = DETAIL_RETRY) {
-  for (let i = 0; i <= retries; i++) {
-    try { return await fetch(url, options) }
-    catch (e) { if (i === retries) throw e; await new Promise(r => setTimeout(r, 500 * (i + 1))) }
-  }
+// ============ 正文提取 ============
+function cleanContent(s) {
+  if (!s) return ''
+  return s
+    .replace(/<script[\s\S]*?<\/script>/gi, '')
+    .replace(/<style[\s\S]*?<\/style>/gi, '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&[a-z]+;/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
 }
 
-function extractContentFromHtml(html, platform) {
+function extractContentFromHtml(html) {
   if (!html) return ''
-  let content = ''
-  content = html.replace(/<script[\s\S]*?<\/script>/gi, '')
+  let content = html.replace(/<script[\s\S]*?<\/script>/gi, '')
   content = content.replace(/<style[\s\S]*?<\/style>/gi, '')
   const articleMatch = content.match(/<article[\s\S]*?<\/article>/i)
   if (articleMatch) content = articleMatch[0]
@@ -172,7 +174,7 @@ function extractContentFromHtml(html, platform) {
   content = content.replace(/<[^>]+>/g, ' ')
   content = content.replace(/&[a-z]+;/gi, ' ')
   content = content.replace(/\s+/g, ' ').trim()
-  return content.slice(0, CONTENT_MAX_LEN)
+  return content.slice(0, 5000)
 }
 
 function extractCctvContent(html) {
@@ -182,11 +184,17 @@ function extractCctvContent(html) {
     try {
       const data = JSON.parse(match[1])
       return data.content || data.body || ''
-    } catch { }
+    } catch {}
   }
   const match2 = html.match(/<div class="content">([\s\S]*?)<\/div>/i)
   if (match2) return clean(match2[1])
   return ''
+}
+
+function extractDoubanSubjectId(url) {
+  if (!url) return null
+  const match = url.match(/subject\/(\d+)/)
+  return match ? match[1] : null
 }
 
 async function fetchDoubanStructured(subjectId) {
@@ -196,54 +204,42 @@ async function fetchDoubanStructured(subjectId) {
     const r = await fetch(url, { timeout: 5000 })
     const j = JSON.parse(r.data)
     return {
-      douban_directors: j.directors?.map(d => d.name).join(', ') || '',
-      douban_casts: j.casts?.map(c => c.name).slice(0, 5).join(', ') || '',
-      douban_genre: j.genres?.join(', ') || '',
+      douban_directors: (j.directors || []).map(d => d.name).join(', '),
+      douban_casts: (j.casts || []).map(c => c.name).slice(0, 5).join(', '),
+      douban_genre: (j.genres || []).join(', '),
       douban_year: j.year || '',
-      douban_runtime: j.durations?.[0] || '',
+      douban_runtime: (j.durations || [])[0] || '',
       douban_episodes: j.episodes_count || '',
-      douban_region: j.countries?.join(', ') || '',
+      douban_region: (j.countries || []).join(', '),
       douban_intro: j.summary || '',
       rate: j.rating?.average || ''
     }
   } catch { return {} }
 }
 
-function extractDoubanSubjectId(url) {
-  if (!url) return null
-  const match = url.match(/subject\/(\d+)/)
-  return match ? match[1] : null
-}
-
 async function enrichContent(platform, items) {
-  const top = items.slice(0, DETAIL_TOP_N)
-  const rest = items.slice(DETAIL_TOP_N)
-  const isDouban = ['douban', 'doubanhot', 'doubantv', 'doubannew', 'doubanscore'].includes(platform)
-  const skipUrl = SKIP_URL_PLATFORMS.includes(platform)
-  const needClean = CLEAN_PLATFORMS.includes(platform)
-  const tier = getPlatformTier(platform)
+  const top = items.slice(0, 15)
+  const rest = items.slice(15)
 
-  const results = await mapWithConcurrency(top, DETAIL_CONCURRENCY, async (it) => {
-    if (isDouban) {
+  const results = await mapWithConcurrency(top, 3, async (it) => {
+    if (DOUBAN_PLATFORMS.includes(platform)) {
       const sid = (it && it.douban_id) || extractDoubanSubjectId(it.url)
       const info = await fetchDoubanStructured(sid)
       if (!info.rate && it && it.rate) info.rate = it.rate
-      const body = (info.douban_intro || '').slice(0, CONTENT_MAX_LEN)
-      delete info.douban_intro
-      return Object.assign({ content: body }, info)
+      return { content: (info.douban_intro || '').slice(0, 5000), ...info }
     }
-    if (skipUrl) return { content: FALLBACK_MESSAGES[platform] || '' }
+    if (SKIP_URL_PLATFORMS.includes(platform)) return { content: FALLBACK_MESSAGES[platform] || '' }
     if (!it.url) return { content: FALLBACK_MESSAGES[platform] || '' }
     try {
-      const r = await fetchWithRetry(it.url, { timeout: DETAIL_TIMEOUT })
+      const r = await fetch(it.url, { timeout: 10000 })
       let content
       if (platform === 'cctv') {
         content = extractCctvContent(r.data || '')
       } else {
-        content = extractContentFromHtml(r.data || '', platform)
+        content = extractContentFromHtml(r.data || '')
       }
-      content = content.slice(0, CONTENT_MAX_LEN)
-      if (needClean && content) content = cleanContent(content)
+      content = content.slice(0, 5000)
+      if (CLEAN_PLATFORMS.includes(platform) && content) content = cleanContent(content)
       return { content }
     } catch (_) {
       return { content: FALLBACK_MESSAGES[platform] || '' }
@@ -252,9 +248,9 @@ async function enrichContent(platform, items) {
 
   top.forEach((it, i) => {
     const r = results[i] || {}
-    if (isDouban) {
-      if (it.douban_intro) it.content = it.douban_intro.slice(0, CONTENT_MAX_LEN)
-      else if (r.douban_intro) it.content = r.douban_intro.slice(0, CONTENT_MAX_LEN)
+    if (DOUBAN_PLATFORMS.includes(platform)) {
+      if (it.douban_intro) it.content = it.douban_intro.slice(0, 5000)
+      else if (r.douban_intro) it.content = r.douban_intro.slice(0, 5000)
       else it.content = it.excerpt || it.title || FALLBACK_MESSAGES[platform] || ''
       if (r.douban_directors) it.douban_directors = r.douban_directors
       if (r.douban_casts) it.douban_casts = r.douban_casts
@@ -276,22 +272,15 @@ async function enrichContent(platform, items) {
   return items
 }
 
-function cleanContent(s) {
-  if (!s) return ''
-  return s
-    .replace(/<script[\s\S]*?<\/script>/gi, '')
-    .replace(/<style[\s\S]*?<\/style>/gi, '')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/&[a-z]+;/gi, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-}
-
+// ============ 并发控制 ============
 async function mapWithConcurrency(arr, concurrency, fn) {
   const results = []
   const executing = []
   for (const item of arr) {
-    const p = fn(item).then(r => { results.push(r); executing.splice(executing.indexOf(p), 1) })
+    const p = fn(item).then(r => {
+      results.push(r)
+      executing.splice(executing.indexOf(p), 1)
+    })
     results.push(p)
     executing.push(p)
     if (executing.length >= concurrency) {
@@ -301,6 +290,7 @@ async function mapWithConcurrency(arr, concurrency, fn) {
   return Promise.all(results)
 }
 
+// ============ 合并去重 ============
 function mergePlatformData(platformKey, allData, mergeConfig) {
   const items = []
   for (const sourceItems of Object.values(allData)) items.push(...sourceItems)
@@ -320,6 +310,7 @@ function mergePlatformData(platformKey, allData, mergeConfig) {
   return items.slice(0, max_per_platform)
 }
 
+// ============ 归一化输出 ============
 function norm(items, platform) {
   return (items || []).map((it, i) => {
     const rank = it.index || i + 1
@@ -359,20 +350,12 @@ function tagsFor(hot, rank) {
   return tags
 }
 
-function tagCls(text) {
-  const t = (text || '').toString()
-  if (t === '爆') return 'tag-boom'
-  if (t === '热' || t === '沸' || t === '热议') return 'tag-hot'
-  if (t === '新') return 'tag-new'
-  return 'tag-plain'
-}
-
 // ============ 各类型源抓取器 ============
 const SOURCE_FETCHERS = {
   rss: async (source) => {
-    const { url, field_mapping } = source.config
+    const { url } = source.config
     try {
-      const r = await fetch(url, { timeout: globalConfig.timeout || 15000 })
+      const r = await fetch(url, { timeout: 15000 })
       const xml = r.data
       const items = []
       const itemRegex = /<item[\s\S]*?<\/item>/gi
@@ -380,7 +363,7 @@ const SOURCE_FETCHERS = {
       while ((m = itemRegex.exec(xml)) && items.length < 50) {
         const itemXml = m[0]
         const getTag = (tag) => {
-          const match = itemXml.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\/${tag}>`))
+          const match = itemXml.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`))
           return match ? clean(match[1]) : ''
         }
         items.push({
@@ -401,10 +384,10 @@ const SOURCE_FETCHERS = {
     const { api_url, parser } = source.config
     try {
       if (!api_url) return []
-      const r = await fetch(api_url, { timeout: globalConfig.timeout || 15000 })
+      const r = await fetch(api_url, { timeout: 15000 })
       const j = JSON.parse(r.data)
       const list = j.data || j.list || j.result || []
-      
+
       if (parser === 'tieba_json') {
         return list.map((it, i) => ({
           index: i + 1,
@@ -416,7 +399,7 @@ const SOURCE_FETCHERS = {
           mobilUrl: clean((it.topic_url || '').replace(/&/g, '&'))
         })).filter(it => it.title)
       }
-      
+
       if (parser === 'sspai_json') {
         return list.map((it, i) => ({
           index: i + 1,
@@ -428,10 +411,8 @@ const SOURCE_FETCHERS = {
           mobilUrl: it.permalink || `https://sspai.com/post/${it.id}`
         })).filter(it => it.title)
       }
-      
-      if (parser === 'hupu_html') return []
-      if (parser === 'ithome_html') return []
-      
+
+      if (parser === 'hupu_html' || parser === 'ithome_html') return []
       return []
     } catch (e) {
       console.error(`  ✗ ${source.id}: ${e.message}`)
@@ -463,21 +444,20 @@ const SOURCE_FETCHERS = {
 
 // ============ 主流程 ============
 async function main() {
-  console.log('=== 开始抓取热搜数据 (零依赖版 v3.0) ===')
+  console.log('=== 开始抓取热搜数据 (零依赖版 v4.0) ===')
   console.log('Time:', new Date().toISOString())
   console.log('Output dir:', OUTPUT_DIR)
   fs.mkdirSync(OUTPUT_DIR, { recursive: true })
 
-  const sources = getEnabledSources(config)
+  const SOURCES = getEnabledSources(config)
   const platforms = getPlatforms(config)
-  const mergeConfig = config.merge || {}
 
-  console.log('启用源数:', sources.length)
+  console.log('启用源数:', SOURCES.length)
   console.log('平台数:', platforms.length)
 
   const platformData = {}
 
-  for (const source of sources) {
+  for (const source of SOURCES) {
     console.log('\n抓取源:', source.id, '(', source.type, ')')
     try {
       const fetcher = SOURCE_FETCHERS[source.type]
@@ -496,13 +476,13 @@ async function main() {
   }
 
   const finalResults = {}
-  const meta = { version: '3.0', update_time: new Date().toISOString(), platforms: [] }
+  const meta = { version: '4.0', update_time: new Date().toISOString(), platforms: [] }
 
   for (const platform of platforms) {
     const key = platform.key
     const sourceData = platformData[key] || {}
     console.log(`\n合并去重 ${key}...`)
-    
+
     let merged = mergePlatformData(key, sourceData, platform.merge_config || {})
     console.log(`  合并后: ${merged.length} 条`)
 
@@ -510,7 +490,7 @@ async function main() {
       console.log(`正文抓取 ${key}...`)
       await enrichContent(key, merged)
       const withContent = merged.filter(x => x.content && x.content.length >= 20).length
-      const isDouban = ['douban', 'doubanhot', 'doubantv', 'doubannew', 'doubanscore'].includes(key)
+      const isDouban = DOUBAN_PLATFORMS.includes(key)
       const infoFields = merged.filter(x => x.douban_directors || x.douban_casts).length
       console.log(`  ✓ ${key} 正文已填充（${withContent}/${merged.length} 条有正文）${isDouban ? '（结构化 ' + infoFields + '/' + merged.length + ' 条）' : ''}`)
     } catch (err) {
@@ -537,4 +517,4 @@ async function main() {
   console.log('OK:', meta.platforms.filter(p => p.success && p.count > 0).length, '/', meta.platforms.length)
 }
 
-}
+main().catch(console.error)
