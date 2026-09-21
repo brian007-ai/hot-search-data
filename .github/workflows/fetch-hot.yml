@@ -9,9 +9,9 @@ name: fetch-hot
 
 on:
   schedule:
-    - cron: '0 */15 * * *'   # 0, 15, 30, 45
-    - cron: '1 */15 * * *'   # 1, 16, 31, 46
-    - cron: '2 */15 * * *'   # 2, 17, 32, 47
+    - cron: '0 * * * *'   # 每小时整点
+    - cron: '1 * * * *'   # 错峰 1 分钟
+    - cron: '2 * * * *'   # 错峰 2 分钟
   workflow_dispatch:          # 支持手动触发
 
 permissions:
