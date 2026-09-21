@@ -23,12 +23,12 @@ concurrency:
 
 jobs:
   fetch:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04    # 固定版本, 避免 2026-10-19 ubuntu-latest 迁移到 26.04
     timeout-minutes: 10
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5        # v5 用 Node 24
         with:
           fetch-depth: 1
 
