@@ -3,7 +3,7 @@
 """
 今日热搜榜 - 统一采集脚本 (档位 0+1)
 
-- RSS 官方源 (36kr/juejin/v2ex/sspai/arxiv/hn)
+- RSS 官方源 (36kr/juejin/sspai/arxiv/hn)
 - JSON API 源 (zhihu/bilibili/weibo/toutiao/tieba)
 - HTML 抓取源 (hupu/ithome)
 
@@ -111,7 +111,6 @@ RSS_SOURCES = [
     ("36kr",     "https://36kr.com/feed",                        "tech"),
     ("juejin",   "https://juejin.cn/rss",                        "tech"),
     ("sspai",    "https://sspai.com/feed",                       "tech"),
-    ("v2ex",     "https://www.v2ex.com/index.xml",               "tech"),
     ("arxiv_ai", "http://export.arxiv.org/rss/cs.AI",             "tech"),
     ("arxiv_cl", "http://export.arxiv.org/rss/cs.CL",             "tech"),
     ("arxiv_cv", "http://export.arxiv.org/rss/cs.CV",             "tech"),
