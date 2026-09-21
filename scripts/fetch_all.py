@@ -4,7 +4,7 @@
 今日热搜榜 - 统一采集脚本 (档位 0+1)
 
 - RSS 官方源 (36kr/juejin/v2ex/sspai/arxiv/hn)
-- JSON API 源 (baidu/zhihu/bilibili/weibo/toutiao/tieba)
+- JSON API 源 (zhihu/bilibili/weibo/toutiao/tieba)
 - HTML 抓取源 (hupu/ithome)
 
 特性:
@@ -122,8 +122,6 @@ RSS_SOURCES = [
 # ---- JSON API 源 (直连官方, 加 UA) ----
 JSON_SOURCES = [
     # (name, url, parser_fn_name, category, headers_extra)
-    ("baidu",    "https://top.baidu.com/api/board?platform=wise&tab=realtime",
-     "baidu_parser",  "news", {"Referer": "https://top.baidu.com/"}),
 
     ("zhihu",    "https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total?limit=50",
      "zhihu_parser",  "news", {"Referer": "https://www.zhihu.com/"}),
@@ -157,32 +155,6 @@ def safe_get(d, *keys, default=None):
             return default
     return d
 
-
-def baidu_parser(data):
-    """百度热搜 (2026-09 实测结构, 两层嵌套):
-    data.cards[0].content[0].content = [{word, url, isTop, hotTag, ...}, ...]
-    无 hotScore 字段, 热度设为 0 (标题即关键词)
-    """
-    items = []
-    try:
-        cards = data.get("data", {}).get("cards", [])
-        for card in cards:
-            outer_content = card.get("content", []) or []
-            for block in outer_content:
-                # block 可能直接是 item (word 在 block 上) 或再嵌套一层
-                if "word" in block:
-                    inner_list = [block]
-                else:
-                    inner_list = block.get("content", []) or []
-                for x in inner_list:
-                    word = x.get("word") or x.get("query")
-                    hot = x.get("hotScore") or x.get("hot") or 0
-                    if word:
-                        url = x.get("url") or f"https://www.baidu.com/s?wd={word}"
-                        items.append((word, hot, url))
-    except Exception as e:
-        print(f"[baidu] parse error: {e}")
-    return items
 
 
 def zhihu_parser(data):
@@ -267,7 +239,6 @@ def tieba_parser(data):
 
 
 PARSERS = {
-    "baidu_parser":    baidu_parser,
     "zhihu_parser":    zhihu_parser,
     "bilibili_parser": bilibili_parser,
     "weibo_parser":    weibo_parser,
