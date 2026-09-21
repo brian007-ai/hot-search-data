@@ -108,7 +108,8 @@ def hn_heat_from_summary(summary):
 
 # ---- RSS 官方源 (零成本, 无反爬) ----
 RSS_SOURCES = [
-    ("36kr",     "https://36kr.com/feed",                        "tech"),
+    # 36kr 已移除: RSS 返回 HTML 而非 XML
+    # ("36kr",     "https://36kr.com/feed",                        "tech"),
     ("juejin",   "https://juejin.cn/rss",                        "tech"),
     ("sspai",    "https://sspai.com/feed",                       "tech"),
     ("arxiv_ai", "http://export.arxiv.org/rss/cs.AI",             "tech"),
@@ -121,9 +122,12 @@ RSS_SOURCES = [
 # ---- JSON API 源 (直连官方, 加 UA) ----
 JSON_SOURCES = [
     # (name, url, parser_fn_name, category, headers_extra)
+    # zhihu 已移除: HTTP 401, 需 Cookie, 维护成本高
+    # ("zhihu",    "https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total?limit=50",
+    #  "zhihu_parser",  "news", {"Referer": "https://www.zhihu.com/"}),
 
-    ("zhihu",    "https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total?limit=50",
-     "zhihu_parser",  "news", {"Referer": "https://www.zhihu.com/"}),
+    ("douyin",   "https://www.iesdouyin.com/web/api/v2/hotsearch/billboard/word/",
+     "douyin_parser",  "news", {"Referer": "https://www.iesdouyin.com/"}),
 
     ("bilibili", "https://api.bilibili.com/x/web-interface/ranking/v2?rid=0&type=all",
      "bilibili_parser", "ent", {"Referer": "https://www.bilibili.com/"}),
@@ -237,8 +241,26 @@ def tieba_parser(data):
     return items
 
 
+def douyin_parser(data):
+    """抖音热榜 (2026-09 实测结构):
+    data.word_list = [{word, hot_value, label}, ...]
+    """
+    items = []
+    try:
+        for x in data.get("word_list", []) or []:
+            word = x.get("word")
+            heat = x.get("hot_value", 0)
+            if word:
+                url = f"https://www.douyin.com/search/{word}"
+                items.append((word, heat, url))
+    except Exception as e:
+        print(f"[douyin] parse error: {e}")
+    return items
+
+
 PARSERS = {
-    "zhihu_parser":    zhihu_parser,
+    # "zhihu_parser":    zhihu_parser,  # 已移除: HTTP 401
+    "douyin_parser":   douyin_parser,
     "bilibili_parser": bilibili_parser,
     "weibo_parser":    weibo_parser,
     "toutiao_parser":  toutiao_parser,
