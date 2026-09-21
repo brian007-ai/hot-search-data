@@ -7,7 +7,7 @@ const fs = require('fs')
 const path = require('path')
 const { parseYaml } = require('./fetcher/yaml-parser')
 
-const SRC = path.resolve(__dirname, '..', 'data-sources.yaml')
+const SRC = path.resolve(__dirname, 'data-sources.yaml')
 const DST_JSON = path.resolve(__dirname, '..', '小程序前端源码', 'utils', 'data-sources.json')
 const DST_JS = path.resolve(__dirname, '..', '小程序前端源码', 'utils', 'data-sources.js')
 

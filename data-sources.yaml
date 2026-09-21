@@ -1,0 +1,334 @@
+# 数据源统一配置文件 (零外部依赖版 v4.0)
+# 核心原则：只使用官方公开接口 + 官方 RSS + 静态兜底
+# 零第三方聚合 API、零图片代理、零额度限制、零维护成本
+
+global:
+  timeout: 15000
+  concurrency: 3
+  detail_top_n: 15
+  content_max_len: 5000
+  default_headers:
+    User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    Accept: "application/json, text/html, */*"
+    Accept-Language: "zh-CN,zh;q=0.9"
+
+sources:
+  # ============ RSS 源（官方、稳定、零维护）==========
+  - id: rss_36kr
+    name: "36氪-快讯"
+    type: rss
+    enabled: false
+    priority: 10
+    config:
+      url: "https://36kr.com/feed"
+      field_mapping:
+        title: "title"
+        url: "link"
+        content: "content:encoded"
+        pub_date: "pubDate"
+    platforms: ["36kr"]
+
+  - id: rss_juejin
+    name: "稀土掘金"
+    type: rss
+    enabled: true
+    priority: 10
+    config:
+      url: "https://juejin.cn/rss"
+      field_mapping:
+        title: "title"
+        url: "link"
+        content: "content:encoded"
+        pub_date: "pubDate"
+    platforms: ["juejin"]
+
+  - id: rss_sspai
+    name: "少数派"
+    type: rss
+    enabled: true
+    priority: 15
+    config:
+      url: "https://sspai.com/feed"
+    platforms: ["sspai"]
+
+  - id: rss_ithome
+    name: "IT之家"
+    type: rss
+    enabled: true
+    priority: 15
+    config:
+      url: "https://www.ithome.com/rss"
+    platforms: ["ithome"]
+
+  - id: rss_arxiv
+    name: "arXiv AI"
+    type: rss
+    enabled: false
+    priority: 20
+    config:
+      url: "https://export.arxiv.org/rss/cs.AI"
+    platforms: ["arxiv"]
+
+  # ============ HTML/JSON 抓取（官方接口、可控）==========
+  - id: scrape_tieba
+    name: "贴吧热议"
+    type: html_scrape
+    enabled: false
+    priority: 20
+    config:
+      api_url: "https://tieba.baidu.com/hottopic/browse/topicList?topic_id=0"
+      parser: "tieba_json"
+    platforms: ["tieba"]
+
+  - id: scrape_hupu
+    name: "虎扑步行街"
+    type: html_scrape
+    enabled: false
+    priority: 20
+    config:
+      api_url: "https://bbs.hupu.com/api/v2/topic/hot"
+      parser: "hupu_json"
+    platforms: ["hupu"]
+
+  - id: scrape_ithome
+    name: "IT之家"
+    type: html_scrape
+    enabled: false
+    priority: 15
+    config:
+      api_url: "https://www.ithome.com/api/v1/articles/hot"
+      parser: "ithome_json"
+    platforms: ["ithome"]
+
+  - id: scrape_sspai
+    name: "少数派精选"
+    type: html_scrape
+    enabled: false
+    priority: 15
+    config:
+      api_url: "https://sspai.com/api/v1/articles?limit=30"
+      parser: "sspai_json"
+    platforms: ["sspai"]
+
+  # ============ 静态兜底（反爬严重平台，本地维护）==========
+  - id: static_douban
+    name: "豆瓣系列-静态兜底"
+    type: static
+    enabled: true
+    priority: 100
+    config:
+      files:
+        douban: "data/douban.json"
+        doubantv: "data/doubantv.json"
+        doubanhot: "data/doubanhot.json"
+        doubannew: "data/doubannew.json"
+        doubanscore: "data/doubanscore.json"
+    platforms: ["douban", "doubantv", "doubanhot", "doubannew", "doubanscore"]
+
+  # ============ 微博/百度/知乎/头条/B站/抖音/微信/央视 ============
+  # 这些平台反爬严重，无稳定公开 API，不再尝试抓取
+  # 如需数据，请使用官方 APP/网页，或配置静态兜底文件
+  # 若后续有稳定开放接口，可在此添加
+
+platforms:
+  - group: "科技资讯"
+    items:
+      - key: "juejin"
+        name: "掘金"
+        emoji: "⛏️"
+        color: "#1e81ff"
+        sub: "热榜"
+        source_priority: ["rss_juejin"]
+      - key: "sspai"
+        name: "少数派"
+        emoji: "🎨"
+        color: "#d33a3a"
+        sub: "首页精选"
+        source_priority: ["rss_sspai", "scrape_sspai"]
+      - key: "ithome"
+        name: "IT之家"
+        emoji: "💻"
+        color: "#d9361f"
+        sub: "科技热闻"
+        source_priority: ["rss_ithome", "scrape_ithome"]
+
+
+
+  - group: "影视娱乐"
+    items:
+      - key: "douban"
+        name: "豆瓣热门"
+        emoji: "🎬"
+        color: "#2e7d32"
+        sub: "热门榜"
+        source_priority: ["static_douban"]
+        is_douban: true
+      - key: "doubanhot"
+        name: "影院热映"
+        emoji: "🍿"
+        color: "#e65100"
+        sub: "正在上映"
+        source_priority: ["static_douban"]
+        is_douban: true
+      - key: "doubantv"
+        name: "豆瓣剧集"
+        emoji: "🎭"
+        color: "#1b5e20"
+        sub: "热播榜"
+        source_priority: ["static_douban"]
+        is_douban: true
+      - key: "doubannew"
+        name: "豆瓣新片"
+        emoji: "🆕"
+        color: "#388e3c"
+        sub: "最新上映"
+        source_priority: ["static_douban"]
+        is_douban: true
+      - key: "doubanscore"
+        name: "豆瓣高分"
+        emoji: "🏆"
+        color: "#1b5e20"
+        sub: "高分榜"
+        source_priority: ["static_douban"]
+        is_douban: true
+
+  # ============ 无稳定数据源平台（仅作展示入口）==========
+  # 微博/百度/知乎/头条/B站/抖音/知乎/微信/央视/虎嗅/InfoQ/GitHub Trending/V2EX
+  # 这些平台无稳定公开接口，不再尝试抓取
+  # 如需数据，请在前端直接跳转官网，或配置静态兜底文件
+  # 如后续有稳定开放接口，可在此添加
+
+  # - group: "综合热榜"
+  #   items:
+  #     - key: "weibo"
+  #       name: "微博"
+  #       emoji: "🔥"
+  #       color: "#e6162d"
+  #       sub: "热搜榜"
+  #       source_priority: []
+  #     - key: "zhihu"
+  #       name: "知乎"
+  #       emoji: "💡"
+  #       color: "#0084ff"
+  #       sub: "热榜"
+  #       source_priority: []
+  #     - key: "bilibili"
+  #       name: "B站"
+  #       emoji: "📺"
+  #       color: "#fb7299"
+  #       sub: "热门"
+  #       source_priority: []
+  #     - key: "toutiao"
+  #       name: "头条"
+  #       emoji: "📰"
+  #       color: "#ff0000"
+  #       sub: "热榜"
+  #       source_priority: []
+  #     - key: "baidu"
+  #       name: "百度"
+  #       emoji: "🔍"
+  #       color: "#306cff"
+  #       sub: "热搜榜"
+  #       source_priority: []
+  #     - key: "douyin"
+  #       name: "抖音"
+  #       emoji: "🎵"
+  #       color: "#fe2c55"
+  #       sub: "热榜"
+  #       source_priority: []
+  #     - key: "bilibili"
+  #       name: "B站"
+  #       emoji: "📺"
+  #       color: "#fb7299"
+  #       sub: "热门"
+  #       source_priority: []
+  #     - key: "toutiao"
+  #       name: "头条"
+  #       emoji: "📰"
+  #       color: "#ff0000"
+  #       sub: "热榜"
+  #       source_priority: []
+  #     - key: "baidu"
+  #       name: "百度"
+  #       emoji: "🔍"
+  #       color: "#306cff"
+  #       sub: "热搜榜"
+  #       source_priority: []
+  #     - key: "zhihu"
+  #       name: "知乎"
+  #       emoji: "💡"
+  #       color: "#0084ff"
+  #       sub: "热榜"
+  #       source_priority: []
+  #     - key: "douyin"
+  #       name: "抖音"
+  #       emoji: "🎵"
+  #       color: "#fe2c55"
+  #       sub: "热榜"
+  #       source_priority: []
+  #     - key: "weixin"
+  #       name: "微信"
+  #       emoji: "💚"
+  #       color: "#07c160"
+  #       sub: "热文榜"
+  #       source_priority: []
+  #     - key: "cctv"
+  #       name: "央视"
+  #       emoji: "📺"
+  #       color: "#e60012"
+  #       sub: "新闻联播"
+  #       source_priority: []
+  #     - key: "v2ex"
+  #       name: "V2EX"
+  #       emoji: "💻"
+  #       color: "#3399ff"
+  #       sub: "热门"
+  #       source_priority: []
+  #     - key: "huxiu"
+  #       name: "虎嗅"
+  #       emoji: "🐯"
+  #       color: "#ff6b00"
+  #       sub: "深度"
+  #       source_priority: []
+  #     - key: "infoq"
+  #       name: "InfoQ"
+  #       emoji: "📚"
+  #       color: "#2d8cf0"
+  #       sub: "技术"
+  #       source_priority: []
+  #     - key: "github_trending"
+  #       name: "GitHub Trending"
+  #       emoji: "⭐"
+  #       color: "#24292e"
+  #       sub: "日榜"
+  #       source_priority: []
+  #     - key: "v2ex"
+  #       name: "V2EX"
+  #       emoji: "💻"
+  #       color: "#3399ff"
+  #       sub: "热门"
+  #       source_priority: []
+  #     - key: "huxiu"
+  #       name: "虎嗅"
+  #       emoji: "🐯"
+  #       color: "#ff6b00"
+  #       sub: "深度"
+  #       source_priority: []
+  #     - key: "infoq"
+  #       name: "InfoQ"
+  #       emoji: "📚"
+  #       color: "#2d8cf0"
+  #       sub: "技术"
+  #       source_priority: []
+  #     - key: "github_trending"
+  #       name: "GitHub Trending"
+  #       emoji: "⭐"
+  #       color: "#24292e"
+  #       sub: "日榜"
+  #       source_priority: []
+  #     - key: "v2ex"
+  #       name: "V2EX"
+  #       emoji: "💻"
+  #       color: "#3399ff"
+  #       sub: "热门"
+  #       source_priority: []

@@ -6,7 +6,7 @@ const fs = require('fs')
 const path = require('path')
 const { parseYaml } = require('./yaml-parser')
 
-const CONFIG_PATH = path.resolve(__dirname, '..', '..', 'data-sources.yaml')
+const CONFIG_PATH = path.resolve(__dirname, '..', 'data-sources.yaml')
 
 function loadConfig() {
   const content = fs.readFileSync(CONFIG_PATH, 'utf8')
