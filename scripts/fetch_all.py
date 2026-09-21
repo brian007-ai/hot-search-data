@@ -142,10 +142,8 @@ JSON_SOURCES = [
 ]
 
 # ---- HTML 抓取源 ----
-HTML_SOURCES = [
-    ("hupu",     "https://bbs.hupu.com/all-gambia",     "hupu_parser",     "sports"),
-    ("ithome",   "https://www.ithome.com/list/hot.html", "ithome_parser",  "tech"),
-]
+# 注: 虎扑被阿里云 WAF 拦截 (405), IT之家 HTML 与 RSS 重复, 都不再使用
+HTML_SOURCES = []
 
 # ============================================================
 # JSON 解析器 (每个平台一个函数, 失败返回空)
@@ -161,16 +159,27 @@ def safe_get(d, *keys, default=None):
 
 
 def baidu_parser(data):
+    """百度热搜 (2026-09 实测结构, 两层嵌套):
+    data.cards[0].content[0].content = [{word, url, isTop, hotTag, ...}, ...]
+    无 hotScore 字段, 热度设为 0 (标题即关键词)
+    """
     items = []
     try:
         cards = data.get("data", {}).get("cards", [])
         for card in cards:
-            for x in card.get("content", []) or []:
-                word = x.get("word") or x.get("query")
-                hot = x.get("hotScore") or x.get("hot", 0)
-                if word:
-                    url = x.get("url") or f"https://www.baidu.com/s?wd={word}"
-                    items.append((word, hot, url))
+            outer_content = card.get("content", []) or []
+            for block in outer_content:
+                # block 可能直接是 item (word 在 block 上) 或再嵌套一层
+                if "word" in block:
+                    inner_list = [block]
+                else:
+                    inner_list = block.get("content", []) or []
+                for x in inner_list:
+                    word = x.get("word") or x.get("query")
+                    hot = x.get("hotScore") or x.get("hot") or 0
+                    if word:
+                        url = x.get("url") or f"https://www.baidu.com/s?wd={word}"
+                        items.append((word, hot, url))
     except Exception as e:
         print(f"[baidu] parse error: {e}")
     return items
@@ -237,18 +246,20 @@ def toutiao_parser(data):
 
 
 def tieba_parser(data):
+    """贴吧热议 (2026-09 实测结构):
+    data.bang_topic.topic_list = [{topic_name, topic_url, discuss_num, topic_id, ...}, ...]
+    """
     items = []
     try:
-        forum_list = safe_get(data, "data", "forum_list", default=[])
-        topic_list = data.get("data", {}).get("topic_list") or []
-        # 优先用 topic_list
+        bang_topic = safe_get(data, "data", "bang_topic", default={}) or {}
+        topic_list = bang_topic.get("topic_list") or []
         for x in topic_list:
-            title = x.get("title") or x.get("topic_title") or ""
-            url = x.get("url") or ""
-            heat = x.get("heat") or x.get("read") or 0
+            title = x.get("topic_name") or ""
+            url = x.get("topic_url") or ""
+            heat = x.get("discuss_num") or 0
             if title and url:
-                if url.startswith("//"):
-                    url = "https:" + url
+                # url 里可能被 HTML 转义, 清洗一下
+                url = url.replace("&amp;", "&")
                 items.append((title, heat, url))
     except Exception as e:
         print(f"[tieba] parse error: {e}")
