@@ -1,0 +1,60 @@
+# ============================================================
+# 今日热搜榜 - 定时采集 Workflow
+# ============================================================
+# 每 15 分钟错峰跑一次 (0/1/2 分触发, 避免 GitHub Actions 限流)
+# 失败不影响推送: 保留上一次的数据
+# ============================================================
+
+name: fetch-hot
+
+on:
+  schedule:
+    - cron: '0 */15 * * *'   # 0, 15, 30, 45
+    - cron: '1 */15 * * *'   # 1, 16, 31, 46
+    - cron: '2 */15 * * *'   # 2, 17, 32, 47
+  workflow_dispatch:          # 支持手动触发
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-hot-${{ github.ref }}
+  cancel-in-progress: true   # 上一次没跑完就跳过新任务
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: 'requirements.txt'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -q -r requirements.txt
+
+      - name: Fetch all sources
+        run: python scripts/fetch_all.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/hot-items.json
+          if git diff --staged --quiet; then
+            echo "No data changes, skip commit"
+          else
+            git commit -m "chore: update hot items at $(date -u +'%Y-%m-%d %H:%M') UTC"
+            git push
+          fi
