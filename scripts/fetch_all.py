@@ -442,6 +442,53 @@ def main():
         platform_stats[it["platform"]] = platform_stats.get(it["platform"], 0) + 1
     print("Platform coverage:", platform_stats)
 
+    # ---- 完整性校验: 用旧数据兜底 ----
+    if OUTPUT_FILE.exists():
+        try:
+            old_data = json.loads(OUTPUT_FILE.read_text(encoding="utf-8"))
+            old_items = old_data.get("items", [])
+            old_platforms = old_data.get("platforms", {})
+            old_total = old_data.get("total", 0)
+
+            if old_total > 0:
+                # 1. 对于新数据里缺失的平台, 用旧数据兜底
+                new_platforms = set(platform_stats.keys())
+                merged_extra = []
+                for old_platform in old_platforms.keys():
+                    if old_platform not in new_platforms:
+                        old_items_platform = [it for it in old_items if it["platform"] == old_platform]
+                        if old_items_platform:
+                            print(f"[WARN] {old_platform} 本次 0 条, 用旧数据兜底 ({len(old_items_platform)} 条)")
+                            merged_extra.extend(old_items_platform)
+
+                final = final + merged_extra
+
+                # 2. 如果新数据总量异常少 (< 30% 旧数据), 全部用旧数据
+                if len(final) < old_total * 0.3:
+                    print("\n[WARN] 新数据", len(deduped), "条 < 旧数据", old_total, "的 30%, 全部用旧数据")
+                    final = old_items
+                else:
+                    # 3. 去重
+                    final = dedupe(final)
+                    # 4. 重新排序
+                    final = sorted(
+                        final,
+                        key=lambda x: (x["heat"] > 0, x["heat"], x["fetched_at"]),
+                        reverse=True,
+                    )[:MAX_TOTAL_ITEMS]
+                    # 5. 如果和旧数据一样, 不写入
+                    if sorted(final, key=lambda x: x["id"]) == sorted(old_items, key=lambda x: x["id"]):
+                        print("\n[INFO] No data changes, skip write")
+                        return 0
+        except Exception as e:
+            print("\n[WARN] 加载旧数据失败:", e)
+
+    # 重新统计
+    platform_stats = {}
+    for it in final:
+        platform_stats[it["platform"]] = platform_stats.get(it["platform"], 0) + 1
+    print("Platform coverage (merged):", platform_stats)
+
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     output = {
         "updated_at": datetime.now(TIMEZONE_CN).isoformat(),
