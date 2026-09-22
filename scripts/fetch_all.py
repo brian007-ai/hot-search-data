@@ -129,8 +129,6 @@ JSON_SOURCES = [
     ("douyin",   "https://www.iesdouyin.com/web/api/v2/hotsearch/billboard/word/",
      "douyin_parser",  "news", {"Referer": "https://www.iesdouyin.com/"}),
 
-    ("bilibili", "https://api.bilibili.com/x/web-interface/popular?ps=30",
-     "bilibili_parser", "ent", {"Referer": "https://www.bilibili.com/"}),
 
     ("weibo",    "https://weibo.com/ajax/side/hotSearch",
      "weibo_parser",  "news", {"Referer": "https://weibo.com/"}),
