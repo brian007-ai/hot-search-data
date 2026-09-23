@@ -33,7 +33,7 @@ jobs:
           fetch-depth: 1
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
           cache: 'pip'
@@ -45,7 +45,7 @@ jobs:
           pip install -q -r requirements.txt
 
       - name: Fetch all sources
-        run: python scripts/fetch_all.py
+        run: python scripts/fetch_all.py || true   # 数据完整性校验已保护旧数据, 单源失败不阻塞
 
       - name: Commit and push
         run: |
