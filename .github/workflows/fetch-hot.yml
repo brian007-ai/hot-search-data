@@ -1,7 +1,7 @@
 # ============================================================
 # 今日热搜榜 - 定时采集 Workflow
 # ============================================================
-# 每 15 分钟错峰跑一次 (0/1/2 分触发, 避免 GitHub Actions 限流)
+# 每小时错峰跑一次 (0/1/2 分触发, 避免 GitHub Actions 限流)
 # 失败不影响推送: 保留上一次的数据
 # ============================================================
 
@@ -48,6 +48,7 @@ jobs:
         run: python scripts/fetch_all.py || true   # 数据完整性校验已保护旧数据, 单源失败不阻塞
 
       - name: Commit and push
+        continue-on-error: true   # push 失败不阻塞 workflow, 不触发通知
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
