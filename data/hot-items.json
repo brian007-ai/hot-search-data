@@ -1,982 +1,1054 @@
 {
-  "updated_at": "2026-10-26T08:04:26.017163+08:00",
-  "total": 289,
+  "updated_at": "2026-10-26T11:56:39.480183+08:00",
+  "total": 288,
   "platforms": {
+    "ithome_rss": 30,
     "toutiao": 30,
     "douyin": 30,
     "tieba": 30,
-    "weibo": 29,
+    "weibo": 28,
     "sspai": 10,
-    "juejin": 20,
-    "ithome_rss": 30,
     "arxiv_cv": 30,
     "arxiv_cl": 30,
     "arxiv_ai": 30,
+    "juejin": 20,
     "hn": 20
   },
   "items": [
     {
-      "id": "toutiao_27ccdfd88b08",
-      "platform": "toutiao",
-      "title": "国乒亚锦赛四冠收官",
-      "url": "https://www.toutiao.com/trending/7700437056199180351/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700437056199180351%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%9B%BD%E4%B9%92%E4%BA%9A%E9%94%A6%E8%B5%9B%E5%9B%9B%E5%86%A0%E6%94%B6%E5%AE%98%22%7D&rank=&style_id=40132&topic_id=7700437056199180351",
-      "heat": 25181574,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769404+08:00"
+      "id": "ithome_rss_ac12b8cdfd36",
+      "platform": "ithome_rss",
+      "title": "王腾：ISHO 今日宜休，目标用 5-10 年时间成为全球领先的 AI 睡眠科技品牌",
+      "url": "https://www.ithome.com/1/017/809.htm",
+      "heat": 5239385108,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:26.203018+08:00"
     },
     {
-      "id": "toutiao_31d7c43cb6a3",
-      "platform": "toutiao",
-      "title": "姆巴佩双响 皇马终结巴萨9连胜",
-      "url": "https://www.toutiao.com/trending/7700741454288653850/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%225%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700741454288653850%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A7%86%E5%B7%B4%E4%BD%A9%E5%8F%8C%E5%93%8D+%E7%9A%87%E9%A9%AC%E7%BB%88%E7%BB%93%E5%B7%B4%E8%90%A89%E8%BF%9E%E8%83%9C%22%7D&rank=&style_id=40132&topic_id=7700741454288653850",
-      "heat": 22785231,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769424+08:00"
+      "id": "ithome_rss_b7e4ed601f7e",
+      "platform": "ithome_rss",
+      "title": "特斯拉官宣全系现款在售车型标配被动安全系统，称安全永远是设计的首要目标",
+      "url": "https://www.ithome.com/1/017/773.htm",
+      "heat": 3615027564,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:26.203133+08:00"
     },
     {
-      "id": "toutiao_7a494036fef2",
-      "platform": "toutiao",
-      "title": "76年了，致敬最可爱的他们",
-      "url": "https://www.toutiao.com/trending/7700376045093912595/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700376045093912595%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2276%E5%B9%B4%E4%BA%86%EF%BC%8C%E8%87%B4%E6%95%AC%E6%9C%80%E5%8F%AF%E7%88%B1%E7%9A%84%E4%BB%96%E4%BB%AC%22%7D&rank=&style_id=40132&topic_id=7700376045093912595",
-      "heat": 20616929,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769430+08:00"
+      "id": "ithome_rss_23bf68236cdd",
+      "platform": "ithome_rss",
+      "title": "小鹏汽车回应车撞报废安全气囊未弹出：未达到传感器触发条件，尊重客户第三方鉴定诉求",
+      "url": "https://www.ithome.com/1/017/811.htm",
+      "heat": 2188202475,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:26.203002+08:00"
     },
     {
-      "id": "toutiao_d96d7f81ce65",
+      "id": "toutiao_ebbd15efe56d",
       "platform": "toutiao",
-      "title": "县委书记回应被扔下水：张雪临时起意",
-      "url": "https://www.toutiao.com/trending/7700473698733588506/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700473698733588506%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8E%BF%E5%A7%94%E4%B9%A6%E8%AE%B0%E5%9B%9E%E5%BA%94%E8%A2%AB%E6%89%94%E4%B8%8B%E6%B0%B4%EF%BC%9A%E5%BC%A0%E9%9B%AA%E4%B8%B4%E6%97%B6%E8%B5%B7%E6%84%8F%22%7D&rank=&style_id=40132&topic_id=7700473698733588506",
-      "heat": 18654969,
+      "title": "二十届五中全会今起至29日召开",
+      "url": "https://www.toutiao.com/trending/7698680775600128562/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227698680775600128562%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%BA%8C%E5%8D%81%E5%B1%8A%E4%BA%94%E4%B8%AD%E5%85%A8%E4%BC%9A%E4%BB%8A%E8%B5%B7%E8%87%B329%E6%97%A5%E5%8F%AC%E5%BC%80%22%7D&rank=&style_id=40132&topic_id=7698680775600128562",
+      "heat": 27157446,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769435+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434078+08:00"
     },
     {
-      "id": "toutiao_e24730ed3d65",
+      "id": "toutiao_c460f84630cb",
       "platform": "toutiao",
-      "title": "国乒获奖组委会错放日本国旗",
-      "url": "https://www.toutiao.com/trending/7700465091720445988/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700465091720445988%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%9B%BD%E4%B9%92%E8%8E%B7%E5%A5%96%E7%BB%84%E5%A7%94%E4%BC%9A%E9%94%99%E6%94%BE%E6%97%A5%E6%9C%AC%E5%9B%BD%E6%97%97%22%7D&rank=&style_id=40132&topic_id=7700465091720445988",
-      "heat": 16879714,
+      "title": "武契奇承认败选",
+      "url": "https://www.toutiao.com/trending/7700758338107166246/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%221%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700758338107166246%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%AD%A6%E5%A5%91%E5%A5%87%E6%89%BF%E8%AE%A4%E8%B4%A5%E9%80%89%22%7D&rank=&style_id=40132&topic_id=7700758338107166246",
+      "heat": 24573073,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769440+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434092+08:00"
     },
     {
-      "id": "toutiao_f1f51b849938",
+      "id": "toutiao_2df248774b72",
       "platform": "toutiao",
-      "title": "穆里尼奥再现滑跪挥拳庆祝",
-      "url": "https://www.toutiao.com/trending/7700728414927569417/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700728414927569417%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%A9%86%E9%87%8C%E5%B0%BC%E5%A5%A5%E5%86%8D%E7%8E%B0%E6%BB%91%E8%B7%AA%E6%8C%A5%E6%8B%B3%E5%BA%86%E7%A5%9D%22%7D&rank=&style_id=40132&topic_id=7700728414927569417",
-      "heat": 15273397,
+      "title": "在新征程上持之以恒推进全面从严治党",
+      "url": "https://www.toutiao.com/article/7700756961331085862",
+      "heat": 22234636,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769445+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434096+08:00"
     },
     {
-      "id": "toutiao_816e54951f1a",
+      "id": "toutiao_5318907856ac",
       "platform": "toutiao",
-      "title": "山东日照捕获260余斤“鲅鱼王”",
-      "url": "https://www.toutiao.com/trending/7699744084282294282/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227699744084282294282%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%B1%B1%E4%B8%9C%E6%97%A5%E7%85%A7%E6%8D%95%E8%8E%B7260%E4%BD%99%E6%96%A4%E2%80%9C%E9%B2%85%E9%B1%BC%E7%8E%8B%E2%80%9D%22%7D&rank=&style_id=40132&topic_id=7699744084282294282",
-      "heat": 13819941,
+      "title": "80岁卢拉再次当选巴西总统",
+      "url": "https://www.toutiao.com/trending/7699682440381546538/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227699682440381546538%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2280%E5%B2%81%E5%8D%A2%E6%8B%89%E5%86%8D%E6%AC%A1%E5%BD%93%E9%80%89%E5%B7%B4%E8%A5%BF%E6%80%BB%E7%BB%9F%22%7D&rank=&style_id=40132&topic_id=7699682440381546538",
+      "heat": 20118731,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769450+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434101+08:00"
     },
     {
-      "id": "toutiao_4aa8ee53dea9",
+      "id": "toutiao_5a60dc90a103",
       "platform": "toutiao",
-      "title": "“23:59:60”今后将不再出现",
-      "url": "https://www.toutiao.com/trending/7698300945130390043/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227698300945130390043%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E2%80%9C23%3A59%3A60%E2%80%9D%E4%BB%8A%E5%90%8E%E5%B0%86%E4%B8%8D%E5%86%8D%E5%87%BA%E7%8E%B0%22%7D&rank=&style_id=40132&topic_id=7698300945130390043",
-      "heat": 12504799,
+      "title": "人民日报评樊振东抵制偷拍乱象",
+      "url": "https://www.toutiao.com/trending/7700238337919123466/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700238337919123466%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%BA%BA%E6%B0%91%E6%97%A5%E6%8A%A5%E8%AF%84%E6%A8%8A%E6%8C%AF%E4%B8%9C%E6%8A%B5%E5%88%B6%E5%81%B7%E6%8B%8D%E4%B9%B1%E8%B1%A1%22%7D&rank=&style_id=40132&topic_id=7700238337919123466",
+      "heat": 18204180,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769455+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434105+08:00"
+    },
+    {
+      "id": "toutiao_6590f168fc67",
+      "platform": "toutiao",
+      "title": "梅德韦杰夫喊话特朗普“教训”乌总统",
+      "url": "https://www.toutiao.com/trending/7700578970949075465/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700578970949075465%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%A2%85%E5%BE%B7%E9%9F%A6%E6%9D%B0%E5%A4%AB%E5%96%8A%E8%AF%9D%E7%89%B9%E6%9C%97%E6%99%AE%E2%80%9C%E6%95%99%E8%AE%AD%E2%80%9D%E4%B9%8C%E6%80%BB%E7%BB%9F%22%7D&rank=&style_id=40132&topic_id=7700578970949075465",
+      "heat": 16471823,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:34.434109+08:00"
+    },
+    {
+      "id": "toutiao_0f3082f03bd1",
+      "platform": "toutiao",
+      "title": "比尔·盖茨谈AI对人类工作的冲击",
+      "url": "https://www.toutiao.com/trending/7700200466793267236/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700200466793267236%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%AF%94%E5%B0%94%C2%B7%E7%9B%96%E8%8C%A8%E8%B0%88AI%E5%AF%B9%E4%BA%BA%E7%B1%BB%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%86%B2%E5%87%BB%22%7D&rank=&style_id=40132&topic_id=7700200466793267236",
+      "heat": 14904322,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:34.434113+08:00"
+    },
+    {
+      "id": "toutiao_d40ca7d005a3",
+      "platform": "toutiao",
+      "title": "卢拉用标志“小跳”庆祝连任",
+      "url": "https://www.toutiao.com/trending/7700433055723978806/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700433055723978806%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8D%A2%E6%8B%89%E7%94%A8%E6%A0%87%E5%BF%97%E2%80%9C%E5%B0%8F%E8%B7%B3%E2%80%9D%E5%BA%86%E7%A5%9D%E8%BF%9E%E4%BB%BB%22%7D&rank=&style_id=40132&topic_id=7700433055723978806",
+      "heat": 13485988,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:34.434117+08:00"
+    },
+    {
+      "id": "douyin_fabaaba2c37b",
+      "platform": "douyin",
+      "title": "想和你去看赛里木湖的冬日浪漫",
+      "url": "https://www.douyin.com/search/想和你去看赛里木湖的冬日浪漫",
+      "heat": 12425389,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:28.480810+08:00"
+    },
+    {
+      "id": "toutiao_968b27533f2a",
+      "platform": "toutiao",
+      "title": "多个“首部”“首次”布局发展新方向",
+      "url": "https://www.toutiao.com/article/7700612676002578973",
+      "heat": 12202627,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:34.434120+08:00"
     },
     {
       "id": "douyin_bd832e79298a",
       "platform": "douyin",
       "title": "跟着现在就出发玩转九寨沟",
       "url": "https://www.douyin.com/search/跟着现在就出发玩转九寨沟",
-      "heat": 12180449,
+      "heat": 12123156,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238076+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480823+08:00"
     },
     {
-      "id": "douyin_55c10d7bf0ea",
+      "id": "douyin_52ce6e012fd5",
       "platform": "douyin",
-      "title": "S16进入大AI时代",
-      "url": "https://www.douyin.com/search/S16进入大AI时代",
-      "heat": 12121572,
+      "title": "看祖国各地丰收景象",
+      "url": "https://www.douyin.com/search/看祖国各地丰收景象",
+      "heat": 12081236,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238092+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480827+08:00"
     },
     {
-      "id": "toutiao_7b739ad8c1e1",
-      "platform": "toutiao",
-      "title": "卢宁本场5次扑救2次解围",
-      "url": "https://www.toutiao.com/trending/7700707532582421018/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700707532582421018%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8D%A2%E5%AE%81%E6%9C%AC%E5%9C%BA5%E6%AC%A1%E6%89%91%E6%95%912%E6%AC%A1%E8%A7%A3%E5%9B%B4%22%7D&rank=&style_id=40132&topic_id=7700707532582421018",
-      "heat": 11314810,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769460+08:00"
-    },
-    {
-      "id": "douyin_351eed4e6249",
+      "id": "douyin_2f31672d2ad3",
       "platform": "douyin",
-      "title": "引江补汉工程有多硬核",
-      "url": "https://www.douyin.com/search/引江补汉工程有多硬核",
-      "heat": 11073973,
+      "title": "U17女足世界杯中国3:2美国",
+      "url": "https://www.douyin.com/search/U17女足世界杯中国3:2美国",
+      "heat": 11990301,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238096+08:00"
-    },
-    {
-      "id": "douyin_4a32f69875b9",
-      "platform": "douyin",
-      "title": "巴萨1:2皇马",
-      "url": "https://www.douyin.com/search/巴萨1:2皇马",
-      "heat": 11067886,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238099+08:00"
-    },
-    {
-      "id": "douyin_e40a9426ab1e",
-      "platform": "douyin",
-      "title": "张雪机车刷新水上漂吉尼斯纪录",
-      "url": "https://www.douyin.com/search/张雪机车刷新水上漂吉尼斯纪录",
-      "heat": 10431573,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238104+08:00"
-    },
-    {
-      "id": "toutiao_7d4e149f9386",
-      "platform": "toutiao",
-      "title": "姑娘花3.8万在鹤岗买房入住后傻眼",
-      "url": "https://www.toutiao.com/trending/7700115642267844644/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700115642267844644%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A7%91%E5%A8%98%E8%8A%B13.8%E4%B8%87%E5%9C%A8%E9%B9%A4%E5%B2%97%E4%B9%B0%E6%88%BF%E5%85%A5%E4%BD%8F%E5%90%8E%E5%82%BB%E7%9C%BC%22%7D&rank=&style_id=40132&topic_id=7700115642267844644",
-      "heat": 10238064,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769464+08:00"
-    },
-    {
-      "id": "douyin_423617294999",
-      "platform": "douyin",
-      "title": "泰州队球员集体发抖音告别苏超",
-      "url": "https://www.douyin.com/search/泰州队球员集体发抖音告别苏超",
-      "heat": 10125845,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238107+08:00"
-    },
-    {
-      "id": "toutiao_2b08d669954f",
-      "platform": "toutiao",
-      "title": "大衣哥遭黑粉举报十几场演出取消",
-      "url": "https://www.toutiao.com/trending/7699999489775665188/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227699999489775665188%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A4%A7%E8%A1%A3%E5%93%A5%E9%81%AD%E9%BB%91%E7%B2%89%E4%B8%BE%E6%8A%A5%E5%8D%81%E5%87%A0%E5%9C%BA%E6%BC%94%E5%87%BA%E5%8F%96%E6%B6%88%22%7D&rank=&style_id=40132&topic_id=7699999489775665188",
-      "heat": 9263783,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769469+08:00"
-    },
-    {
-      "id": "douyin_30beea99ec77",
-      "platform": "douyin",
-      "title": "巴西总统选举第二轮投票结束",
-      "url": "https://www.douyin.com/search/巴西总统选举第二轮投票结束",
-      "heat": 8952204,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238111+08:00"
-    },
-    {
-      "id": "toutiao_ff73544a78f8",
-      "platform": "toutiao",
-      "title": "地震躲“生命三角”避险不靠谱",
-      "url": "https://www.toutiao.com/trending/7699717741762887731/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227699717741762887731%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%9C%B0%E9%9C%87%E8%BA%B2%E2%80%9C%E7%94%9F%E5%91%BD%E4%B8%89%E8%A7%92%E2%80%9D%E9%81%BF%E9%99%A9%E4%B8%8D%E9%9D%A0%E8%B0%B1%22%7D&rank=&style_id=40132&topic_id=7699717741762887731",
-      "heat": 8382218,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769473+08:00"
-    },
-    {
-      "id": "douyin_696acb15cdd9",
-      "platform": "douyin",
-      "title": "Jason吴梦泪王不见王合拍",
-      "url": "https://www.douyin.com/search/Jason吴梦泪王不见王合拍",
-      "heat": 7815696,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238117+08:00"
-    },
-    {
-      "id": "douyin_229ea26026d0",
-      "platform": "douyin",
-      "title": "2026王者荣耀共创之夜",
-      "url": "https://www.douyin.com/search/2026王者荣耀共创之夜",
-      "heat": 7789488,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238122+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480831+08:00"
     },
     {
       "id": "douyin_bb21ce9c44a4",
       "platform": "douyin",
       "title": "新一股冷空气将影响长江以北大部",
       "url": "https://www.douyin.com/search/新一股冷空气将影响长江以北大部",
-      "heat": 7766894,
+      "heat": 11277336,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238125+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480834+08:00"
     },
     {
-      "id": "douyin_f7621d8c1bbf",
-      "platform": "douyin",
-      "title": "A股指数调整10月26日落地",
-      "url": "https://www.douyin.com/search/A股指数调整10月26日落地",
-      "heat": 7763361,
+      "id": "toutiao_a5fe132caa0c",
+      "platform": "toutiao",
+      "title": "新能源汽车的“八年大考”来了",
+      "url": "https://www.toutiao.com/trending/7700598240630161450/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700598240630161450%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6%E7%9A%84%E2%80%9C%E5%85%AB%E5%B9%B4%E5%A4%A7%E8%80%83%E2%80%9D%E6%9D%A5%E4%BA%86%22%7D&rank=&style_id=40132&topic_id=7700598240630161450",
+      "heat": 11041393,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238129+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434124+08:00"
     },
     {
-      "id": "douyin_814479de041d",
-      "platform": "douyin",
-      "title": "IG战胜HLE",
-      "url": "https://www.douyin.com/search/IG战胜HLE",
-      "heat": 7757210,
+      "id": "toutiao_5ba271c86e59",
+      "platform": "toutiao",
+      "title": "巴西货币雷亚尔暴跌11.5%",
+      "url": "https://www.toutiao.com/trending/7700762106802668070/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700762106802668070%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%B7%B4%E8%A5%BF%E8%B4%A7%E5%B8%81%E9%9B%B7%E4%BA%9A%E5%B0%94%E6%9A%B4%E8%B7%8C11.5%25%22%7D&rank=&style_id=40132&topic_id=7700762106802668070",
+      "heat": 9990666,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238133+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434128+08:00"
     },
     {
-      "id": "douyin_6386a002923d",
-      "platform": "douyin",
-      "title": "“地震生命三角区”不靠谱",
-      "url": "https://www.douyin.com/search/“地震生命三角区”不靠谱",
-      "heat": 7755864,
+      "id": "toutiao_b1f60f729db2",
+      "platform": "toutiao",
+      "title": "武契奇称败选背后“有欧美干预”",
+      "url": "https://www.toutiao.com/trending/7700787722469936667/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700787722469936667%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%AD%A6%E5%A5%91%E5%A5%87%E7%A7%B0%E8%B4%A5%E9%80%89%E8%83%8C%E5%90%8E%E2%80%9C%E6%9C%89%E6%AC%A7%E7%BE%8E%E5%B9%B2%E9%A2%84%E2%80%9D%22%7D&rank=&style_id=40132&topic_id=7700787722469936667",
+      "heat": 9039928,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238137+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434132+08:00"
     },
     {
-      "id": "douyin_dc26c60f2c04",
+      "id": "douyin_fa954d5698ed",
       "platform": "douyin",
-      "title": "在这里遇见盛大晴天",
-      "url": "https://www.douyin.com/search/在这里遇见盛大晴天",
-      "heat": 7754062,
+      "title": "我国造船业持续领跑全球",
+      "url": "https://www.douyin.com/search/我国造船业持续领跑全球",
+      "heat": 8608980,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238140+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480837+08:00"
     },
     {
-      "id": "douyin_396a9bbaa841",
-      "platform": "douyin",
-      "title": "唐朝诡事录之蜀道开机",
-      "url": "https://www.douyin.com/search/唐朝诡事录之蜀道开机",
-      "heat": 7752912,
+      "id": "toutiao_b5934bb0b328",
+      "platform": "toutiao",
+      "title": "大衣哥遭黑粉举报十几场演出取消",
+      "url": "https://www.toutiao.com/trending/7699999489775665188/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227699999489775665188%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A4%A7%E8%A1%A3%E5%93%A5%E9%81%AD%E9%BB%91%E7%B2%89%E4%B8%BE%E6%8A%A5%E5%8D%81%E5%87%A0%E5%9C%BA%E6%BC%94%E5%87%BA%E5%8F%96%E6%B6%88%22%7D&rank=&style_id=40132&topic_id=7699999489775665188",
+      "heat": 8179665,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238143+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434136+08:00"
+    },
+    {
+      "id": "douyin_4a32f69875b9",
+      "platform": "douyin",
+      "title": "巴萨1:2皇马",
+      "url": "https://www.douyin.com/search/巴萨1:2皇马",
+      "heat": 7939091,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:28.480841+08:00"
+    },
+    {
+      "id": "douyin_e8f73eb732dd",
+      "platform": "douyin",
+      "title": "不良反应都是药品质量导致的吗",
+      "url": "https://www.douyin.com/search/不良反应都是药品质量导致的吗",
+      "heat": 7772810,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:28.480845+08:00"
+    },
+    {
+      "id": "douyin_84c3c89bafcf",
+      "platform": "douyin",
+      "title": "梦泪韩信偷塔十周年",
+      "url": "https://www.douyin.com/search/梦泪韩信偷塔十周年",
+      "heat": 7765315,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:28.480849+08:00"
+    },
+    {
+      "id": "douyin_9c59cbc2e36e",
+      "platform": "douyin",
+      "title": "真实锐评IG战胜HLE",
+      "url": "https://www.douyin.com/search/真实锐评IG战胜HLE",
+      "heat": 7758144,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:28.480852+08:00"
     },
     {
       "id": "douyin_6d2dc297ab26",
       "platform": "douyin",
       "title": "超级武将杯S2开赛",
       "url": "https://www.douyin.com/search/超级武将杯S2开赛",
-      "heat": 7751048,
+      "heat": 7753598,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238147+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480855+08:00"
     },
     {
-      "id": "douyin_236ca09b61a1",
+      "id": "douyin_dc26c60f2c04",
       "platform": "douyin",
-      "title": "JackeyLove说369没毛病",
-      "url": "https://www.douyin.com/search/JackeyLove说369没毛病",
-      "heat": 7745355,
+      "title": "在这里遇见盛大晴天",
+      "url": "https://www.douyin.com/search/在这里遇见盛大晴天",
+      "heat": 7748191,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238150+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480858+08:00"
     },
     {
-      "id": "douyin_5f2a956ea9f3",
+      "id": "douyin_22823ed40855",
       "platform": "douyin",
-      "title": "快硬夸我一句",
-      "url": "https://www.douyin.com/search/快硬夸我一句",
-      "heat": 7732871,
+      "title": "TES战胜G2",
+      "url": "https://www.douyin.com/search/TES战胜G2",
+      "heat": 7737232,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238154+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480861+08:00"
+    },
+    {
+      "id": "douyin_396a9bbaa841",
+      "platform": "douyin",
+      "title": "唐朝诡事录之蜀道开机",
+      "url": "https://www.douyin.com/search/唐朝诡事录之蜀道开机",
+      "heat": 7735155,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:28.480864+08:00"
+    },
+    {
+      "id": "douyin_b4d037d94a74",
+      "platform": "douyin",
+      "title": "记录我镜头下的王者共创之夜",
+      "url": "https://www.douyin.com/search/记录我镜头下的王者共创之夜",
+      "heat": 7728411,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:28.480867+08:00"
+    },
+    {
+      "id": "douyin_f406035745d4",
+      "platform": "douyin",
+      "title": "王者共创之夜群星登场大片",
+      "url": "https://www.douyin.com/search/王者共创之夜群星登场大片",
+      "heat": 7726949,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:28.480870+08:00"
+    },
+    {
+      "id": "douyin_8181dfb22d56",
+      "platform": "douyin",
+      "title": "沉浸式感受姆巴佩梅开二度",
+      "url": "https://www.douyin.com/search/沉浸式感受姆巴佩梅开二度",
+      "heat": 7725084,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:28.480873+08:00"
+    },
+    {
+      "id": "douyin_a8f10758f6c8",
+      "platform": "douyin",
+      "title": "IG还是太能创造奇迹了",
+      "url": "https://www.douyin.com/search/IG还是太能创造奇迹了",
+      "heat": 7724829,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:28.480876+08:00"
+    },
+    {
+      "id": "douyin_855811092f3b",
+      "platform": "douyin",
+      "title": "杰伦威廉姆斯伤病",
+      "url": "https://www.douyin.com/search/杰伦威廉姆斯伤病",
+      "heat": 7723999,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:28.480879+08:00"
     },
     {
       "id": "douyin_346c2fe93c7b",
       "platform": "douyin",
       "title": "横店微短剧之夜",
       "url": "https://www.douyin.com/search/横店微短剧之夜",
-      "heat": 7729874,
+      "heat": 7716055,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238157+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480882+08:00"
     },
     {
-      "id": "douyin_c8e099c3c52c",
+      "id": "douyin_814479de041d",
       "platform": "douyin",
-      "title": "临床医生解读offer8",
-      "url": "https://www.douyin.com/search/临床医生解读offer8",
-      "heat": 7728808,
+      "title": "IG战胜HLE",
+      "url": "https://www.douyin.com/search/IG战胜HLE",
+      "heat": 7715387,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238160+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480885+08:00"
     },
     {
-      "id": "douyin_3a663dc13f16",
+      "id": "douyin_70417d3f2875",
       "platform": "douyin",
-      "title": "跟着郑恺毛晓彤祝绪丹玩转东北",
-      "url": "https://www.douyin.com/search/跟着郑恺毛晓彤祝绪丹玩转东北",
-      "heat": 7718108,
+      "title": "一年一度王者全英雄集结",
+      "url": "https://www.douyin.com/search/一年一度王者全英雄集结",
+      "heat": 7715289,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238164+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480887+08:00"
     },
     {
-      "id": "douyin_f553dd21edc2",
+      "id": "douyin_8511924ac54b",
       "platform": "douyin",
-      "title": "369赛后采访谈英雄池与队友签证",
-      "url": "https://www.douyin.com/search/369赛后采访谈英雄池与队友签证",
-      "heat": 7715728,
+      "title": "夏天煎饼cos少司缘大司命",
+      "url": "https://www.douyin.com/search/夏天煎饼cos少司缘大司命",
+      "heat": 7712840,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238167+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480891+08:00"
+    },
+    {
+      "id": "douyin_55c10d7bf0ea",
+      "platform": "douyin",
+      "title": "S16进入大AI时代",
+      "url": "https://www.douyin.com/search/S16进入大AI时代",
+      "heat": 7696112,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:28.480894+08:00"
     },
     {
       "id": "douyin_feeaa11d77d2",
       "platform": "douyin",
       "title": "贝斯加鼓点随便配张照片都好拽",
       "url": "https://www.douyin.com/search/贝斯加鼓点随便配张照片都好拽",
-      "heat": 7712681,
+      "heat": 7696084,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238170+08:00"
-    },
-    {
-      "id": "douyin_328c0321ae8b",
-      "platform": "douyin",
-      "title": "黄子韬直播怒怼黑粉",
-      "url": "https://www.douyin.com/search/黄子韬直播怒怼黑粉",
-      "heat": 7708908,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238174+08:00"
-    },
-    {
-      "id": "douyin_17b6d6de4e0a",
-      "platform": "douyin",
-      "title": "DK战胜T1",
-      "url": "https://www.douyin.com/search/DK战胜T1",
-      "heat": 7702648,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238177+08:00"
-    },
-    {
-      "id": "douyin_18196e3b9822",
-      "platform": "douyin",
-      "title": "这首歌唱出了我的心情",
-      "url": "https://www.douyin.com/search/这首歌唱出了我的心情",
-      "heat": 7701274,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238180+08:00"
-    },
-    {
-      "id": "douyin_50ddf00c3a4a",
-      "platform": "douyin",
-      "title": "论闺蜜给我出片的速度",
-      "url": "https://www.douyin.com/search/论闺蜜给我出片的速度",
-      "heat": 7694364,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238184+08:00"
-    },
-    {
-      "id": "douyin_8c60749f9687",
-      "platform": "douyin",
-      "title": "王楚淇终于结婚了",
-      "url": "https://www.douyin.com/search/王楚淇终于结婚了",
-      "heat": 7685320,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238187+08:00"
-    },
-    {
-      "id": "douyin_8f80c750d226",
-      "platform": "douyin",
-      "title": "于蕾任2027羊年春晚总导演",
-      "url": "https://www.douyin.com/search/于蕾任2027羊年春晚总导演",
-      "heat": 7680585,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238191+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480896+08:00"
     },
     {
       "id": "douyin_864dc0f48d9b",
       "platform": "douyin",
       "title": "来一起翻跳KDA卡莎神之八秒",
       "url": "https://www.douyin.com/search/来一起翻跳KDA卡莎神之八秒",
-      "heat": 7679136,
+      "heat": 7693896,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:15.238195+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480900+08:00"
     },
     {
-      "id": "toutiao_16bda7284d7f",
-      "platform": "toutiao",
-      "title": "邓超登台演唱主打一个放飞自我",
-      "url": "https://www.toutiao.com/trending/7700627922738004490/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700627922738004490%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%82%93%E8%B6%85%E7%99%BB%E5%8F%B0%E6%BC%94%E5%94%B1%E4%B8%BB%E6%89%93%E4%B8%80%E4%B8%AA%E6%94%BE%E9%A3%9E%E8%87%AA%E6%88%91%22%7D&rank=&style_id=40132&topic_id=7700627922738004490",
-      "heat": 7584544,
+      "id": "douyin_f553dd21edc2",
+      "platform": "douyin",
+      "title": "369赛后采访谈英雄池与队友签证",
+      "url": "https://www.douyin.com/search/369赛后采访谈英雄池与队友签证",
+      "heat": 7691417,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769478+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480902+08:00"
     },
     {
-      "id": "toutiao_29541ba2d7ad",
-      "platform": "toutiao",
-      "title": "徐冬冬回应身材争议",
-      "url": "https://www.toutiao.com/trending/7700081825624342564/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700081825624342564%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%BE%90%E5%86%AC%E5%86%AC%E5%9B%9E%E5%BA%94%E8%BA%AB%E6%9D%90%E4%BA%89%E8%AE%AE%22%7D&rank=&style_id=40132&topic_id=7700081825624342564",
-      "heat": 6862779,
+      "id": "douyin_8c60749f9687",
+      "platform": "douyin",
+      "title": "王楚淇终于结婚了",
+      "url": "https://www.douyin.com/search/王楚淇终于结婚了",
+      "heat": 7690845,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769482+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480905+08:00"
     },
     {
-      "id": "toutiao_2c55a969dc52",
-      "platform": "toutiao",
-      "title": "国考83个职位无人报名",
-      "url": "https://www.toutiao.com/trending/7699488753051631679/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227699488753051631679%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%9B%BD%E8%80%8383%E4%B8%AA%E8%81%8C%E4%BD%8D%E6%97%A0%E4%BA%BA%E6%8A%A5%E5%90%8D%22%7D&rank=&style_id=40132&topic_id=7699488753051631679",
-      "heat": 6209699,
+      "id": "douyin_2c69d69079e4",
+      "platform": "douyin",
+      "title": "锐评VOGUE红毯明星穿搭",
+      "url": "https://www.douyin.com/search/锐评VOGUE红毯明星穿搭",
+      "heat": 7688708,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769487+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480908+08:00"
     },
     {
-      "id": "toutiao_d56099f5dddd",
-      "platform": "toutiao",
-      "title": "U17女足世界杯中国队力克美国队",
-      "url": "https://www.toutiao.com/trending/7700690254268760626/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700690254268760626%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22U17%E5%A5%B3%E8%B6%B3%E4%B8%96%E7%95%8C%E6%9D%AF%E4%B8%AD%E5%9B%BD%E9%98%9F%E5%8A%9B%E5%85%8B%E7%BE%8E%E5%9B%BD%E9%98%9F%22%7D&rank=&style_id=40132&topic_id=7700690254268760626",
-      "heat": 5618768,
+      "id": "douyin_80270efe7293",
+      "platform": "douyin",
+      "title": "蔡徐坤新加坡演唱会",
+      "url": "https://www.douyin.com/search/蔡徐坤新加坡演唱会",
+      "heat": 7684808,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769491+08:00"
+      "fetched_at": "2026-10-26T11:56:28.480911+08:00"
     },
     {
-      "id": "toutiao_4a4ddadecba5",
+      "id": "toutiao_7dd2639586ec",
       "platform": "toutiao",
-      "title": "以选举倒计时内塔尼亚胡能否翻盘",
-      "url": "https://www.toutiao.com/trending/7699404987843265033/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227699404987843265033%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%BB%A5%E9%80%89%E4%B8%BE%E5%80%92%E8%AE%A1%E6%97%B6%E5%86%85%E5%A1%94%E5%B0%BC%E4%BA%9A%E8%83%A1%E8%83%BD%E5%90%A6%E7%BF%BB%E7%9B%98%22%7D&rank=&style_id=40132&topic_id=7699404987843265033",
-      "heat": 5084072,
+      "title": "小博索纳罗拒绝承认败选",
+      "url": "https://www.toutiao.com/trending/7700788188142374454/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%225%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700788188142374454%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%B0%8F%E5%8D%9A%E7%B4%A2%E7%BA%B3%E7%BD%97%E6%8B%92%E7%BB%9D%E6%89%BF%E8%AE%A4%E8%B4%A5%E9%80%89%22%7D&rank=&style_id=40132&topic_id=7700788188142374454",
+      "heat": 7401267,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769496+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434140+08:00"
     },
     {
-      "id": "toutiao_0ad177571afa",
+      "id": "toutiao_5c351f0024f5",
       "platform": "toutiao",
-      "title": "68年前的今天志愿军全部撤离朝鲜",
-      "url": "https://www.toutiao.com/trending/7700403783569965097/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%220%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700403783569965097%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2268%E5%B9%B4%E5%89%8D%E7%9A%84%E4%BB%8A%E5%A4%A9%E5%BF%97%E6%84%BF%E5%86%9B%E5%85%A8%E9%83%A8%E6%92%A4%E7%A6%BB%E6%9C%9D%E9%B2%9C%22%7D&rank=&style_id=40132&topic_id=7700403783569965097",
-      "heat": 4600258,
+      "title": "12000名跑者跑过实景版富春山居图",
+      "url": "https://www.toutiao.com/trending/7700784468797259812/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700784468797259812%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%2212000%E5%90%8D%E8%B7%91%E8%80%85%E8%B7%91%E8%BF%87%E5%AE%9E%E6%99%AF%E7%89%88%E5%AF%8C%E6%98%A5%E5%B1%B1%E5%B1%85%E5%9B%BE%22%7D&rank=&style_id=40132&topic_id=7700784468797259812",
+      "heat": 6696943,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769501+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434144+08:00"
     },
     {
-      "id": "toutiao_debbda392b02",
+      "id": "toutiao_dd2957b13cf4",
       "platform": "toutiao",
-      "title": "人造黄金会不会击穿金价",
-      "url": "https://www.toutiao.com/trending/7699776708773249067/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227699776708773249067%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E4%BA%BA%E9%80%A0%E9%BB%84%E9%87%91%E4%BC%9A%E4%B8%8D%E4%BC%9A%E5%87%BB%E7%A9%BF%E9%87%91%E4%BB%B7%22%7D&rank=&style_id=40132&topic_id=7699776708773249067",
-      "heat": 4162486,
+      "title": "109岁老红军曾参加长征渡江战役",
+      "url": "https://www.toutiao.com/trending/7700465644214501439/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%223%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700465644214501439%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22109%E5%B2%81%E8%80%81%E7%BA%A2%E5%86%9B%E6%9B%BE%E5%8F%82%E5%8A%A0%E9%95%BF%E5%BE%81%E6%B8%A1%E6%B1%9F%E6%88%98%E5%BD%B9%22%7D&rank=&style_id=40132&topic_id=7700465644214501439",
+      "heat": 6059645,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769505+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434148+08:00"
     },
     {
-      "id": "toutiao_f8bfb6761b7e",
+      "id": "toutiao_432f2f3ec0d0",
       "platform": "toutiao",
-      "title": "皇马发文庆祝赢下国家德比",
-      "url": "https://www.toutiao.com/trending/7700734598950633993/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700734598950633993%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%9A%87%E9%A9%AC%E5%8F%91%E6%96%87%E5%BA%86%E7%A5%9D%E8%B5%A2%E4%B8%8B%E5%9B%BD%E5%AE%B6%E5%BE%B7%E6%AF%94%22%7D&rank=&style_id=40132&topic_id=7700734598950633993",
-      "heat": 3766373,
+      "title": "学者：卢拉在民生议题上“放了大招”",
+      "url": "https://www.toutiao.com/trending/7700797297172434468/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700797297172434468%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%AD%A6%E8%80%85%EF%BC%9A%E5%8D%A2%E6%8B%89%E5%9C%A8%E6%B0%91%E7%94%9F%E8%AE%AE%E9%A2%98%E4%B8%8A%E2%80%9C%E6%94%BE%E4%BA%86%E5%A4%A7%E6%8B%9B%E2%80%9D%22%7D&rank=&style_id=40132&topic_id=7700797297172434468",
+      "heat": 5482993,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769509+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434151+08:00"
     },
     {
-      "id": "toutiao_75aeb885ea74",
+      "id": "toutiao_6fcbdd5186ba",
       "platform": "toutiao",
-      "title": "iPhone Duo开售2天就跌破官方首发价",
-      "url": "https://www.toutiao.com/trending/7700592660213403187/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700592660213403187%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22iPhone+Duo%E5%BC%80%E5%94%AE2%E5%A4%A9%E5%B0%B1%E8%B7%8C%E7%A0%B4%E5%AE%98%E6%96%B9%E9%A6%96%E5%8F%91%E4%BB%B7%22%7D&rank=&style_id=40132&topic_id=7700592660213403187",
-      "heat": 3407955,
+      "title": "县委书记回应被扔下水：张雪临时起意",
+      "url": "https://www.toutiao.com/trending/7700473698733588506/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700473698733588506%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8E%BF%E5%A7%94%E4%B9%A6%E8%AE%B0%E5%9B%9E%E5%BA%94%E8%A2%AB%E6%89%94%E4%B8%8B%E6%B0%B4%EF%BC%9A%E5%BC%A0%E9%9B%AA%E4%B8%B4%E6%97%B6%E8%B5%B7%E6%84%8F%22%7D&rank=&style_id=40132&topic_id=7700473698733588506",
+      "heat": 4961218,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769514+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434156+08:00"
     },
     {
-      "id": "toutiao_2cd30598398b",
+      "id": "toutiao_42f7138a1063",
       "platform": "toutiao",
-      "title": "泽连斯基：绝不接受放弃25%领土提议",
-      "url": "https://www.toutiao.com/trending/7699509225088745526/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227699509225088745526%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%B3%BD%E8%BF%9E%E6%96%AF%E5%9F%BA%EF%BC%9A%E7%BB%9D%E4%B8%8D%E6%8E%A5%E5%8F%97%E6%94%BE%E5%BC%8325%25%E9%A2%86%E5%9C%9F%E6%8F%90%E8%AE%AE%22%7D&rank=&style_id=40132&topic_id=7699509225088745526",
-      "heat": 3083645,
+      "title": "“23:59:60”今后将不再出现",
+      "url": "https://www.toutiao.com/trending/7698300945130390043/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227698300945130390043%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E2%80%9C23%3A59%3A60%E2%80%9D%E4%BB%8A%E5%90%8E%E5%B0%86%E4%B8%8D%E5%86%8D%E5%87%BA%E7%8E%B0%22%7D&rank=&style_id=40132&topic_id=7698300945130390043",
+      "heat": 4489095,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769519+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434159+08:00"
+    },
+    {
+      "id": "toutiao_e425297c8218",
+      "platform": "toutiao",
+      "title": "媒体：国乒要敢于送年轻人上硬仗C位",
+      "url": "https://www.toutiao.com/trending/7700764627223904292/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700764627223904292%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%AA%92%E4%BD%93%EF%BC%9A%E5%9B%BD%E4%B9%92%E8%A6%81%E6%95%A2%E4%BA%8E%E9%80%81%E5%B9%B4%E8%BD%BB%E4%BA%BA%E4%B8%8A%E7%A1%AC%E4%BB%97C%E4%BD%8D%22%7D&rank=&style_id=40132&topic_id=7700764627223904292",
+      "heat": 4061901,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:34.434163+08:00"
+    },
+    {
+      "id": "toutiao_7aea56b6eed2",
+      "platform": "toutiao",
+      "title": "老干妈600人变48人意味着什么",
+      "url": "https://www.toutiao.com/trending/7700771403812834852/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700771403812834852%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%80%81%E5%B9%B2%E5%A6%88600%E4%BA%BA%E5%8F%9848%E4%BA%BA%E6%84%8F%E5%91%B3%E7%9D%80%E4%BB%80%E4%B9%88%22%7D&rank=&style_id=40132&topic_id=7700771403812834852",
+      "heat": 3675360,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:34.434167+08:00"
+    },
+    {
+      "id": "toutiao_b9f80bef4204",
+      "platform": "toutiao",
+      "title": "国乒获奖组委会错放日本国旗",
+      "url": "https://www.toutiao.com/trending/7700465091720445988/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%222%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700465091720445988%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%9B%BD%E4%B9%92%E8%8E%B7%E5%A5%96%E7%BB%84%E5%A7%94%E4%BC%9A%E9%94%99%E6%94%BE%E6%97%A5%E6%9C%AC%E5%9B%BD%E6%97%97%22%7D&rank=&style_id=40132&topic_id=7700465091720445988",
+      "heat": 3325603,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:34.434171+08:00"
+    },
+    {
+      "id": "toutiao_0dd4e3aa2e0d",
+      "platform": "toutiao",
+      "title": "杰威失衡倒地导致脚踝严重变形",
+      "url": "https://www.toutiao.com/trending/7700785207032417842/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%225%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700785207032417842%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%9D%B0%E5%A8%81%E5%A4%B1%E8%A1%A1%E5%80%92%E5%9C%B0%E5%AF%BC%E8%87%B4%E8%84%9A%E8%B8%9D%E4%B8%A5%E9%87%8D%E5%8F%98%E5%BD%A2%22%7D&rank=&style_id=40132&topic_id=7700785207032417842",
+      "heat": 3009130,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:34.434175+08:00"
     },
     {
       "id": "tieba_46ce33b30cae",
       "platform": "tieba",
       "title": "抗韩先锋!IG斩HLE于马下",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368027&topic_name=%E6%8A%97%E9%9F%A9%E5%85%88%E9%94%8B%21IG%E6%96%A9HLE%E4%BA%8E%E9%A9%AC%E4%B8%8B",
-      "heat": 2983230,
+      "heat": 2728770,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434235+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261180+08:00"
     },
     {
-      "id": "toutiao_cc406efb483a",
+      "id": "toutiao_34468c8cb458",
       "platform": "toutiao",
-      "title": "巴萨主帅谈国家德比失利：我很失望",
-      "url": "https://www.toutiao.com/trending/7700737705080291849/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700737705080291849%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%B7%B4%E8%90%A8%E4%B8%BB%E5%B8%85%E8%B0%88%E5%9B%BD%E5%AE%B6%E5%BE%B7%E6%AF%94%E5%A4%B1%E5%88%A9%EF%BC%9A%E6%88%91%E5%BE%88%E5%A4%B1%E6%9C%9B%22%7D&rank=&style_id=40132&topic_id=7700737705080291849",
-      "heat": 2790198,
+      "title": "金价创纪录 俄罗斯矿企财务状况改善",
+      "url": "https://www.toutiao.com/trending/7700744756238663723/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700744756238663723%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%87%91%E4%BB%B7%E5%88%9B%E7%BA%AA%E5%BD%95+%E4%BF%84%E7%BD%97%E6%96%AF%E7%9F%BF%E4%BC%81%E8%B4%A2%E5%8A%A1%E7%8A%B6%E5%86%B5%E6%94%B9%E5%96%84%22%7D&rank=&style_id=40132&topic_id=7700744756238663723",
+      "heat": 2722774,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769524+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434180+08:00"
     },
     {
-      "id": "toutiao_731f29fc0317",
-      "platform": "toutiao",
-      "title": "院士：主动是健康最可靠的路径",
-      "url": "https://www.toutiao.com/trending/7700590307414376467/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700590307414376467%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E9%99%A2%E5%A3%AB%EF%BC%9A%E4%B8%BB%E5%8A%A8%E6%98%AF%E5%81%A5%E5%BA%B7%E6%9C%80%E5%8F%AF%E9%9D%A0%E7%9A%84%E8%B7%AF%E5%BE%84%22%7D&rank=&style_id=40132&topic_id=7700590307414376467",
-      "heat": 2524675,
+      "id": "tieba_274ee481a9cd",
+      "platform": "tieba",
+      "title": "69会拉扯,TES逮捕G2",
+      "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368028&topic_name=69%E4%BC%9A%E6%8B%89%E6%89%AF%2CTES%E9%80%AE%E6%8D%95G2",
+      "heat": 2597211,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769530+08:00"
-    },
-    {
-      "id": "toutiao_c27632d33045",
-      "platform": "toutiao",
-      "title": "女生拒绝表白后照片被发色情软件",
-      "url": "https://www.toutiao.com/trending/7700440450536292393/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700440450536292393%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%A5%B3%E7%94%9F%E6%8B%92%E7%BB%9D%E8%A1%A8%E7%99%BD%E5%90%8E%E7%85%A7%E7%89%87%E8%A2%AB%E5%8F%91%E8%89%B2%E6%83%85%E8%BD%AF%E4%BB%B6%22%7D&rank=&style_id=40132&topic_id=7700440450536292393",
-      "heat": 2284420,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769535+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261195+08:00"
     },
     {
       "id": "tieba_14467b012574",
       "platform": "tieba",
       "title": "大肥鱼闹智械危机?吧友打假",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368018&topic_name=%E5%A4%A7%E8%82%A5%E9%B1%BC%E9%97%B9%E6%99%BA%E6%A2%B0%E5%8D%B1%E6%9C%BA%3F%E5%90%A7%E5%8F%8B%E6%89%93%E5%81%87",
-      "heat": 2113636,
+      "heat": 2472400,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434252+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261200+08:00"
     },
     {
-      "id": "toutiao_a9ef9a3be3f7",
+      "id": "toutiao_a5293a71b564",
       "platform": "toutiao",
-      "title": "第一批拿到iPhone Duo的人还好吗",
-      "url": "https://www.toutiao.com/trending/7700431889122804233/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700431889122804233%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E7%AC%AC%E4%B8%80%E6%89%B9%E6%8B%BF%E5%88%B0iPhone+Duo%E7%9A%84%E4%BA%BA%E8%BF%98%E5%A5%BD%E5%90%97%22%7D&rank=&style_id=40132&topic_id=7700431889122804233",
-      "heat": 2067029,
+      "title": "AI生成视频已经能逃过人脸识别系统",
+      "url": "https://www.toutiao.com/trending/7700611070783881755/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%228%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700611070783881755%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22AI%E7%94%9F%E6%88%90%E8%A7%86%E9%A2%91%E5%B7%B2%E7%BB%8F%E8%83%BD%E9%80%83%E8%BF%87%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E7%B3%BB%E7%BB%9F%22%7D&rank=&style_id=40132&topic_id=7700611070783881755",
+      "heat": 2463667,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769540+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434184+08:00"
     },
     {
-      "id": "toutiao_23471bf0e64f",
+      "id": "toutiao_3556322b4d42",
       "platform": "toutiao",
-      "title": "巴西总统卢拉为何开始使用智能手机",
-      "url": "https://www.toutiao.com/trending/7700437060892495401/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700437060892495401%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%B7%B4%E8%A5%BF%E6%80%BB%E7%BB%9F%E5%8D%A2%E6%8B%89%E4%B8%BA%E4%BD%95%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8%E6%99%BA%E8%83%BD%E6%89%8B%E6%9C%BA%22%7D&rank=&style_id=40132&topic_id=7700437060892495401",
-      "heat": 1870325,
+      "title": "媒体：蒋万安“乖乖牌”遇“闪身步”",
+      "url": "https://www.toutiao.com/trending/7699628749511229459/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227699628749511229459%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%AA%92%E4%BD%93%EF%BC%9A%E8%92%8B%E4%B8%87%E5%AE%89%E2%80%9C%E4%B9%96%E4%B9%96%E7%89%8C%E2%80%9D%E9%81%87%E2%80%9C%E9%97%AA%E8%BA%AB%E6%AD%A5%E2%80%9D%22%7D&rank=&style_id=40132&topic_id=7699628749511229459",
+      "heat": 2229218,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769544+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434188+08:00"
     },
     {
-      "id": "toutiao_0e30be9546e6",
+      "id": "toutiao_41b59a638e6a",
       "platform": "toutiao",
-      "title": "2027年乒乓球亚锦赛将在泰国举办",
-      "url": "https://www.toutiao.com/trending/7700587638729802291/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700587638729802291%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%222027%E5%B9%B4%E4%B9%92%E4%B9%93%E7%90%83%E4%BA%9A%E9%94%A6%E8%B5%9B%E5%B0%86%E5%9C%A8%E6%B3%B0%E5%9B%BD%E4%B8%BE%E5%8A%9E%22%7D&rank=&style_id=40132&topic_id=7700587638729802291",
-      "heat": 1692340,
+      "title": "日本多家车企力求缩短新车开发周期",
+      "url": "https://www.toutiao.com/trending/7700534283680711206/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700534283680711206%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%97%A5%E6%9C%AC%E5%A4%9A%E5%AE%B6%E8%BD%A6%E4%BC%81%E5%8A%9B%E6%B1%82%E7%BC%A9%E7%9F%AD%E6%96%B0%E8%BD%A6%E5%BC%80%E5%8F%91%E5%91%A8%E6%9C%9F%22%7D&rank=&style_id=40132&topic_id=7700534283680711206",
+      "heat": 2017080,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769549+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434192+08:00"
     },
     {
       "id": "tieba_74805d889d14",
       "platform": "tieba",
       "title": "战火中享安逸?吧友怒斥起点文",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368013&topic_name=%E6%88%98%E7%81%AB%E4%B8%AD%E4%BA%AB%E5%AE%89%E9%80%B8%3F%E5%90%A7%E5%8F%8B%E6%80%92%E6%96%A5%E8%B5%B7%E7%82%B9%E6%96%87",
-      "heat": 1642200,
+      "heat": 2014416,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434256+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261204+08:00"
     },
     {
-      "id": "toutiao_1b9bcfe87eb4",
+      "id": "toutiao_a6fb43f3e826",
       "platform": "toutiao",
-      "title": "法国极右翼领导人启动总统竞选活动",
-      "url": "https://www.toutiao.com/trending/7700491330081800714/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2215%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700491330081800714%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E6%B3%95%E5%9B%BD%E6%9E%81%E5%8F%B3%E7%BF%BC%E9%A2%86%E5%AF%BC%E4%BA%BA%E5%90%AF%E5%8A%A8%E6%80%BB%E7%BB%9F%E7%AB%9E%E9%80%89%E6%B4%BB%E5%8A%A8%22%7D&rank=&style_id=40132&topic_id=7700491330081800714",
-      "heat": 1531293,
+      "title": "博主：穆里尼奥的帅位这下稳了",
+      "url": "https://www.toutiao.com/trending/7700812304903835199/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700812304903835199%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8D%9A%E4%B8%BB%EF%BC%9A%E7%A9%86%E9%87%8C%E5%B0%BC%E5%A5%A5%E7%9A%84%E5%B8%85%E4%BD%8D%E8%BF%99%E4%B8%8B%E7%A8%B3%E4%BA%86%22%7D&rank=&style_id=40132&topic_id=7700812304903835199",
+      "heat": 1825130,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769554+08:00"
-    },
-    {
-      "id": "toutiao_2a8d5c1116cd",
-      "platform": "toutiao",
-      "title": "迪丽热巴雨中衔蝶全平台爆火",
-      "url": "https://www.toutiao.com/trending/7700220606004527146/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2216%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700220606004527146%22%2C%22hot_board_impr_id%22%3A%222026102608042052E8C9BFE0CA96074491%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E8%BF%AA%E4%B8%BD%E7%83%AD%E5%B7%B4%E9%9B%A8%E4%B8%AD%E8%A1%94%E8%9D%B6%E5%85%A8%E5%B9%B3%E5%8F%B0%E7%88%86%E7%81%AB%22%7D&rank=&style_id=40132&topic_id=7700220606004527146",
-      "heat": 1385571,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:20.769558+08:00"
-    },
-    {
-      "id": "weibo_7e466a16ad52",
-      "platform": "weibo",
-      "title": "武契奇承认败选",
-      "url": "https://s.weibo.com/weibo?q=武契奇承认败选",
-      "heat": 1317149,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233397+08:00"
+      "fetched_at": "2026-10-26T11:56:34.434196+08:00"
     },
     {
       "id": "tieba_5555d4e84b27",
       "platform": "tieba",
       "title": "上岸5天换男友,6年感情喂狗",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368016&topic_name=%E4%B8%8A%E5%B2%B85%E5%A4%A9%E6%8D%A2%E7%94%B7%E5%8F%8B%2C6%E5%B9%B4%E6%84%9F%E6%83%85%E5%96%82%E7%8B%97",
-      "heat": 1254177,
+      "heat": 1686178,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434261+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261207+08:00"
+    },
+    {
+      "id": "toutiao_79bb24653c75",
+      "platform": "toutiao",
+      "title": "《三星堆：未来往事》为何票房不佳",
+      "url": "https://www.toutiao.com/trending/7700787112974487076/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%2213%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700787112974487076%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E3%80%8A%E4%B8%89%E6%98%9F%E5%A0%86%EF%BC%9A%E6%9C%AA%E6%9D%A5%E5%BE%80%E4%BA%8B%E3%80%8B%E4%B8%BA%E4%BD%95%E7%A5%A8%E6%88%BF%E4%B8%8D%E4%BD%B3%22%7D&rank=&style_id=40132&topic_id=7700787112974487076",
+      "heat": 1651446,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:34.434200+08:00"
+    },
+    {
+      "id": "toutiao_468ed2530f29",
+      "platform": "toutiao",
+      "title": "台“馆长”谈台湾光复：盼两岸繁荣",
+      "url": "https://www.toutiao.com/trending/7700174850928771135/?category_name=topic_innerflow&event_type=hot_board&log_pb=%7B%22category_name%22%3A%22topic_innerflow%22%2C%22cluster_type%22%3A%226%22%2C%22enter_from%22%3A%22click_category%22%2C%22entrance_hotspot%22%3A%22outside%22%2C%22event_type%22%3A%22hot_board%22%2C%22hot_board_cluster_id%22%3A%227700174850928771135%22%2C%22hot_board_impr_id%22%3A%22202610261156344C75CD9A90E3B9B36D21%22%2C%22jump_page%22%3A%22hot_board_page%22%2C%22location%22%3A%22news_hot_card%22%2C%22page_location%22%3A%22hot_board_page%22%2C%22source%22%3A%22trending_tab%22%2C%22style_id%22%3A%2240132%22%2C%22title%22%3A%22%E5%8F%B0%E2%80%9C%E9%A6%86%E9%95%BF%E2%80%9D%E8%B0%88%E5%8F%B0%E6%B9%BE%E5%85%89%E5%A4%8D%EF%BC%9A%E7%9B%BC%E4%B8%A4%E5%B2%B8%E7%B9%81%E8%8D%A3%22%7D&rank=&style_id=40132&topic_id=7700174850928771135",
+      "heat": 1494290,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:34.434204+08:00"
     },
     {
       "id": "tieba_1be22bd2183f",
       "platform": "tieba",
       "title": "土耳其摇人翻车,阿拉伯帮中国",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368026&topic_name=%E5%9C%9F%E8%80%B3%E5%85%B6%E6%91%87%E4%BA%BA%E7%BF%BB%E8%BD%A6%2C%E9%98%BF%E6%8B%89%E4%BC%AF%E5%B8%AE%E4%B8%AD%E5%9B%BD",
-      "heat": 1168310,
+      "heat": 1411175,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434265+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261211+08:00"
     },
     {
       "id": "tieba_9711c016d6e3",
       "platform": "tieba",
       "title": "陈熠首夺亚锦赛女单冠军",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368025&topic_name=%E9%99%88%E7%86%A0%E9%A6%96%E5%A4%BA%E4%BA%9A%E9%94%A6%E8%B5%9B%E5%A5%B3%E5%8D%95%E5%86%A0%E5%86%9B",
-      "heat": 1009175,
+      "heat": 1179504,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434268+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261214+08:00"
+    },
+    {
+      "id": "weibo_6bda883b51e0",
+      "platform": "weibo",
+      "title": "韩网热议iG战胜HLE",
+      "url": "https://s.weibo.com/weibo?q=韩网热议iG战胜HLE",
+      "heat": 1076360,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727027+08:00"
     },
     {
       "id": "tieba_4ccf569169b9",
       "platform": "tieba",
       "title": "网友自制性转马尔福同人游戏",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368024&topic_name=%E7%BD%91%E5%8F%8B%E8%87%AA%E5%88%B6%E6%80%A7%E8%BD%AC%E9%A9%AC%E5%B0%94%E7%A6%8F%E5%90%8C%E4%BA%BA%E6%B8%B8%E6%88%8F",
-      "heat": 1003320,
+      "heat": 1074330,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434271+08:00"
-    },
-    {
-      "id": "weibo_463027200913",
-      "platform": "weibo",
-      "title": "姆巴佩绝杀巴萨",
-      "url": "https://s.weibo.com/weibo?q=姆巴佩绝杀巴萨",
-      "heat": 848943,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233412+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261217+08:00"
     },
     {
       "id": "tieba_1b3039e81661",
       "platform": "tieba",
       "title": "Bin哥采访太公式,丧失活人感",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368022&topic_name=Bin%E5%93%A5%E9%87%87%E8%AE%BF%E5%A4%AA%E5%85%AC%E5%BC%8F%2C%E4%B8%A7%E5%A4%B1%E6%B4%BB%E4%BA%BA%E6%84%9F",
-      "heat": 810589,
+      "heat": 857120,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434275+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261220+08:00"
     },
     {
-      "id": "weibo_17d4d695243d",
+      "id": "weibo_958d33ab6b85",
       "platform": "weibo",
-      "title": "金牌闪耀赛场人生不惧残缺",
-      "url": "https://s.weibo.com/weibo?q=金牌闪耀赛场人生不惧残缺",
-      "heat": 677096,
+      "title": "嫁金钗全员恶女TOP10",
+      "url": "https://s.weibo.com/weibo?q=嫁金钗全员恶女TOP10",
+      "heat": 773757,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233416+08:00"
+      "fetched_at": "2026-10-26T11:56:31.727041+08:00"
+    },
+    {
+      "id": "weibo_688d9b6126c9",
+      "platform": "weibo",
+      "title": "纪念红军长征胜利90周年主题长卷",
+      "url": "https://s.weibo.com/weibo?q=纪念红军长征胜利90周年主题长卷",
+      "heat": 668888,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727046+08:00"
+    },
+    {
+      "id": "weibo_82d0ecbf134f",
+      "platform": "weibo",
+      "title": "马天宇主动提起李明德是要有反转了吗",
+      "url": "https://s.weibo.com/weibo?q=马天宇主动提起李明德是要有反转了吗",
+      "heat": 659811,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727049+08:00"
+    },
+    {
+      "id": "weibo_d978ceade8b4",
+      "platform": "weibo",
+      "title": "丈夫砍死出轨妻子法院认定妻子有责任",
+      "url": "https://s.weibo.com/weibo?q=丈夫砍死出轨妻子法院认定妻子有责任",
+      "heat": 647512,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727052+08:00"
     },
     {
       "id": "tieba_cd4b3b6ad21e",
       "platform": "tieba",
       "title": "火鸡面配薯片,新型赛博灯泡?",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368023&topic_name=%E7%81%AB%E9%B8%A1%E9%9D%A2%E9%85%8D%E8%96%AF%E7%89%87%2C%E6%96%B0%E5%9E%8B%E8%B5%9B%E5%8D%9A%E7%81%AF%E6%B3%A1%3F",
-      "heat": 633270,
+      "heat": 644343,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434278+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261223+08:00"
     },
     {
-      "id": "weibo_c02388f78ec3",
+      "id": "weibo_280bb221e510",
       "platform": "weibo",
-      "title": "iG与TES双双晋级2-1组",
-      "url": "https://s.weibo.com/weibo?q=iG与TES双双晋级2-1组",
-      "heat": 600259,
+      "title": "65岁以上人口22365万",
+      "url": "https://s.weibo.com/weibo?q=65岁以上人口22365万",
+      "heat": 610787,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233420+08:00"
+      "fetched_at": "2026-10-26T11:56:31.727055+08:00"
+    },
+    {
+      "id": "weibo_40afe4a2643e",
+      "platform": "weibo",
+      "title": "馅饼店老板 沈腾就是太饿了",
+      "url": "https://s.weibo.com/weibo?q=馅饼店老板 沈腾就是太饿了",
+      "heat": 601546,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727059+08:00"
+    },
+    {
+      "id": "ithome_rss_ceba89f45d44",
+      "platform": "ithome_rss",
+      "title": "终于低过 10 元 / 月：迅雷超级会员 11.11 直降，12T 网盘 + 每天 1000 次云添加",
+      "url": "https://www.ithome.com/1/012/491.htm",
+      "heat": 542974,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:26.203089+08:00"
     },
     {
       "id": "tieba_b5515aecbb97",
       "platform": "tieba",
       "title": "日网友不识Steam,出警批盗版",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368014&topic_name=%E6%97%A5%E7%BD%91%E5%8F%8B%E4%B8%8D%E8%AF%86Steam%2C%E5%87%BA%E8%AD%A6%E6%89%B9%E7%9B%97%E7%89%88",
-      "heat": 573993,
+      "heat": 528880,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434282+08:00"
-    },
-    {
-      "id": "weibo_097e5c732a4b",
-      "platform": "weibo",
-      "title": "巴萨1比2皇马",
-      "url": "https://s.weibo.com/weibo?q=巴萨1比2皇马",
-      "heat": 410636,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233424+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261226+08:00"
     },
     {
       "id": "tieba_79e7d997942a",
       "platform": "tieba",
       "title": "央视批AI魔改经典名著",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368017&topic_name=%E5%A4%AE%E8%A7%86%E6%89%B9AI%E9%AD%94%E6%94%B9%E7%BB%8F%E5%85%B8%E5%90%8D%E8%91%97",
-      "heat": 410240,
+      "heat": 522044,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434285+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261229+08:00"
     },
     {
       "id": "tieba_4bb1d7577961",
       "platform": "tieba",
       "title": "日剧抹黑中国,高市点名要看",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368020&topic_name=%E6%97%A5%E5%89%A7%E6%8A%B9%E9%BB%91%E4%B8%AD%E5%9B%BD%2C%E9%AB%98%E5%B8%82%E7%82%B9%E5%90%8D%E8%A6%81%E7%9C%8B",
-      "heat": 387638,
+      "heat": 503748,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434289+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261232+08:00"
     },
     {
       "id": "tieba_d7393935b5e4",
       "platform": "tieba",
       "title": "仁义!国人祝福土耳其抗癌母亲",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368015&topic_name=%E4%BB%81%E4%B9%89%21%E5%9B%BD%E4%BA%BA%E7%A5%9D%E7%A6%8F%E5%9C%9F%E8%80%B3%E5%85%B6%E6%8A%97%E7%99%8C%E6%AF%8D%E4%BA%B2",
-      "heat": 375516,
+      "heat": 482477,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434292+08:00"
-    },
-    {
-      "id": "weibo_589019a42edd",
-      "platform": "weibo",
-      "title": "多款护眼膏涉嫌虚假宣传",
-      "url": "https://s.weibo.com/weibo?q=多款护眼膏涉嫌虚假宣传",
-      "heat": 357812,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233431+08:00"
-    },
-    {
-      "id": "weibo_682d86ccdd88",
-      "platform": "weibo",
-      "title": "美国客户一口气买了200套房",
-      "url": "https://s.weibo.com/weibo?q=美国客户一口气买了200套房",
-      "heat": 320263,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233434+08:00"
-    },
-    {
-      "id": "weibo_74089093c332",
-      "platform": "weibo",
-      "title": "我国家庭规模持续缩小",
-      "url": "https://s.weibo.com/weibo?q=我国家庭规模持续缩小",
-      "heat": 296374,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233438+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261235+08:00"
     },
     {
       "id": "tieba_a145c2bb75f3",
       "platform": "tieba",
       "title": "BLG速通TLAW,Bin哥怒秀青钢影",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368012&topic_name=BLG%E9%80%9F%E9%80%9ATLAW%2CBin%E5%93%A5%E6%80%92%E7%A7%80%E9%9D%92%E9%92%A2%E5%BD%B1",
-      "heat": 293624,
+      "heat": 434096,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434296+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261238+08:00"
     },
     {
-      "id": "weibo_233d317e702c",
+      "id": "weibo_cbf950ef05e4",
       "platform": "weibo",
-      "title": "杨幂给林俊杰伴舞",
-      "url": "https://s.weibo.com/weibo?q=杨幂给林俊杰伴舞",
-      "heat": 254057,
+      "title": "93岁94岁志愿军女兵见面相拥",
+      "url": "https://s.weibo.com/weibo?q=93岁94岁志愿军女兵见面相拥",
+      "heat": 400162,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233441+08:00"
+      "fetched_at": "2026-10-26T11:56:31.727065+08:00"
     },
     {
-      "id": "weibo_5904bf26ec06",
+      "id": "weibo_3e140c1e5e12",
       "platform": "weibo",
-      "title": "迪丽热巴五年前的红毯造型",
-      "url": "https://s.weibo.com/weibo?q=迪丽热巴五年前的红毯造型",
-      "heat": 242733,
+      "title": "住房公积金更好用了",
+      "url": "https://s.weibo.com/weibo?q=住房公积金更好用了",
+      "heat": 399431,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233445+08:00"
+      "fetched_at": "2026-10-26T11:56:31.727068+08:00"
+    },
+    {
+      "id": "weibo_2bec4797c713",
+      "platform": "weibo",
+      "title": "和胡彦斌分手后状态反差",
+      "url": "https://s.weibo.com/weibo?q=和胡彦斌分手后状态反差",
+      "heat": 398864,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727070+08:00"
+    },
+    {
+      "id": "weibo_96cd6dbe2091",
+      "platform": "weibo",
+      "title": "别杀我我是浙江人",
+      "url": "https://s.weibo.com/weibo?q=别杀我我是浙江人",
+      "heat": 396520,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727073+08:00"
+    },
+    {
+      "id": "weibo_debae3a57e9b",
+      "platform": "weibo",
+      "title": "网友让徐艺洋展示妊娠纹",
+      "url": "https://s.weibo.com/weibo?q=网友让徐艺洋展示妊娠纹",
+      "heat": 396265,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727076+08:00"
+    },
+    {
+      "id": "weibo_a58709928bc0",
+      "platform": "weibo",
+      "title": "华伦天奴待官宣尴尬期",
+      "url": "https://s.weibo.com/weibo?q=华伦天奴待官宣尴尬期",
+      "heat": 394802,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727079+08:00"
+    },
+    {
+      "id": "weibo_85604614a372",
+      "platform": "weibo",
+      "title": "肖战姜妍小城良方吻戏",
+      "url": "https://s.weibo.com/weibo?q=肖战姜妍小城良方吻戏",
+      "heat": 393042,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727082+08:00"
     },
     {
       "id": "weibo_9df4b981de04",
       "platform": "weibo",
       "title": "黄子韬我结婚生子碍你事了吗",
       "url": "https://s.weibo.com/weibo?q=黄子韬我结婚生子碍你事了吗",
-      "heat": 234071,
+      "heat": 389151,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233448+08:00"
+      "fetched_at": "2026-10-26T11:56:31.727088+08:00"
     },
     {
       "id": "weibo_54e92f4974c8",
       "platform": "weibo",
       "title": "强烈建议给家里老人用苹果手机",
       "url": "https://s.weibo.com/weibo?q=强烈建议给家里老人用苹果手机",
-      "heat": 230502,
+      "heat": 387517,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233452+08:00"
+      "fetched_at": "2026-10-26T11:56:31.727091+08:00"
+    },
+    {
+      "id": "weibo_b5e25be3b8da",
+      "platform": "weibo",
+      "title": "马斯克称如关停星链乌前线将崩溃",
+      "url": "https://s.weibo.com/weibo?q=马斯克称如关停星链乌前线将崩溃",
+      "heat": 387139,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727094+08:00"
+    },
+    {
+      "id": "weibo_63cd7f3189fd",
+      "platform": "weibo",
+      "title": "将照片挂色情软件男子已取保候审",
+      "url": "https://s.weibo.com/weibo?q=将照片挂色情软件男子已取保候审",
+      "heat": 384762,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727097+08:00"
+    },
+    {
+      "id": "weibo_4adb3d94f681",
+      "platform": "weibo",
+      "title": "阿雅 一个中国",
+      "url": "https://s.weibo.com/weibo?q=阿雅 一个中国",
+      "heat": 383053,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727100+08:00"
+    },
+    {
+      "id": "weibo_fb74df49e832",
+      "platform": "weibo",
+      "title": "offer1的李浩源怎么了",
+      "url": "https://s.weibo.com/weibo?q=offer1的李浩源怎么了",
+      "heat": 382225,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727103+08:00"
+    },
+    {
+      "id": "weibo_ad02e566a0f9",
+      "platform": "weibo",
+      "title": "杰威重伤离场",
+      "url": "https://s.weibo.com/weibo?q=杰威重伤离场",
+      "heat": 381352,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727106+08:00"
     },
     {
       "id": "tieba_714bd6b92968",
       "platform": "tieba",
       "title": "TES拿下AL,内战幻神发力了",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368009&topic_name=TES%E6%8B%BF%E4%B8%8BAL%2C%E5%86%85%E6%88%98%E5%B9%BB%E7%A5%9E%E5%8F%91%E5%8A%9B%E4%BA%86",
-      "heat": 220128,
+      "heat": 339495,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434299+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261241+08:00"
     },
     {
-      "id": "weibo_cdea330ad689",
+      "id": "weibo_9d82558ba26f",
       "platform": "weibo",
-      "title": "张智霖与前女友许秋怡世纪合体",
-      "url": "https://s.weibo.com/weibo?q=张智霖与前女友许秋怡世纪合体",
-      "heat": 219706,
+      "title": "海拔4800米的生命救援",
+      "url": "https://s.weibo.com/weibo?q=海拔4800米的生命救援",
+      "heat": 320934,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233455+08:00"
+      "fetched_at": "2026-10-26T11:56:31.727109+08:00"
     },
     {
-      "id": "weibo_e6d8ef833393",
+      "id": "weibo_7043ffeac6cf",
       "platform": "weibo",
-      "title": "林俊杰杨幂 茉莉雨",
-      "url": "https://s.weibo.com/weibo?q=林俊杰杨幂 茉莉雨",
-      "heat": 210408,
+      "title": "杰伦威廉姆斯或赛季报销",
+      "url": "https://s.weibo.com/weibo?q=杰伦威廉姆斯或赛季报销",
+      "heat": 312902,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233461+08:00"
+      "fetched_at": "2026-10-26T11:56:31.727112+08:00"
+    },
+    {
+      "id": "weibo_b2e11422550c",
+      "platform": "weibo",
+      "title": "以为不上班直到打开工资卡",
+      "url": "https://s.weibo.com/weibo?q=以为不上班直到打开工资卡",
+      "heat": 312753,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727115+08:00"
+    },
+    {
+      "id": "weibo_bb2ed7924d44",
+      "platform": "weibo",
+      "title": "闫桉试镜7次拿下男主",
+      "url": "https://s.weibo.com/weibo?q=闫桉试镜7次拿下男主",
+      "heat": 270653,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:31.727117+08:00"
     },
     {
       "id": "tieba_62e4643aef88",
       "platform": "tieba",
       "title": "60岁再出发,老哥自述流浪人生",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368004&topic_name=60%E5%B2%81%E5%86%8D%E5%87%BA%E5%8F%91%2C%E8%80%81%E5%93%A5%E8%87%AA%E8%BF%B0%E6%B5%81%E6%B5%AA%E4%BA%BA%E7%94%9F",
-      "heat": 201645,
+      "heat": 260372,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434303+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261244+08:00"
     },
     {
-      "id": "weibo_cf98e976bc31",
-      "platform": "weibo",
-      "title": "TES战胜G2",
-      "url": "https://s.weibo.com/weibo?q=TES战胜G2",
-      "heat": 201070,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233465+08:00"
-    },
-    {
-      "id": "weibo_d84aa1da7fe4",
-      "platform": "weibo",
-      "title": "徐艺洋赶来安抚黄子韬的情绪",
-      "url": "https://s.weibo.com/weibo?q=徐艺洋赶来安抚黄子韬的情绪",
-      "heat": 195646,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233468+08:00"
-    },
-    {
-      "id": "weibo_2361734bb68f",
-      "platform": "weibo",
-      "title": "湖人vs爵士",
-      "url": "https://s.weibo.com/weibo?q=湖人vs爵士",
-      "heat": 185916,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233471+08:00"
-    },
-    {
-      "id": "weibo_404ead159f66",
-      "platform": "weibo",
-      "title": "巴西大选",
-      "url": "https://s.weibo.com/weibo?q=巴西大选",
-      "heat": 176139,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233474+08:00"
-    },
-    {
-      "id": "tieba_e7df40ff0102",
+      "id": "tieba_3ca9051102c8",
       "platform": "tieba",
-      "title": "IG力克TSW,LPL外战止血",
-      "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368010&topic_name=IG%E5%8A%9B%E5%85%8BTSW%2CLPL%E5%A4%96%E6%88%98%E6%AD%A2%E8%A1%80",
-      "heat": 175434,
+      "title": "影之刃零评分解禁,质量稳了?",
+      "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368029&topic_name=%E5%BD%B1%E4%B9%8B%E5%88%83%E9%9B%B6%E8%AF%84%E5%88%86%E8%A7%A3%E7%A6%81%2C%E8%B4%A8%E9%87%8F%E7%A8%B3%E4%BA%86%3F",
+      "heat": 259532,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434306+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261247+08:00"
     },
     {
-      "id": "weibo_f95c54f5e253",
+      "id": "weibo_0e7170a890bc",
       "platform": "weibo",
-      "title": "刘宇宁神级出场",
-      "url": "https://s.weibo.com/weibo?q=刘宇宁神级出场",
-      "heat": 174333,
+      "title": "刘浩存安踏雪境存真",
+      "url": "https://s.weibo.com/weibo?q=刘浩存安踏雪境存真",
+      "heat": 234464,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233477+08:00"
+      "fetched_at": "2026-10-26T11:56:31.727120+08:00"
     },
     {
-      "id": "weibo_c5f3f711b753",
+      "id": "weibo_e9f875f3d0e8",
       "platform": "weibo",
-      "title": "皇马主帅回应国家德比战胜巴萨",
-      "url": "https://s.weibo.com/weibo?q=皇马主帅回应国家德比战胜巴萨",
-      "heat": 173087,
+      "title": "刘冲后台看迪丽热巴",
+      "url": "https://s.weibo.com/weibo?q=刘冲后台看迪丽热巴",
+      "heat": 233853,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233481+08:00"
+      "fetched_at": "2026-10-26T11:56:31.727123+08:00"
     },
     {
-      "id": "weibo_90de5193038e",
+      "id": "weibo_0d4a2014945d",
       "platform": "weibo",
-      "title": "不上班后发现上海才是最宜居的城市",
-      "url": "https://s.weibo.com/weibo?q=不上班后发现上海才是最宜居的城市",
-      "heat": 161490,
+      "title": "大S二十年前分享的西太后穿搭",
+      "url": "https://s.weibo.com/weibo?q=大S二十年前分享的西太后穿搭",
+      "heat": 233611,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233484+08:00"
-    },
-    {
-      "id": "weibo_b056df9e93c6",
-      "platform": "weibo",
-      "title": "中年失业冲法考做律师现实吗",
-      "url": "https://s.weibo.com/weibo?q=中年失业冲法考做律师现实吗",
-      "heat": 147072,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233487+08:00"
-    },
-    {
-      "id": "weibo_b41b040aee21",
-      "platform": "weibo",
-      "title": "最封建的不是古代而是影视剧",
-      "url": "https://s.weibo.com/weibo?q=最封建的不是古代而是影视剧",
-      "heat": 137864,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233491+08:00"
-    },
-    {
-      "id": "weibo_c8f7be397361",
-      "platform": "weibo",
-      "title": "VOGUE绝色红毯",
-      "url": "https://s.weibo.com/weibo?q=VOGUE绝色红毯",
-      "heat": 137841,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233494+08:00"
-    },
-    {
-      "id": "weibo_a0988f51fd3c",
-      "platform": "weibo",
-      "title": "贝林厄姆脚后跟策动绝杀",
-      "url": "https://s.weibo.com/weibo?q=贝林厄姆脚后跟策动绝杀",
-      "heat": 136081,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233497+08:00"
-    },
-    {
-      "id": "weibo_7fb8a2a366b0",
-      "platform": "weibo",
-      "title": "被一株三角梅燃到了",
-      "url": "https://s.weibo.com/weibo?q=被一株三角梅燃到了",
-      "heat": 135156,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233500+08:00"
-    },
-    {
-      "id": "weibo_5f3585522dbb",
-      "platform": "weibo",
-      "title": "GEN击败LYON",
-      "url": "https://s.weibo.com/weibo?q=GEN击败LYON",
-      "heat": 134408,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233503+08:00"
+      "fetched_at": "2026-10-26T11:56:31.727126+08:00"
     },
     {
       "id": "tieba_7cc7b49fc35a",
       "platform": "tieba",
       "title": "对线碾压,国人喊老外来贴吧进修",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368003&topic_name=%E5%AF%B9%E7%BA%BF%E7%A2%BE%E5%8E%8B%2C%E5%9B%BD%E4%BA%BA%E5%96%8A%E8%80%81%E5%A4%96%E6%9D%A5%E8%B4%B4%E5%90%A7%E8%BF%9B%E4%BF%AE",
-      "heat": 129376,
+      "heat": 224388,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434310+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261250+08:00"
     },
     {
-      "id": "weibo_71fd31e703b2",
-      "platform": "weibo",
-      "title": "钟文泽 小米18Fold",
-      "url": "https://s.weibo.com/weibo?q=钟文泽 小米18Fold",
-      "heat": 125524,
+      "id": "tieba_4d140c5ea3b0",
+      "platform": "tieba",
+      "title": "B站肥鱼成灾,AI评论泛滥",
+      "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368005&topic_name=B%E7%AB%99%E8%82%A5%E9%B1%BC%E6%88%90%E7%81%BE%2CAI%E8%AF%84%E8%AE%BA%E6%B3%9B%E6%BB%A5",
+      "heat": 215138,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233507+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261253+08:00"
     },
     {
-      "id": "weibo_d0cabe4789bf",
-      "platform": "weibo",
-      "title": "巴萨欧冠联赛两连败",
-      "url": "https://s.weibo.com/weibo?q=巴萨欧冠联赛两连败",
-      "heat": 122546,
+      "id": "tieba_ce3ea35c7569",
+      "platform": "tieba",
+      "title": "美国女孩来华上学,英语考倒一",
+      "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368007&topic_name=%E7%BE%8E%E5%9B%BD%E5%A5%B3%E5%AD%A9%E6%9D%A5%E5%8D%8E%E4%B8%8A%E5%AD%A6%2C%E8%8B%B1%E8%AF%AD%E8%80%83%E5%80%92%E4%B8%80",
+      "heat": 184020,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:18.233510+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261257+08:00"
+    },
+    {
+      "id": "tieba_3475a8277f75",
+      "platform": "tieba",
+      "title": "方舟塔露拉实装,三技能太有料",
+      "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368008&topic_name=%E6%96%B9%E8%88%9F%E5%A1%94%E9%9C%B2%E6%8B%89%E5%AE%9E%E8%A3%85%2C%E4%B8%89%E6%8A%80%E8%83%BD%E5%A4%AA%E6%9C%89%E6%96%99",
+      "heat": 153972,
+      "category": "news",
+      "fetched_at": "2026-10-26T11:56:37.261260+08:00"
+    },
+    {
+      "id": "sspai_9d2507227d2e",
+      "platform": "sspai",
+      "title": "派早报：iFixit 拆解 iPhone Duo，肯定可维修性但指出内屏隐患",
+      "url": "https://sspai.com/post/117460",
+      "heat": 117460,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:18.322882+08:00"
     },
     {
       "id": "sspai_fcaee7c9b6f7",
@@ -985,7 +1057,7 @@
       "url": "https://sspai.com/post/117169",
       "heat": 117169,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:06.397238+08:00"
+      "fetched_at": "2026-10-26T11:56:18.322922+08:00"
     },
     {
       "id": "sspai_7694ab122853",
@@ -994,7 +1066,7 @@
       "url": "https://sspai.com/post/117104",
       "heat": 117104,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:06.397267+08:00"
+      "fetched_at": "2026-10-26T11:56:18.322946+08:00"
     },
     {
       "id": "sspai_54a654e638eb",
@@ -1003,16 +1075,7 @@
       "url": "https://sspai.com/post/116979",
       "heat": 116979,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:06.397257+08:00"
-    },
-    {
-      "id": "sspai_65d8ff77da11",
-      "platform": "sspai",
-      "title": "派早报：荣耀发布 WIN2 系列新品、Google 开源 TorchTPU 等",
-      "url": "https://sspai.com/post/116953",
-      "heat": 116953,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:06.397314+08:00"
+      "fetched_at": "2026-10-26T11:56:18.322938+08:00"
     },
     {
       "id": "sspai_7ea9c8783cf5",
@@ -1021,7 +1084,7 @@
       "url": "https://sspai.com/post/116923",
       "heat": 116923,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:06.397293+08:00"
+      "fetched_at": "2026-10-26T11:56:18.322960+08:00"
     },
     {
       "id": "sspai_29cbd4da1099",
@@ -1030,7 +1093,7 @@
       "url": "https://sspai.com/post/116398",
       "heat": 116398,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:06.397248+08:00"
+      "fetched_at": "2026-10-26T11:56:18.322931+08:00"
     },
     {
       "id": "sspai_40f0419185ec",
@@ -1039,7 +1102,7 @@
       "url": "https://sspai.com/post/116128",
       "heat": 116128,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:06.397225+08:00"
+      "fetched_at": "2026-10-26T11:56:18.322911+08:00"
     },
     {
       "id": "sspai_a45b34ae77d9",
@@ -1048,7 +1111,7 @@
       "url": "https://sspai.com/post/115437",
       "heat": 115437,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:06.397280+08:00"
+      "fetched_at": "2026-10-26T11:56:18.322954+08:00"
     },
     {
       "id": "sspai_2617a83a0c8d",
@@ -1057,7 +1120,7 @@
       "url": "https://sspai.com/post/115090",
       "heat": 115090,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:06.397302+08:00"
+      "fetched_at": "2026-10-26T11:56:18.322966+08:00"
     },
     {
       "id": "sspai_5c92719d28ad",
@@ -1066,142 +1129,115 @@
       "url": "https://sspai.com/post/114741",
       "heat": 114741,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:06.397202+08:00"
-    },
-    {
-      "id": "tieba_4d140c5ea3b0",
-      "platform": "tieba",
-      "title": "B站肥鱼成灾,AI评论泛滥",
-      "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368005&topic_name=B%E7%AB%99%E8%82%A5%E9%B1%BC%E6%88%90%E7%81%BE%2CAI%E8%AF%84%E8%AE%BA%E6%B3%9B%E6%BB%A5",
-      "heat": 98880,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434314+08:00"
-    },
-    {
-      "id": "tieba_ce3ea35c7569",
-      "platform": "tieba",
-      "title": "美国女孩来华上学,英语考倒一",
-      "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368007&topic_name=%E7%BE%8E%E5%9B%BD%E5%A5%B3%E5%AD%A9%E6%9D%A5%E5%8D%8E%E4%B8%8A%E5%AD%A6%2C%E8%8B%B1%E8%AF%AD%E8%80%83%E5%80%92%E4%B8%80",
-      "heat": 70631,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434318+08:00"
-    },
-    {
-      "id": "tieba_3475a8277f75",
-      "platform": "tieba",
-      "title": "方舟塔露拉实装,三技能太有料",
-      "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368008&topic_name=%E6%96%B9%E8%88%9F%E5%A1%94%E9%9C%B2%E6%8B%89%E5%AE%9E%E8%A3%85%2C%E4%B8%89%E6%8A%80%E8%83%BD%E5%A4%AA%E6%9C%89%E6%96%99",
-      "heat": 56950,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434321+08:00"
+      "fetched_at": "2026-10-26T11:56:18.322903+08:00"
     },
     {
       "id": "tieba_22eb7be60b32",
       "platform": "tieba",
       "title": "兵部尚书被冻死,女频剧情引激辩",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368006&topic_name=%E5%85%B5%E9%83%A8%E5%B0%9A%E4%B9%A6%E8%A2%AB%E5%86%BB%E6%AD%BB%2C%E5%A5%B3%E9%A2%91%E5%89%A7%E6%83%85%E5%BC%95%E6%BF%80%E8%BE%A9",
-      "heat": 48726,
+      "heat": 111912,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434324+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261263+08:00"
     },
     {
       "id": "tieba_9468fab18e56",
       "platform": "tieba",
       "title": "老外来华买抗癌药,上演美版药神",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368001&topic_name=%E8%80%81%E5%A4%96%E6%9D%A5%E5%8D%8E%E4%B9%B0%E6%8A%97%E7%99%8C%E8%8D%AF%2C%E4%B8%8A%E6%BC%94%E7%BE%8E%E7%89%88%E8%8D%AF%E7%A5%9E",
-      "heat": 48376,
+      "heat": 83041,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434328+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261266+08:00"
     },
     {
       "id": "tieba_e8dafccfcc16",
       "platform": "tieba",
       "title": "吧友养活大肥鱼,鲸鱼娘爱做梦",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368000&topic_name=%E5%90%A7%E5%8F%8B%E5%85%BB%E6%B4%BB%E5%A4%A7%E8%82%A5%E9%B1%BC%2C%E9%B2%B8%E9%B1%BC%E5%A8%98%E7%88%B1%E5%81%9A%E6%A2%A6",
-      "heat": 47376,
+      "heat": 82044,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434332+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261269+08:00"
     },
     {
       "id": "tieba_5de852da5f83",
       "platform": "tieba",
       "title": "瓦学弟开团撸友,抗吧认栽",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368002&topic_name=%E7%93%A6%E5%AD%A6%E5%BC%9F%E5%BC%80%E5%9B%A2%E6%92%B8%E5%8F%8B%2C%E6%8A%97%E5%90%A7%E8%AE%A4%E6%A0%BD",
-      "heat": 39678,
+      "heat": 58840,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434335+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261272+08:00"
     },
     {
       "id": "tieba_c0e0f70cd16d",
       "platform": "tieba",
       "title": "吧友中病毒写检讨,吧主严肃批阅",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28367997&topic_name=%E5%90%A7%E5%8F%8B%E4%B8%AD%E7%97%85%E6%AF%92%E5%86%99%E6%A3%80%E8%AE%A8%2C%E5%90%A7%E4%B8%BB%E4%B8%A5%E8%82%83%E6%89%B9%E9%98%85",
-      "heat": 31240,
+      "heat": 49540,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434339+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261274+08:00"
     },
     {
       "id": "tieba_6edff4739d65",
       "platform": "tieba",
       "title": "丢人!LPL四队瑞士轮首日全败",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28367996&topic_name=%E4%B8%A2%E4%BA%BA%21LPL%E5%9B%9B%E9%98%9F%E7%91%9E%E5%A3%AB%E8%BD%AE%E9%A6%96%E6%97%A5%E5%85%A8%E8%B4%A5",
-      "heat": 29564,
+      "heat": 35130,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434342+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261278+08:00"
     },
     {
       "id": "tieba_71d01de6c429",
       "platform": "tieba",
       "title": "图吧垃圾佬逆天狠活大赏",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28367998&topic_name=%E5%9B%BE%E5%90%A7%E5%9E%83%E5%9C%BE%E4%BD%AC%E9%80%86%E5%A4%A9%E7%8B%A0%E6%B4%BB%E5%A4%A7%E8%B5%8F",
-      "heat": 24060,
+      "heat": 25904,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434345+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261280+08:00"
     },
     {
       "id": "tieba_b25592d1e125",
       "platform": "tieba",
       "title": "孙笑川成中土大战最大受害者",
       "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28367981&topic_name=%E5%AD%99%E7%AC%91%E5%B7%9D%E6%88%90%E4%B8%AD%E5%9C%9F%E5%A4%A7%E6%88%98%E6%9C%80%E5%A4%A7%E5%8F%97%E5%AE%B3%E8%80%85",
-      "heat": 18210,
+      "heat": 22576,
       "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434348+08:00"
+      "fetched_at": "2026-10-26T11:56:37.261283+08:00"
     },
     {
-      "id": "tieba_21b1b2b95bf1",
-      "platform": "tieba",
-      "title": "抗韩先锋,IG决战HLE",
-      "url": "https://tieba.baidu.com/hottopic/browse/hottopic?topic_id=28368011&topic_name=%E6%8A%97%E9%9F%A9%E5%85%88%E9%94%8B%2CIG%E5%86%B3%E6%88%98HLE",
-      "heat": 15377,
-      "category": "news",
-      "fetched_at": "2026-10-26T08:04:24.434352+08:00"
-    },
-    {
-      "id": "juejin_35a545b4f758",
-      "platform": "juejin",
-      "title": "做前端 UI 的人，接下来得先过一道开源技能的\"设计质检\"",
-      "url": "https://juejin.cn/post/7700511283238060095",
-      "heat": 5000,
-      "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.833972+08:00"
-    },
-    {
-      "id": "ithome_rss_23db667842bc",
+      "id": "ithome_rss_3b8cf4f7de83",
       "platform": "ithome_rss",
-      "title": "现代汽车和起亚在华单月合计销量今年来首次跌破 1 万辆，市占率降至 0.6%",
-      "url": "https://www.ithome.com/1/017/728.htm",
-      "heat": 4000,
+      "title": "OPPO 推出 80W 15000mAh、67W 20000mAh 新国标移动电源，269 元",
+      "url": "https://www.ithome.com/1/017/804.htm",
+      "heat": 15000,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807518+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203042+08:00"
     },
     {
-      "id": "ithome_rss_be0c4e9910eb",
+      "id": "ithome_rss_e5ce2b169672",
       "platform": "ithome_rss",
-      "title": "马斯克确认 SpaceX 完成 400 亿美元债务融资，用于购买 GPU",
-      "url": "https://www.ithome.com/1/017/720.htm",
-      "heat": 2675,
+      "title": "vivo Y600 手机开启预售：搭载 10000mAh 大电池，国补到手价 1699 元起",
+      "url": "https://www.ithome.com/1/017/810.htm",
+      "heat": 10000,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807589+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203010+08:00"
+    },
+    {
+      "id": "ithome_rss_8fce40dacb11",
+      "platform": "ithome_rss",
+      "title": "铁三角发布旗舰木碗耳机 ATH-AWX7000，定价 3799 美元",
+      "url": "https://www.ithome.com/1/017/774.htm",
+      "heat": 7000,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:26.203126+08:00"
+    },
+    {
+      "id": "ithome_rss_79992673c826",
+      "platform": "ithome_rss",
+      "title": "OPPO Find X10 手机全新配色“森绿”公布：10 月 30 日开售，5499 元起",
+      "url": "https://www.ithome.com/1/017/770.htm",
+      "heat": 5499,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:26.203160+08:00"
     },
     {
       "id": "arxiv_cv_e48a90421c2e",
@@ -2014,337 +2050,211 @@
       "fetched_at": "2026-10-24T08:22:37.460013+08:00"
     },
     {
-      "id": "ithome_rss_471197d17f63",
+      "id": "ithome_rss_93ccef1d620c",
       "platform": "ithome_rss",
-      "title": "铺路铺到苹果家：开发者成功令微软 Surface Duo 2 运行 iOS / iPadOS 26 系统",
-      "url": "https://www.ithome.com/1/017/703.htm",
+      "title": "报告：微软 XBOX 高管过去六年有五年未达成绩效目标",
+      "url": "https://www.ithome.com/1/017/813.htm",
+      "heat": 2027,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:26.202984+08:00"
+    },
+    {
+      "id": "ithome_rss_c9292f743daf",
+      "platform": "ithome_rss",
+      "title": "CHERRY 推出 MX EMERALD REEF 机械轴体，静音段落类型",
+      "url": "https://www.ithome.com/1/017/765.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807736+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203195+08:00"
     },
     {
-      "id": "ithome_rss_ed0c6f9715fb",
+      "id": "ithome_rss_55ba22d2bd52",
       "platform": "ithome_rss",
-      "title": "再添新色？全新 smart 精灵 2 号蓝色版实车曝光",
-      "url": "https://www.ithome.com/1/017/706.htm",
+      "title": "华为路由 X2 系列首销：书本设计、Wi‑Fi 7+、AI Mesh 组网，478 元起",
+      "url": "https://www.ithome.com/1/017/767.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807705+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203187+08:00"
     },
     {
-      "id": "ithome_rss_fb6b37691b48",
+      "id": "ithome_rss_743930523a75",
       "platform": "ithome_rss",
-      "title": "Claude 桌面应用推出新版界面，从草图到上线用时不到 3 周",
-      "url": "https://www.ithome.com/1/017/710.htm",
+      "title": "华硕 ROG × 《影之刃零》首批联名硬件发售，399 元起",
+      "url": "https://www.ithome.com/1/017/768.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807678+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203177+08:00"
     },
     {
-      "id": "ithome_rss_ca3382acc349",
+      "id": "ithome_rss_1243af05d946",
       "platform": "ithome_rss",
-      "title": "古尔曼：苹果首款触屏 MacBook Pro 北京时间 10 月 29 日发布，标志公司产品策略迎来重大转变",
-      "url": "https://www.ithome.com/1/017/711.htm",
+      "title": "新款 CD 播放器接连上市，光驱短缺致设备难以维修",
+      "url": "https://www.ithome.com/1/017/769.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807668+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203169+08:00"
     },
     {
-      "id": "ithome_rss_77ac983c758f",
+      "id": "ithome_rss_574530e5ddc8",
       "platform": "ithome_rss",
-      "title": "古尔曼：苹果正为 iPhone Duo 开发全新“便捷访问”模式，方便左撇子用户根据持机习惯调整界面",
-      "url": "https://www.ithome.com/1/017/713.htm",
+      "title": "玩家提需求一天就落地：Valve 为 Steam Frame 内核添加光驱支持",
+      "url": "https://www.ithome.com/1/017/772.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807645+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203141+08:00"
     },
     {
-      "id": "ithome_rss_a2e7badb633d",
+      "id": "ithome_rss_681f44dc6bf6",
       "platform": "ithome_rss",
-      "title": "苹果硬件技术部门再迎人事调整：两名显示技术高管退休临近，转任顾问角色",
-      "url": "https://www.ithome.com/1/017/714.htm",
+      "title": "小米推出米家多头筋膜枪 3 C：16 个球形按摩头、25kg 大推力，209 元",
+      "url": "https://www.ithome.com/1/017/776.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807636+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203120+08:00"
     },
     {
-      "id": "ithome_rss_d2129536de89",
+      "id": "ithome_rss_aaa4d27ac8fe",
       "platform": "ithome_rss",
-      "title": "Home Assistant 将新增 Live USB 安装选项，利好迷你主机用户",
-      "url": "https://www.ithome.com/1/017/715.htm",
+      "title": "AI 成功破解索尼 A7C II 相机固件，直接解锁 FL2 / FL3 和富士理光滤镜",
+      "url": "https://www.ithome.com/1/017/777.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807628+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203111+08:00"
     },
     {
-      "id": "ithome_rss_aa5f35698b7c",
+      "id": "ithome_rss_1b8caf69e7f6",
       "platform": "ithome_rss",
-      "title": "国产武侠游戏《影之刃零》10 月 27 日 10:00 开启预下载，游戏本体约 145G",
-      "url": "https://www.ithome.com/1/017/716.htm",
+      "title": "丰田发力人形机器人，挑战特斯拉与中国厂商",
+      "url": "https://www.ithome.com/1/017/778.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807617+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203103+08:00"
     },
     {
-      "id": "ithome_rss_0b45d6277389",
+      "id": "ithome_rss_8e0b2defeed2",
       "platform": "ithome_rss",
-      "title": "古尔曼：苹果正测试配备 OLED 屏幕的 iMac 和 MacBook Air",
-      "url": "https://www.ithome.com/1/017/717.htm",
+      "title": "HTC 公布口袋 AI 互动伴侣 VIVEE：支持个性化性格，预售价 99.99 美元",
+      "url": "https://www.ithome.com/1/017/794.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807607+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203078+08:00"
     },
     {
-      "id": "ithome_rss_f5bfcb2fb3ec",
+      "id": "ithome_rss_91b0e7d3432f",
       "platform": "ithome_rss",
-      "title": "国内首部 AI 院线长片《三星堆：未来往事》，票房过百万",
-      "url": "https://www.ithome.com/1/017/719.htm",
+      "title": "具身智能公司无境动力被曝停工欠薪近 800 万元：CEO 称联系不上实控人，成立仅 4 个月就拿下近 10 亿元订单",
+      "url": "https://www.ithome.com/1/017/795.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807598+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203068+08:00"
     },
     {
-      "id": "ithome_rss_faf4e555d776",
+      "id": "ithome_rss_856dd4b1c5d6",
       "platform": "ithome_rss",
-      "title": "星闪 3.0 无源 SLZ 亮相：无需电池与电容、传感覆盖 30 米，已落地电网等能源场景",
-      "url": "https://www.ithome.com/1/017/722.htm",
+      "title": "鸿蒙智行尊界汽车微博复更，发布 S800 典藏大观车型组图",
+      "url": "https://www.ithome.com/1/017/796.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807574+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203058+08:00"
     },
     {
-      "id": "ithome_rss_250ce79fb8b3",
+      "id": "ithome_rss_d6da51f90bd4",
       "platform": "ithome_rss",
-      "title": "Kimi 就会员使用 K3.1 Pro 出现限流等问题致歉，为所有订阅会员进行重置",
-      "url": "https://www.ithome.com/1/017/723.htm",
+      "title": "《艾尔登法环》近 1000 万玩家游玩时长超 100 小时，约 350 万人解锁全部成就",
+      "url": "https://www.ithome.com/1/017/797.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807566+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203050+08:00"
     },
     {
-      "id": "ithome_rss_8962d1dcfc78",
+      "id": "ithome_rss_5438f0609152",
       "platform": "ithome_rss",
-      "title": "iFixit 拆解苹果 iPhone Duo：初步锁定折叠屏故障潜在诱因",
-      "url": "https://www.ithome.com/1/017/724.htm",
+      "title": "小米汽车 App“车辆助手”第二批公测开启招募，对话交互可查询车辆状态、即时 / 定时控车等",
+      "url": "https://www.ithome.com/1/017/807.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807554+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203034+08:00"
     },
     {
-      "id": "ithome_rss_24c6dd98d15b",
+      "id": "ithome_rss_5bbf3cdeb3f2",
       "platform": "ithome_rss",
-      "title": "苹果 iPhone Duo 新增快捷指令，展开和折叠时可触发预设操作",
-      "url": "https://www.ithome.com/1/017/725.htm",
+      "title": "小鹏集团 Robotaxi 小鹏悠游获批 L4 级自动驾驶示范运营资质",
+      "url": "https://www.ithome.com/1/017/808.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807545+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203026+08:00"
     },
     {
-      "id": "ithome_rss_1be09acae8c9",
+      "id": "ithome_rss_9952516b8feb",
       "platform": "ithome_rss",
-      "title": "AI“专属保险”：全国首个人工智能应用风险综合保障方案正式发布",
-      "url": "https://www.ithome.com/1/017/726.htm",
+      "title": "英伟达下调 Rubin GPU 系统 HBM 与 NVLink 带宽，网络带宽提升",
+      "url": "https://www.ithome.com/1/017/812.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807536+08:00"
+      "fetched_at": "2026-10-26T11:56:26.202993+08:00"
     },
     {
-      "id": "ithome_rss_61f923f13a05",
+      "id": "ithome_rss_eb1d6195e2d5",
       "platform": "ithome_rss",
-      "title": "马斯克的 Grok 发布 AI 版《奥德赛》前 7 分钟内容，被指缺乏艺术感染力",
-      "url": "https://www.ithome.com/1/017/727.htm",
+      "title": "原生桌面级应用 WPS for Pad 正式上线小米应用商城，支持 18 Fold、平板设备下载使用",
+      "url": "https://www.ithome.com/1/017/815.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807529+08:00"
+      "fetched_at": "2026-10-26T11:56:26.202977+08:00"
     },
     {
-      "id": "ithome_rss_b45b002fdd71",
+      "id": "ithome_rss_56121c8231d7",
       "platform": "ithome_rss",
-      "title": "玩家呼吁 EA 保住《质量效应》IP，请愿签名数突破 18.7 万",
-      "url": "https://www.ithome.com/1/017/729.htm",
+      "title": "遭网络攻击后，多家日本企业开始向用户支付补偿金",
+      "url": "https://www.ithome.com/1/017/817.htm",
       "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807509+08:00"
+      "fetched_at": "2026-10-26T11:56:26.202945+08:00"
     },
     {
-      "id": "ithome_rss_3a9b4c3d4425",
-      "platform": "ithome_rss",
-      "title": "奕境曾清林谈汽车“终身质保”服务：行业里有很多隐形门槛，如卡里程为的是控制赔付概率",
-      "url": "https://www.ithome.com/1/017/730.htm",
-      "heat": 2026,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807500+08:00"
-    },
-    {
-      "id": "ithome_rss_f07eea00dc07",
-      "platform": "ithome_rss",
-      "title": "猫王音乐版权方起诉 Anthropic，指控其未经授权用 274 首歌曲训练 AI 模型",
-      "url": "https://www.ithome.com/1/017/731.htm",
-      "heat": 2026,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807491+08:00"
-    },
-    {
-      "id": "ithome_rss_8651a7bfb4db",
-      "platform": "ithome_rss",
-      "title": "IT早报 1026：苹果 iPhone Duo 热门游戏内屏黑边引吐槽；星闪 3.0 成果发布；张雪成功挑战摩托水上漂吉尼斯世界纪录；小米武汉员工住宅光谷梦享家开盘...",
-      "url": "https://www.ithome.com/1/017/733.htm",
-      "heat": 2026,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807466+08:00"
-    },
-    {
-      "id": "ithome_rss_fd65b4126388",
-      "platform": "ithome_rss",
-      "title": "华为鸿蒙 HarmonyOS 7.0.0.111 版本更多“隐藏”新特性盘点，深色模式随日出日落切换等功能下放",
-      "url": "https://www.ithome.com/1/017/707.htm",
-      "heat": 2024,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807696+08:00"
-    },
-    {
-      "id": "ithome_rss_7af3be3237c9",
-      "platform": "ithome_rss",
-      "title": "比亚迪在韩销量激增，现代起亚本土市场承压",
-      "url": "https://www.ithome.com/1/017/721.htm",
-      "heat": 2016,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807580+08:00"
-    },
-    {
-      "id": "ithome_rss_524b82ec6e34",
-      "platform": "ithome_rss",
-      "title": "微软解释称删除 Prefetch 文件夹不会提速，反而可能拖慢 Win11 应用启动速度",
-      "url": "https://www.ithome.com/1/017/734.htm",
-      "heat": 2005,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807440+08:00"
-    },
-    {
-      "id": "ithome_rss_62a20a70bbd2",
-      "platform": "ithome_rss",
-      "title": "联合创新“D32U1”31.5 英寸显示器发售：4K 60Hz、USB-C 65W，1699 元",
-      "url": "https://www.ithome.com/1/017/709.htm",
-      "heat": 1699,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807686+08:00"
-    },
-    {
-      "id": "ithome_rss_439a5aa753e0",
-      "platform": "ithome_rss",
-      "title": "雷蛇幻影战狼 V4 系列手柄发售：电容摇杆，竞技版 799 元、专业版 1599 元",
-      "url": "https://www.ithome.com/1/017/705.htm",
-      "heat": 1599,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807713+08:00"
-    },
-    {
-      "id": "juejin_c03bc4378d7b",
+      "id": "juejin_b8f3bf20bb3f",
       "platform": "juejin",
-      "title": "运行时性能",
-      "url": "https://juejin.cn/post/7700359102765350922",
-      "heat": 1215,
+      "title": "天涯神贴《2027年以后，你要活成这个样子》有感，希望 2027 年可以活成自己想要的样子",
+      "url": "https://juejin.cn/post/7700522130220023862",
+      "heat": 2026,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.833871+08:00"
+      "fetched_at": "2026-10-26T11:56:16.175186+08:00"
     },
     {
-      "id": "ithome_rss_a7c8f507defe",
+      "id": "ithome_rss_95b35c40e581",
       "platform": "ithome_rss",
-      "title": "比亚迪腾势 Z9GT 在香港上市，99.8 万港元",
-      "url": "https://www.ithome.com/1/017/704.htm",
+      "title": "巨量引擎、百度、腾讯、快手、京东集团、美团、360 集团、凤凰网签署《互联网营销宣传自律公约》",
+      "url": "https://www.ithome.com/1/017/793.htm",
+      "heat": 2025,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:26.203096+08:00"
+    },
+    {
+      "id": "ithome_rss_8153a8b46eb1",
+      "platform": "ithome_rss",
+      "title": "英伟达瞄准 AI 软件订阅收入，黄仁勋提出每块 GPU 每年约 2000 美元",
+      "url": "https://www.ithome.com/1/017/764.htm",
+      "heat": 2000,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:26.203202+08:00"
+    },
+    {
+      "id": "ithome_rss_932cb39f9604",
+      "platform": "ithome_rss",
+      "title": "Acoustune 发布 XHS1400 耳机：发声单元与连接器为独立模块",
+      "url": "https://www.ithome.com/1/017/816.htm",
+      "heat": 1400,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:26.202966+08:00"
+    },
+    {
+      "id": "ithome_rss_897c5e3f33fc",
+      "platform": "ithome_rss",
+      "title": "上市 7 个月，华为畅享 90 系列手机累计发货量突破 1000 万台",
+      "url": "https://www.ithome.com/1/017/771.htm",
       "heat": 1000,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807723+08:00"
-    },
-    {
-      "id": "ithome_rss_3e627ca86150",
-      "platform": "ithome_rss",
-      "title": "遏制退货欺诈：苹果开发新型检测设备，可帮助 Apple Store 员工扫描密封包装盒内 iPhone 完整性",
-      "url": "https://www.ithome.com/1/017/712.htm",
-      "heat": 0,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807655+08:00"
-    },
-    {
-      "id": "ithome_rss_d65a6d3aea8b",
-      "platform": "ithome_rss",
-      "title": "Anthropic Claude 被曝绕过付费墙，调取美国佐治亚州选民数据",
-      "url": "https://www.ithome.com/1/017/732.htm",
-      "heat": 0,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:12.807480+08:00"
-    },
-    {
-      "id": "hn_5be67215b3f9",
-      "platform": "hn",
-      "title": "R/open source bans all solo projects and projects using LLMs",
-      "url": "https://www.reddit.com/r/opensource/comments/1xelcuf/your_tokens_arent_valuable_no_more_ai",
-      "heat": 0,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374208+08:00"
-    },
-    {
-      "id": "hn_dcf7be5e2f2d",
-      "platform": "hn",
-      "title": "A few thoughts on intensity (2024)",
-      "url": "https://www.tylerhogge.com/blog/a-few-thoughts-on-intensity/",
-      "heat": 0,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374202+08:00"
-    },
-    {
-      "id": "hn_0e9a83b21bff",
-      "platform": "hn",
-      "title": "Show HN: I put employees inside S&P 500 market-cap bubbles",
-      "url": "https://bigwhalehunting.com/workforce/",
-      "heat": 0,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374196+08:00"
-    },
-    {
-      "id": "hn_41060ed72dbc",
-      "platform": "hn",
-      "title": "What Adobe v ArtCraft teaches us",
-      "url": "https://techbronerd.substack.com/p/openai-and-anthropic-wanted-to-replace",
-      "heat": 0,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374190+08:00"
-    },
-    {
-      "id": "hn_9fe0ab02c3e7",
-      "platform": "hn",
-      "title": "JetBrains Thinkrail",
-      "url": "https://github.com/JetBrains/thinkrail",
-      "heat": 0,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374184+08:00"
-    },
-    {
-      "id": "hn_0f648f49cd01",
-      "platform": "hn",
-      "title": "AI use leads UC Berkeley math professor to see 'no point' in grading homework",
-      "url": "https://www.dailycal.org/news/campus/academics/ai-use-leads-uc-berkeley-math-professor-to-see-no-point-in-grading-homework/article_bdf1eae2-c08b-491f-b9f1-81a7cea177de.html",
-      "heat": 0,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374179+08:00"
-    },
-    {
-      "id": "hn_ed885bcf5c51",
-      "platform": "hn",
-      "title": "Sabre Wulf Remastered",
-      "url": "https://gp-64.com/swr/",
-      "heat": 0,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374171+08:00"
-    },
-    {
-      "id": "hn_1786dbecdb74",
-      "platform": "hn",
-      "title": "A 10-year-old CNN outperforms frontier LLMs for skin cancer diagnosis",
-      "url": "https://lynchlab.net/llm-skin-cancer",
-      "heat": 0,
-      "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374166+08:00"
+      "fetched_at": "2026-10-26T11:56:26.203152+08:00"
     },
     {
       "id": "hn_3cb0d649a407",
@@ -2353,7 +2263,7 @@
       "url": "https://www.theguardian.com/science/2026/oct/25/scientists-rediscover-ancient-roman-colour-changing-glass",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374160+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668834+08:00"
     },
     {
       "id": "hn_089e0e184791",
@@ -2362,7 +2272,7 @@
       "url": "https://talkweb.eu/openweb/4558/",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374154+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668828+08:00"
     },
     {
       "id": "hn_9a474f30e140",
@@ -2371,7 +2281,7 @@
       "url": "https://theintercept.com/2026/10/01/oregon-police-misconduct-public-records-cost-fee/",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374147+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668823+08:00"
     },
     {
       "id": "hn_a795c439bd02",
@@ -2380,7 +2290,7 @@
       "url": "https://isburmistrov.substack.com/p/all-you-need-is-wide-events-not-metrics",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374140+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668817+08:00"
     },
     {
       "id": "hn_76a65ebddf96",
@@ -2389,7 +2299,16 @@
       "url": "https://imaginationlibrary.com/",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374133+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668811+08:00"
+    },
+    {
+      "id": "hn_e62cb9946769",
+      "platform": "hn",
+      "title": "Where the Romans Fought (interactive map)",
+      "url": "https://iosiflazaridis.github.io/battles-of-the-romans/",
+      "heat": 0,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:23.668807+08:00"
     },
     {
       "id": "hn_5d09509ad240",
@@ -2398,7 +2317,7 @@
       "url": "https://www.alfie.wtf/programming/why-i-am-a-programmer.html",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374127+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668802+08:00"
     },
     {
       "id": "hn_66c37c3a712c",
@@ -2407,7 +2326,7 @@
       "url": "https://arstechnica.com/health/2026/10/personalized-mrna-cancer-vaccine-cut-melanoma-death-recurrence-by-42/",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374121+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668797+08:00"
     },
     {
       "id": "hn_ad4661495d8a",
@@ -2416,7 +2335,7 @@
       "url": "https://armincat.com/articles/eunice-is-almost-here",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374114+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668791+08:00"
     },
     {
       "id": "hn_51f97bff524c",
@@ -2425,7 +2344,7 @@
       "url": "https://www.disneyanimation.com/process/",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374109+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668787+08:00"
     },
     {
       "id": "hn_e816699453b1",
@@ -2434,7 +2353,7 @@
       "url": "https://www.dbreunig.com/2026/10/24/the-state-of-context-engineering.html",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374103+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668782+08:00"
     },
     {
       "id": "hn_126292358399",
@@ -2443,7 +2362,7 @@
       "url": "https://www.reuters.com/world/europe/serbia-votes-students-seek-unseat-vucic-snap-election-2026-10-25/",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374096+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668777+08:00"
     },
     {
       "id": "hn_c10a2b502fcc",
@@ -2452,169 +2371,241 @@
       "url": "https://minimaxir.com/2026/10/cheap-llms/",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T08:04:10.374076+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668771+08:00"
     },
     {
-      "id": "juejin_cd6f042da81e",
-      "platform": "juejin",
-      "title": "用 STM32 搞清楚 FreeRTOS 的任务上下文到底是什么",
-      "url": "https://juejin.cn/post/7700054147283124260",
+      "id": "hn_799361407d6d",
+      "platform": "hn",
+      "title": "Proton Flock Camera Map",
+      "url": "https://proton.me/flock-camera-map",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.834045+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668765+08:00"
     },
     {
-      "id": "juejin_1447c9e3602d",
-      "platform": "juejin",
-      "title": "从 0 到 1 写一个扫雷游戏",
-      "url": "https://juejin.cn/post/7700077216747290667",
+      "id": "hn_f2c31f8d0c98",
+      "platform": "hn",
+      "title": "F-Zero X on Nintendo 3DS",
+      "url": "https://hypnotize.works/gdx-3ds/postmortem/index.html",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.834036+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668760+08:00"
     },
     {
-      "id": "juejin_10e160ac6d9b",
-      "platform": "juejin",
-      "title": "给 Agent 装上对话框 —— AgentScope-Java 接入 Spring Boot 与 SSE 流式实战",
-      "url": "https://juejin.cn/post/7700041801634660390",
+      "id": "hn_caf9664c10c3",
+      "platform": "hn",
+      "title": "Lula Wins Brazilian Election",
+      "url": "https://resultados.tse.jus.br/oficial/app/index.html#/eleicao/6258/uf/br/cargo/1/vis/nominal/resultados",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.834028+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668755+08:00"
     },
     {
-      "id": "juejin_bf1edc86a7a8",
-      "platform": "juejin",
-      "title": "工具分享：OneX AI 工具安装、配置及功能介绍",
-      "url": "https://juejin.cn/post/7700084697594888226",
+      "id": "hn_cf05a3347161",
+      "platform": "hn",
+      "title": "Lula wins election after final votes tallied",
+      "url": "https://www.reuters.com/live/brazil-election-live-lula-bolsonaro-face-off-presidential-runoff-2026-10-25/",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.834018+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668750+08:00"
     },
     {
-      "id": "juejin_80838946d873",
-      "platform": "juejin",
-      "title": "砍半价格、参数再涨，国产旗舰追到 Opus 鼻尖了",
-      "url": "https://juejin.cn/post/7700090207215353897",
+      "id": "hn_765ecb2f0d56",
+      "platform": "hn",
+      "title": "Removing Next.js Got My Blog to 100 on Every Lighthouse Category",
+      "url": "https://korindiehacker.bloffy.blog/en/removing-nextjs-got-my-blog-to-100-on-every-lighthouse-category",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.834010+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668744+08:00"
     },
     {
-      "id": "juejin_8f2cc8bae618",
-      "platform": "juejin",
-      "title": "【鸿蒙心迹】让老照片变清晰：HarmonyOS 7.0 图像超分相册工程化落地与 5 个踩坑解法",
-      "url": "https://juejin.cn/post/7700152107849334793",
+      "id": "hn_e4ca21c00b88",
+      "platform": "hn",
+      "title": "iPhone Duo Teardown",
+      "url": "https://www.ifixit.com/News/119895/iphone-duo-teardown",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.834001+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668736+08:00"
     },
     {
-      "id": "juejin_8e47f02f6d48",
-      "platform": "juejin",
-      "title": "第7章：Redis有序集合 ZSet 实战：排行榜与延时任务",
-      "url": "https://juejin.cn/post/7700165668347658267",
+      "id": "hn_6b0aac1f5344",
+      "platform": "hn",
+      "title": "IBM CEO says open weight models are now irresistibly good and cheap on-prem",
+      "url": "https://www.theregister.com/systems/2026/10/22/ibm-ceo-says-open-weight-models-are-now-irresistibly-good-and-cheap-on-prem/5304640",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.833990+08:00"
+      "fetched_at": "2026-10-26T11:56:23.668720+08:00"
     },
     {
-      "id": "juejin_f5806830eaa7",
+      "id": "juejin_93fece43ff18",
       "platform": "juejin",
-      "title": "WebGIS + AI 智能体：唯杰地图智能体平台一句话处理 CAD 图纸，支持 MCP 接入 AI 编辑器",
-      "url": "https://juejin.cn/post/7699886793819832320",
+      "title": "一根杆与一张场：把你的机场画上地图",
+      "url": "https://juejin.cn/post/7700194552506449947",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.833937+08:00"
+      "fetched_at": "2026-10-26T11:56:16.175294+08:00"
     },
     {
-      "id": "juejin_757dd22fb9bf",
+      "id": "juejin_4dd361111225",
       "platform": "juejin",
-      "title": "拆一台数据集成产品：KFS 的骨架、肌肉和神经",
-      "url": "https://juejin.cn/post/7700096358476595200",
+      "title": "阿里云Flink + Fluss年度发布：Streaming Agent 与湖流一体",
+      "url": "https://juejin.cn/post/7700782390201663526",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.833927+08:00"
+      "fetched_at": "2026-10-26T11:56:16.175289+08:00"
     },
     {
-      "id": "juejin_a1bf5ff85207",
+      "id": "juejin_ababb9b4bc3f",
       "platform": "juejin",
-      "title": "[Java] 用 GUI 展示 EnumSet 增减元素时的内部变化（下）",
-      "url": "https://juejin.cn/post/7700211887543582783",
+      "title": "[Android 从零到一] Glide 图片加载原理：三级缓存、生命周期绑定与内存优化",
+      "url": "https://juejin.cn/post/7700377150851153920",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.833919+08:00"
+      "fetched_at": "2026-10-26T11:56:16.175282+08:00"
     },
     {
-      "id": "juejin_8c9c38e99ecc",
+      "id": "juejin_0a21749b28e3",
       "platform": "juejin",
-      "title": "AI Agent工具误调用怎么解决-从参数校验到高危二次确认的四层工程防线",
-      "url": "https://juejin.cn/post/7700327310138687498",
+      "title": "TRAE 10 月插件热榜，看看大家都在用什么",
+      "url": "https://juejin.cn/post/7700267917770735666",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.833909+08:00"
+      "fetched_at": "2026-10-26T11:56:16.175276+08:00"
     },
     {
-      "id": "juejin_df653ec06880",
+      "id": "juejin_f87320145d6a",
       "platform": "juejin",
-      "title": "AI Agent工具调用防护层怎么写-一份能直接跑的Python四层拦截实现",
-      "url": "https://juejin.cn/post/7700194552505892891",
+      "title": "如何用 Claude Opus 5.5 做一支音乐 MV？代码逐帧渲染完整教程（2026）",
+      "url": "https://juejin.cn/post/7700211887544008767",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.833899+08:00"
+      "fetched_at": "2026-10-26T11:56:16.175270+08:00"
     },
     {
-      "id": "juejin_2a7c51f6238d",
+      "id": "juejin_ae9cfc851fd8",
       "platform": "juejin",
-      "title": "一天一个开源项目（第247篇）：wxa-runner —— 让小程序在普通浏览器里用微信官方基础库跑起来，直接接 Playwright 做无头 E2E",
-      "url": "https://juejin.cn/post/7700090632083308594",
+      "title": "SVG 缩放预览：F12 无法定位子元素 & 放大模糊",
+      "url": "https://juejin.cn/post/7700404334723055651",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.833883+08:00"
+      "fetched_at": "2026-10-26T11:56:16.175263+08:00"
     },
     {
-      "id": "juejin_95a4bc357bb6",
+      "id": "juejin_28320a39f017",
       "platform": "juejin",
-      "title": "消除AI幻觉，普通人能做的五件事",
-      "url": "https://juejin.cn/post/7700237215259639849",
+      "title": "一个人，带着一群 AI：一个 10 年前端如何做出几十个团队在用的在线文档",
+      "url": "https://juejin.cn/post/7700215375997370409",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.833860+08:00"
+      "fetched_at": "2026-10-26T11:56:16.175255+08:00"
     },
     {
-      "id": "juejin_3975bfd6c429",
+      "id": "juejin_ea543f6c9b3c",
       "platform": "juejin",
-      "title": "给豆包和 Claude 派活总返工？把测试用例搬进提示词，前置验收清单一次交差",
-      "url": "https://juejin.cn/post/7700511283238862911",
+      "title": "从 Function Calling 到 MCP（四）：把 Server 部署上线前，先处理好这五件事",
+      "url": "https://juejin.cn/post/7700237215260901417",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.833851+08:00"
+      "fetched_at": "2026-10-26T11:56:16.175249+08:00"
     },
     {
-      "id": "juejin_ca7218498f44",
+      "id": "juejin_66c80f297cad",
       "platform": "juejin",
-      "title": "一次 Skill 评测的复盘：我推翻了一份现成的模型选型结论，然后自己造了个评测平台",
-      "url": "https://juejin.cn/post/7700327310138884106",
+      "title": "浏览器的“无痕模式”是当代最大安慰剂？我用 30 行 JS 提取硬件指纹，跨网络换代理照样精准锁定你",
+      "url": "https://juejin.cn/post/7700462324586528778",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.833840+08:00"
+      "fetched_at": "2026-10-26T11:56:16.175242+08:00"
     },
     {
-      "id": "juejin_dc6d1b45cbc6",
+      "id": "juejin_ace9fe9b119c",
       "platform": "juejin",
-      "title": "金融 AI 最危险的“专业感”：数据是真的，数字却算错了",
-      "url": "https://juejin.cn/post/7700157305414058019",
+      "title": "Windows也能用 Apple Watch 解锁",
+      "url": "https://juejin.cn/post/7700194552506286107",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.833823+08:00"
+      "fetched_at": "2026-10-26T11:56:16.175235+08:00"
     },
     {
-      "id": "juejin_156e5d6e331b",
+      "id": "juejin_cfdaea8fd3b1",
       "platform": "juejin",
-      "title": "VeOps 深度调查：让 AI 排障从“能用”走向“可靠”",
-      "url": "https://juejin.cn/post/7700631102843387914",
+      "title": "代理网络环境下 Linux Pro 在线激活实操指南",
+      "url": "https://juejin.cn/post/7700601438522687539",
       "heat": 0,
       "category": "tech",
-      "fetched_at": "2026-10-26T05:32:27.833801+08:00"
+      "fetched_at": "2026-10-26T11:56:16.175229+08:00"
+    },
+    {
+      "id": "juejin_46ec5a3a56df",
+      "platform": "juejin",
+      "title": "2026年第43周GitHub趋势周报",
+      "url": "https://juejin.cn/post/7700247737962676224",
+      "heat": 0,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:16.175222+08:00"
+    },
+    {
+      "id": "juejin_80afdb9193a0",
+      "platform": "juejin",
+      "title": "Sebastian Raschka 11 小时视频课：用 PyTorch 从零构建推理模型",
+      "url": "https://juejin.cn/post/7700782390201483302",
+      "heat": 0,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:16.175215+08:00"
+    },
+    {
+      "id": "juejin_25d1a5da5091",
+      "platform": "juejin",
+      "title": "一个人 + AI 做的小程序，今天，正式回本了",
+      "url": "https://juejin.cn/post/7700157486075035683",
+      "heat": 0,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:16.175202+08:00"
+    },
+    {
+      "id": "juejin_dee845744de2",
+      "platform": "juejin",
+      "title": "APP 人脸识别增值版 SDK：Camera2 无缝接入指南",
+      "url": "https://juejin.cn/post/7700601438522785843",
+      "heat": 0,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:16.175194+08:00"
+    },
+    {
+      "id": "juejin_9603d96a6586",
+      "platform": "juejin",
+      "title": "测试全绿，上线三周数据没入账——那个95%的兼容度报告，漏掉的是边界",
+      "url": "https://juejin.cn/post/7700647882466443306",
+      "heat": 0,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:16.175169+08:00"
+    },
+    {
+      "id": "juejin_7fcbf6949f53",
+      "platform": "juejin",
+      "title": "Apollo 经济学家：AI 在科技行业外的财务回报为零",
+      "url": "https://juejin.cn/post/7700267917770702898",
+      "heat": 0,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:16.175162+08:00"
+    },
+    {
+      "id": "juejin_1f358057971e",
+      "platform": "juejin",
+      "title": "06-01-源码-文件系统体系（IFileSystem）",
+      "url": "https://juejin.cn/post/7700592903407927338",
+      "heat": 0,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:16.175152+08:00"
+    },
+    {
+      "id": "juejin_61fc9ec092aa",
+      "platform": "juejin",
+      "title": "Claude Duet 发布：又一个手机Agent可以用了！",
+      "url": "https://juejin.cn/post/7700267917771079730",
+      "heat": 0,
+      "category": "tech",
+      "fetched_at": "2026-10-26T11:56:16.175134+08:00"
     }
   ]
 }
